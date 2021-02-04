@@ -18,20 +18,20 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
+              "Sobre mi",
               "/about/"
+            ],
+            [
+              "Libros que he leído y reseñas",
+              "/libros-que-he-leido-y-resenas/"
+            ],
+            [
+              "Contáctame",
+              "/contacto/"
+            ],
+            [
+              "Subscríbete aquí",
+              "/no-te-pierdas-ninguna-de-nuestras-entradas/"
             ]
           ],
           "featured": {
