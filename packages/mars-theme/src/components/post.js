@@ -3,8 +3,7 @@ import { connect, styled, styles, css } from "frontity";
 import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
-import Prism from 'prismjs';
-import prism from '../styles/prism.css';
+import prismjs from "./styles/prism-styles";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -27,12 +26,11 @@ const Post = ({ state, actions, libraries }) => {
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
-    setTimeout(() => Prism.highlightAll(), 0)
   }, []);
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
-    <Container>
+    <Container css={prismjs}>
       <div>
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
@@ -71,18 +69,23 @@ const Post = ({ state, actions, libraries }) => {
 export default connect(Post);
 
 const Container = styled.div`
-  ${prism}
-  width: 800px;
+  width: 768px;
   margin: 0;
   padding: 24px;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding:12px;
+  }
 `;
 
 const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: #FFF;
+  color: #F3B433;
   line-height: 1.5em;
+  font-family: Roboto;
+  font-variant: petite-caps;
 `;
 
 const StyledLink = styled(Link)`
@@ -96,7 +99,7 @@ const Author = styled.p`
 `;
 
 const DateWrapper = styled.p`
-  color: rgba(12, 17, 43, 0.9);
+  color: #A2A2A2;
   font-size: 0.9em;
   display: inline;
 `;
@@ -114,7 +117,8 @@ const Content = styled.div`
   }
 
   p {
-    line-height: 1.6em;
+    font-size: 20px;
+    line-height: 2em;
   }
 
   img {
@@ -146,8 +150,8 @@ const Content = styled.div`
   }
 
   a {
-    color: rgb(31, 56, 197);
-    text-decoration: underline;
+    color: #FFF;
+    text-decoration: none;
   }
 
   /* Input fields styles */

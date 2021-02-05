@@ -2,6 +2,7 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
+import prismProcessor from "./processors/prism";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -20,6 +21,7 @@ const marsTheme = {
     theme: {
       autoPrefetch: "in-view",
       menu: [],
+      darkTheme: true,
       isMobileMenuOpen: false,
       featured: {
         showOnList: false,
@@ -40,6 +42,9 @@ const marsTheme = {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
+      toggleDarkTheme: ({ state }) => {
+        state.theme.darkTheme = !state.theme.darkTheme
+      }
     },
   },
   libraries: {
@@ -49,7 +54,7 @@ const marsTheme = {
        * and internal link inside the content HTML.
        * You can add your own processors too.
        */
-      processors: [image, iframe, link],
+      processors: [image, iframe, link, prismProcessor],
     },
   },
 };

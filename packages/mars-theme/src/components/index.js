@@ -52,15 +52,15 @@ export default connect(Theme);
 const globalStyles = css`
   body {
     margin: 0;
-    background-color: #091E2E;
+    background-color: #181818;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 20px;
+    line-height: 2rem;
   }
   a,
   a:visited {
-    color: inherit;
+    color: #FFF;
     text-decoration: none;
   }
 `;
@@ -69,11 +69,12 @@ const HeadContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #091E2E;
+  background-color: #181818;
 `;
 
 const Main = styled.div`
+  margin: 28px;
   display: flex;
-  color: #FFF;
+  color: #F2EBD9;
   justify-content: center;
 `;

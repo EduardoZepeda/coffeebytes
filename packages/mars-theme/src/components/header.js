@@ -33,15 +33,17 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  margin: 0;
-  margin-bottom: 16px;
-  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
 `;
 
 const Description = styled.h4`
   margin: 0;
   font-size: 1.5rem;
-  color: #C1402D;
+  color: #F3B433;
+  font-family: sans;
+  font-weight: normal;
 `;
 
 const StyledLink = styled(Link)`

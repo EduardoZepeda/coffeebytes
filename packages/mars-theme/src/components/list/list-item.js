@@ -73,7 +73,7 @@ const StyledLink = styled(Link)`
 `;
 
 const PublishDate = styled.span`
-  color: rgba(12, 17, 43, 0.9);
+  color: #A2A2A2;
   font-size: 0.9em;
 `;
 
