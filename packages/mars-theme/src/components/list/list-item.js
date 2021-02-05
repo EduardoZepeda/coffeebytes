@@ -1,7 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
-
+import excerpt from "../styles/excerpt";
 /**
  * Item Component
  *
@@ -45,7 +45,7 @@ const Item = ({ state, item }) => {
 
       {/* If the post has an excerpt (short summary text), we render it */}
       {item.excerpt && (
-        <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
+        <Excerpt css={excerpt} dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
       )}
     </article>
   );

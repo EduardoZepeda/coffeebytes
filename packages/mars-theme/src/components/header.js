@@ -36,6 +36,9 @@ const Title = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 3rem;
+  @media (max-width: 768px) {
+    margin-top: 4rem;
+  }
 `;
 
 const Description = styled.h4`
