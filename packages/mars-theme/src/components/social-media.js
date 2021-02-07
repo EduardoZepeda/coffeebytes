@@ -3,7 +3,7 @@ import Link from "./link";
 import { GrTwitter, GrLinkedin, GrGithub } from "react-icons/gr";
 
 const SocialMedia = ({ state }) => {
-    const iconSize = "1.5em"
+    const iconSize = "1em"
 
     return (
     <SocialMediaContainer>
@@ -18,12 +18,12 @@ export default connect(SocialMedia);
 
 const SocialMediaContainer = styled.div`
   color: white;
-  display: flex;
-  justify-content: flex-start;
-  margin: 1em 0;
+  margin-top: 1em;
   overflow-x: auto;
+  display: inline-flex;
   @media screen and (max-width: 560px) {
-    display: none;
+    width: 100%;
+    margin-left: 24px;
   }
 `;
 

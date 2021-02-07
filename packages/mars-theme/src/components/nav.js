@@ -8,7 +8,6 @@ import SocialMedia from "./social-media";
  */
 const Nav = ({ state }) => (
   <>
-  <SocialMedia/>
   <NavContainer>
     {state.theme.menu.map(([name, link]) => {
       // Check if the link matched the current page url
@@ -23,6 +22,7 @@ const Nav = ({ state }) => (
       );
     })}
   </NavContainer>
+  <SocialMedia/>
   </>
 );
 
