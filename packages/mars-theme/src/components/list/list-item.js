@@ -1,7 +1,6 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
-import excerpt from "../styles/excerpt";
 /**
  * Item Component
  *
@@ -45,7 +44,13 @@ const Item = ({ state, item }) => {
 
       {/* If the post has an excerpt (short summary text), we render it */}
       {item.excerpt && (
-        <Excerpt css={excerpt} dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
+        <>
+          <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
+          <Link link={item.link}>
+            <ReadMore>Leer más</ReadMore>
+          </Link>
+        </>
+
       )}
     </article>
   );
@@ -53,6 +58,13 @@ const Item = ({ state, item }) => {
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
+
+const ReadMore = styled.div`
+    display: inline-block;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    padding: 14px;
+`
 
 const Title = styled.h1`
   font-size: 2rem;
