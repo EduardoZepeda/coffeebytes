@@ -38,6 +38,11 @@ const settings = {
             "showOnList": false,
             "showOnPost": false
           }
+        },
+        "socialMedia": {
+          "twitter": "https://twitter.com/neon_affogato",
+          "github": "https://github.com/eduardoZepeda",
+          "linkedin": "https://linkedin.com/--eduardozepeda--"
         }
       }
     },

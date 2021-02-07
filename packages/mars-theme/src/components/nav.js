@@ -1,12 +1,14 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
-
+import SocialMedia from "./social-media";
 /**
  * Navigation Component
  *
  * It renders the navigation links
  */
 const Nav = ({ state }) => (
+  <>
+  <SocialMedia/>
   <NavContainer>
     {state.theme.menu.map(([name, link]) => {
       // Check if the link matched the current page url
@@ -21,6 +23,7 @@ const Nav = ({ state }) => (
       );
     })}
   </NavContainer>
+  </>
 );
 
 export default connect(Nav);
