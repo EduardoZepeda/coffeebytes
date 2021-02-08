@@ -39,7 +39,9 @@ const Item = ({ state, item }) => {
        * list of featured posts, we render the media.
        */}
       {state.theme.featured.showOnList && (
-        <FeaturedMedia id={item.featured_media} />
+              <Link link={item.link}>
+                <FeaturedMedia id={item.featured_media}/>
+              </Link>
       )}
 
       {/* If the post has an excerpt (short summary text), we render it */}
@@ -64,6 +66,7 @@ const ReadMore = styled.div`
     border: 1px solid #FFF;
     border-radius: 2px;
     padding: 14px;
+    margin-bottom: 28px;
 `
 
 const Title = styled.h1`
