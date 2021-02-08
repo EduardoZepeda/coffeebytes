@@ -122,7 +122,6 @@ const Content = styled.div`
   }
 
   img {
-    width: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -150,7 +149,7 @@ const Content = styled.div`
   }
 
   a {
-    color: #FFF;
+    color: #3370f3;
     text-decoration: none;
   }
 
