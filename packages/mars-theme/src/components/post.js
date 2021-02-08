@@ -4,20 +4,20 @@ import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
 import prismjs from "./styles/prism-styles";
+import SimilarPosts from "./similar-posts";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  //source.category.id.link
   // Get the data of the post.
   const post = state.source[data.type][data.id];
   // Get the data of the author.
   const author = state.source.author[post.author];
   // Get a human readable date.
   const date = new Date(post.date);
-
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
-
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -62,6 +62,7 @@ const Post = ({ state, actions, libraries }) => {
       <Content>
         <Html2React html={post.content.rendered} />
       </Content>
+      {post.type==="post" && <SimilarPosts post={post}/>}
     </Container>
   ) : null;
 };
