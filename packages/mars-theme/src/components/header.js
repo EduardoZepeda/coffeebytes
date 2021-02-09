@@ -41,7 +41,7 @@ const Title = styled.h2`
   }
 `;
 
-const Description = styled.h4`
+const Description = styled.h2`
   margin: 0;
   font-size: 1.5rem;
   color: #F3B433;
