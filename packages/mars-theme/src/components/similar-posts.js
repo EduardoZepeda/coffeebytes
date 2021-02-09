@@ -20,14 +20,13 @@ const SimilarPosts = ({ state, actions, post }) => {
 
   // 2. get data from frontity state
   const data = state.source.get(randomCategoryLink);
-
   // 3. get entities from frontity state
   if (data.isCategory) {
     // the category entity
     const category = state.source.category[data.id];
-
     // posts from that category
-    const posts = data.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id).slice(0,4);
+    const posts = data.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id).sort(() => Math.random() - 0.5)
+.slice(0,4);
     // 4. render!
     return (
       <>
@@ -41,7 +40,6 @@ const SimilarPosts = ({ state, actions, post }) => {
       </>
     );
   }
-
   return null;
 };
 
