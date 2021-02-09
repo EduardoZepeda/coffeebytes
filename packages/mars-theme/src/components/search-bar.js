@@ -45,7 +45,6 @@ const SearchBarContainer = styled.div`
 const SearchInput = styled.input`
     background-color: 0;
     border: 0px;
-    padding: 15px;
     color: #181818;
     padding: 1rem;
     border-radius: 2px;
@@ -53,17 +52,19 @@ const SearchInput = styled.input`
     border-bottom-left-radius: 2px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    font-size: 1rem;
 `;
 
 const SearchButton = styled.button`
     background-color: #F3B433;
-    color: #181818;
+    color: #FFF;
     margin: 0;
     border: 0px;
     padding: 1rem;
     padding: 1rem;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
+    font-size: 1rem;
   }
 `;
 
