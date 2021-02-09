@@ -117,6 +117,8 @@ const Content = styled.div`
 
   * {
     max-width: 100%;
+    padding-bottom: 0px !important; /* This behavior is needed to prevent the enlargement of images caused by the 'image' preprocessor */
+    border-radius: 4px; 
   }
 
   p {
@@ -127,6 +129,7 @@ const Content = styled.div`
   img {
     object-fit: cover;
     object-position: center;
+    position: relative !important; /* same as above */
   }
 
   figure {
