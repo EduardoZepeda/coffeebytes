@@ -8,8 +8,13 @@ const ReadingTime = ({ content }) => {
 
 export default ReadingTime
 
-const ReadTime = styled.p`
+const ReadTime = styled.div`
   color: #A2A2A2;
   font-size: 0.9em;
-  margin: 0;
+  border: 1px solid #A2A2A2;
+  border-radius: 4px;
+  padding: 0 10px;
+  display: flex;
+  width: max-content;
+  margin-top: 14px;
 `;
