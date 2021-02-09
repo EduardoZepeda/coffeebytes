@@ -5,7 +5,6 @@ import Pagination from "./pagination";
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-
   return (
     <Container>
       {/* If the list is a taxonomy, we render a title. */}
@@ -41,10 +40,13 @@ const Container = styled.section`
   margin: 0;
   padding: 24px;
   list-style: none;
+  @media screen and (max-width: 560px) {
+      width: 100%;
+  }
 `;
 
 const Header = styled.h3`
   font-weight: 300;
   text-transform: capitalize;
-  color: rgba(12, 17, 43, 0.9);
+  color: #F3B433;
 `;
