@@ -5,6 +5,7 @@ import List from "./list";
 import FeaturedMedia from "./featured-media";
 import prismjs from "./styles/prism-styles";
 import SimilarPosts from "./similar-posts";
+import ReadingTime from "./reading-time";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -46,8 +47,9 @@ const Post = ({ state, actions, libraries }) => {
             )}
             <DateWrapper>
               {" "}
-              el <b>{date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
+              <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
             </DateWrapper>
+            <ReadingTime content={post.content}/>
           </div>
         )}
       </div>

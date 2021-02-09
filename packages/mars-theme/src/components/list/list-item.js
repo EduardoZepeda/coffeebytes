@@ -1,6 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
+import ReadingTime from "../reading-time";
 /**
  * Item Component
  *
@@ -30,7 +31,7 @@ const Item = ({ state, item }) => {
         )}
         <PublishDate>
           {" "}
-          el <b>{date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
+          <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
         </PublishDate>
       </div>
 
@@ -38,6 +39,8 @@ const Item = ({ state, item }) => {
        * If the want to show featured media in the
        * list of featured posts, we render the media.
        */}
+       {}
+      <ReadingTime content={item.content}/>
       {state.theme.featured.showOnList && (
               <Link link={item.link}>
                 <FeaturedMedia id={item.featured_media}/>
