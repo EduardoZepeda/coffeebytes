@@ -73,7 +73,7 @@ const SearchBarOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #181818;
+  background-color: #181818CC;
   width: 100vw;
   height: 100vh;
   overflow: hidden auto;
