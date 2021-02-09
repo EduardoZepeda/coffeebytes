@@ -1,5 +1,6 @@
 import { styled, connect } from "frontity";
 import Link from "./link";
+import SearchBar from "./search-bar";
 
 const MenuModal = ({ state }) => {
   const { menu } = state.theme;
@@ -19,6 +20,7 @@ const MenuModal = ({ state }) => {
               {name}
             </MenuLink>
           ))}
+      <SearchBar/>
       </MenuContent>
     </>
   );

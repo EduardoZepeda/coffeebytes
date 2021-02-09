@@ -22,6 +22,8 @@ const marsTheme = {
       autoPrefetch: "in-view",
       menu: [],
       darkTheme: true,
+      searchQuery: "",
+      isSearchBarOpen: false,
       isMobileMenuOpen: false,
       featured: {
         showOnList: false,
@@ -42,9 +44,25 @@ const marsTheme = {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
+      toggleSearchBar: ({ state }) => event => {
+          if(event.target.id!=="search"){
+            state.theme.isSearchBarOpen = !state.theme.isSearchBarOpen;
+          }
+      },
       toggleDarkTheme: ({ state }) => {
         state.theme.darkTheme = !state.theme.darkTheme
-      }
+      },
+      setSearchQuery: ({ state }) => event => {
+        state.theme.searchQuery = event.target.value;
+      },
+      searchQuery: ({ state, actions }) => event => {
+        event.preventDefault();
+        if(state.theme.searchQuery){
+          actions.router.set("?s=" + state.theme.searchQuery);
+          state.theme.searchQuery = "";
+        }
+
+      },
     },
   },
   libraries: {

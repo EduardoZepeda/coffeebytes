@@ -1,6 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
 import SocialMedia from "./social-media";
+import SearchBar from "./search-bar";
 /**
  * Navigation Component
  *
@@ -21,6 +22,7 @@ const Nav = ({ state }) => (
         </NavItem>
       );
     })}
+  <SearchBar/>
   </NavContainer>
   <SocialMedia/>
   </>
