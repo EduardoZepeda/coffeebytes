@@ -1,10 +1,11 @@
 import { styled, connect } from "frontity";
+import Link from "./link";
 
 const description404 = (
   <>
-    That page can’t be found{" "}
+    ¿Por qué no pruebas nuestros post más recientes?{" "}
     <span role="img" aria-label="confused face">
-      😕
+      
     </span>
   </>
 );
@@ -21,13 +22,14 @@ const description = (
 const Page404 = ({ state }) => {
   const data = state.source.get(state.router.link);
 
-  const title = "Oops! Something went wrong";
-  const title404 = "Oops! 404";
+  const title = "Ops! Un error feo por aquí";
+  const title404 = "404, no hay nada... ☕";
 
   return (
     <Container>
       <Title>{data.is404 ? title404 : title}</Title>
       <Description>{data.is404 ? description404 : description}</Description>
+      <Link link={""}><RecentPostsButton>Quiero verlos</RecentPostsButton></Link>
     </Container>
   );
 };
@@ -45,12 +47,22 @@ const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: rgba(12, 17, 43);
-  font-size: 4em;
+  color: #FFF;
+  font-size: 3em;
 `;
 
 const Description = styled.div`
   line-height: 1.6em;
-  color: rgba(12, 17, 43, 0.8);
+  color: #FFF;
+  margin: 48px 0;
+`;
+
+const RecentPostsButton = styled.button`
+  color: #FFF;
   margin: 24px 0;
+  background-color: #F3B433;
+  border: 0px;
+  padding: 1.5rem;
+  border-radius: 2px;
+  font-size: 1rem;
 `;
