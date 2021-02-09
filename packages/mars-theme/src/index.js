@@ -40,6 +40,7 @@ const marsTheme = {
     theme: {
       toggleMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen;
+        state.theme.isSearchBarOpen = false;
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
