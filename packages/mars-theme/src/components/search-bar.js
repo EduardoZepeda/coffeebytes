@@ -20,8 +20,8 @@ const SearchBar = ({ state, actions }) => {
         </SearchBarContainer>
         {isSearchBarOpen && <SearchBarOverlay onClick={actions.theme.toggleSearchBar}>
             <div>
-                <SearchInput onChange={actions.theme.setSearchQuery} value={state.theme.searchQuery} id="search" type="text"/>
-                <SearchButton onClick={actions.theme.searchQuery} type="submit">
+                <SearchInput onChange={actions.theme.setSearchQuery} placeholder="Quiero leer sobre..." value={state.theme.searchQuery} id="search" type="text"/>
+                <SearchButton onClick={actions.theme.searchQuery}  type="submit">
                     Buscar
                 </SearchButton>
             </div>
@@ -38,6 +38,7 @@ const SearchBarContainer = styled.div`
   padding: 4px;
   align-self: end;
   z-index: 3;
+  text-align: center;
   }
 `;
 
