@@ -60,6 +60,7 @@ const marsTheme = {
         if(state.theme.searchQuery){
           actions.router.set("?s=" + state.theme.searchQuery);
           state.theme.searchQuery = "";
+          state.theme.isMobileMenuOpen = false;
         }
 
       },
