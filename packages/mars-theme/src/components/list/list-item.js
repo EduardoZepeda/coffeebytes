@@ -22,17 +22,17 @@ const Item = ({ state, item }) => {
 
       <div>
         {/* If the post has an author, we render a clickable author text. */}
-        {author && (
-          <StyledLink link={author.link}>
-            <AuthorName>
-              By <b>{author.name}</b>
-            </AuthorName>
-          </StyledLink>
-        )}
         <PublishDate>
           {" "}
           <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
         </PublishDate>
+        {author && (
+          <StyledLink link={author.link}>
+            <AuthorName>
+              {" "} por <b>{author.name}</b>
+            </AuthorName>
+          </StyledLink>
+        )}
       </div>
 
       {/*
@@ -82,7 +82,7 @@ const Title = styled.h1`
 `;
 
 const AuthorName = styled.span`
-  color: rgba(12, 17, 43, 0.9);
+  color: #A2A2A2;
   font-size: 0.9em;
 `;
 
