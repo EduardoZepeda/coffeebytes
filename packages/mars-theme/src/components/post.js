@@ -38,17 +38,17 @@ const Post = ({ state, actions, libraries }) => {
         {/* Only display author and date on posts */}
         {data.isPost && (
           <div>
-            {author && (
-              <StyledLink link={author.link}>
-                <Author>
-                  By <b>{author.name}</b>
-                </Author>
-              </StyledLink>
-            )}
             <DateWrapper>
               {" "}
               <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
             </DateWrapper>
+            {author && (
+              <StyledLink link={author.link}>
+                <Author>
+                  {" "} por <b>{author.name}</b>
+                </Author>
+              </StyledLink>
+            )}
             <ReadingTime content={post.content}/>
           </div>
         )}
@@ -96,7 +96,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Author = styled.p`
-  color: rgba(12, 17, 43, 0.9);
+  color: #A2A2A2;
   font-size: 0.9em;
   display: inline;
 `;
