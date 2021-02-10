@@ -1,12 +1,15 @@
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
+import EmptySearch from "../empty-search"
 
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
   return (
     <Container>
+      {state.router.link.startsWith("/?s=") && <h2>Resultados para: {state.router.link.split("=")[1]}</h2>}
+      {data.items.length===0?<EmptySearch/>:null}
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
