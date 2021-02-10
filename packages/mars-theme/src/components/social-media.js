@@ -7,9 +7,9 @@ const SocialMedia = ({ state }) => {
 
     return (
     <SocialMediaContainer>
-        <div><IconContainer link={state.socialMedia.github}><GrGithub size={iconSize}/></IconContainer></div>
-        <div><IconContainer link={state.socialMedia.twitter}><GrTwitter size={iconSize}/></IconContainer></div>
-        <div><IconContainer link={state.socialMedia.linkedin}><GrLinkedin size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Github" link={state.socialMedia.github}><GrGithub size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><GrTwitter size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><GrLinkedin size={iconSize}/></IconContainer></div>
     </SocialMediaContainer>)
 
 };
