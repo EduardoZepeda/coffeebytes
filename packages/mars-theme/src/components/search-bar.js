@@ -39,7 +39,6 @@ const SearchBarContainer = styled.div`
   align-self: end;
   z-index: 3;
   text-align: center;
-  }
 `;
 
 const SearchInput = styled.input`
@@ -57,7 +56,7 @@ const SearchInput = styled.input`
 
 const SearchButton = styled.button`
     background-color: #F3B433;
-    color: #FFF;
+    color: #181818;
     margin: 0;
     border: 0px;
     padding: 1rem;
@@ -65,7 +64,6 @@ const SearchButton = styled.button`
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     font-size: 1rem;
-  }
 `;
 
 
