@@ -22,7 +22,7 @@ const settings = [
             ],
             [
               "About me",
-              "/en/about-me/"
+              "/en/eduardo-zepeda-profile/"
             ],
             [
               "Books I've read and reviews",
@@ -77,7 +77,7 @@ const settings = [
             ],
             [
               "Sobre mi",
-              "/about/"
+              "/perfil-de-eduardo-zepeda-autor-de-coffee-bytes/"
             ],
             [
               "Libros que he leído y reseñas",
