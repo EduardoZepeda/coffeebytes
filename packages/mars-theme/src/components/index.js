@@ -20,7 +20,7 @@ const Theme = ({ state }) => {
       <Title />
       <Head>
         <meta name="description" content={state.frontity.description} />
-        <html lang={state.source.theme} />
+        <html lang={state.theme.lang} />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
