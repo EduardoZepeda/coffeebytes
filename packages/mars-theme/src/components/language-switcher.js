@@ -14,8 +14,8 @@ const LanguageSwitcher = ({ state }) => {
 export default connect(LanguageSwitcher);
 
 const LanguageSwitchContainer = styled.div`
-  display: inline-block;
   line-height: 2em;
+  text-align: center;
   padding: 0;
   margin: 0 16px;
   color: #fff;

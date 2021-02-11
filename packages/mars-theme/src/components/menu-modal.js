@@ -1,6 +1,7 @@
 import { styled, connect } from "frontity";
 import Link from "./link";
 import SearchBar from "./search-bar";
+import LanguageSwitcher from "./language-switcher";
 
 const MenuModal = ({ state }) => {
   const { menu } = state.theme;
@@ -20,6 +21,7 @@ const MenuModal = ({ state }) => {
               {name}
             </MenuLink>
           ))}
+      <LanguageSwitcher/>
       <SearchBar/>
       </MenuContent>
     </>
