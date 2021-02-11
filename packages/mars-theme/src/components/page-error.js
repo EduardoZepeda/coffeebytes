@@ -1,14 +1,14 @@
 import { styled, connect } from "frontity";
 import Link from "./link";
 
-const description404 = (
+const description404 = (lang) => {
   <>
-    ¿Por qué no pruebas nuestros post más recientes?{" "}
+    {lang==="en"? "Why don't you check our latest posts?": "Pero puedes leer nuestros posts más recientes"}
     <span role="img" aria-label="confused face">
       
     </span>
   </>
-);
+  }
 
 const description = (
   <>
@@ -23,13 +23,13 @@ const Page404 = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   const title = "Ops! Un error feo por aquí";
-  const title404 = "404, no hay nada... ☕";
+  const title404 = state.theme.lang==="en" ? "404, there are no post in english... yet ☕":"404, no hay nada... ☕";
 
   return (
     <Container>
       <Title>{data.is404 ? title404 : title}</Title>
-      <Description>{data.is404 ? description404 : description}</Description>
-      <Link link={""}><RecentPostsButton>Quiero verlos</RecentPostsButton></Link>
+      <Description>{data.is404 ? description404(state.theme.lang) : description}</Description>
+      {state.theme.lang==="en"? null: <Link link={""}><RecentPostsButton>"Quiero leerlos"</RecentPostsButton></Link>}
     </Container>
   );
 };
@@ -49,6 +49,7 @@ const Title = styled.h1`
   margin-bottom: 8px;
   color: #FFF;
   font-size: 3em;
+  line-height: 5rem;
 `;
 
 const Description = styled.div`

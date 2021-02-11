@@ -20,9 +20,9 @@ const SearchBar = ({ state, actions }) => {
         </SearchBarContainer>
         {isSearchBarOpen && <SearchBarOverlay onClick={actions.theme.toggleSearchBar}>
             <div>
-                <SearchInput onChange={actions.theme.setSearchQuery} placeholder="Quiero leer sobre..." value={state.theme.searchQuery} id="search" type="text"/>
+                <SearchInput onChange={actions.theme.setSearchQuery} placeholder={state.theme.lang==="en"? "I'm searching for...": "Quiero leer sobre..." } value={state.theme.searchQuery} id="search" type="text"/>
                 <SearchButton onClick={actions.theme.searchQuery}  type="submit">
-                    Buscar
+                    {state.theme.lang==="en"? "Search": "Buscar" }
                 </SearchButton>
             </div>
         </SearchBarOverlay>}

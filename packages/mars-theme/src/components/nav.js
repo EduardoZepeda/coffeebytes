@@ -2,6 +2,7 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import SocialMedia from "./social-media";
 import SearchBar from "./search-bar";
+import LanguageSwitcher from "./language-switcher";
 /**
  * Navigation Component
  *
@@ -22,6 +23,7 @@ const Nav = ({ state }) => (
         </NavItem>
       );
     })}
+  <LanguageSwitcher/>
   <SearchBar/>
   </NavContainer>
   <SocialMedia/>

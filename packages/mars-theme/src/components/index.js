@@ -14,14 +14,13 @@ import PageError from "./page-error";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
       <Title />
       <Head>
         <meta name="description" content={state.frontity.description} />
-        <html lang="es" />
+        <html lang={state.source.theme} />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
