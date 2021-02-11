@@ -20,8 +20,8 @@ const marsTheme = {
      */
     theme: {
       autoPrefetch: "in-view",
+      lang: "es",
       menu: [],
-      darkTheme: true,
       searchQuery: "",
       isSearchBarOpen: false,
       isMobileMenuOpen: false,
@@ -50,9 +50,6 @@ const marsTheme = {
             state.theme.isSearchBarOpen = !state.theme.isSearchBarOpen;
           }
       },
-      toggleDarkTheme: ({ state }) => {
-        state.theme.darkTheme = !state.theme.darkTheme
-      },
       setSearchQuery: ({ state }) => event => {
         state.theme.searchQuery = event.target.value;
       },
@@ -63,8 +60,7 @@ const marsTheme = {
           state.theme.searchQuery = "";
           state.theme.isMobileMenuOpen = false;
         }
-
-      },
+      }
     },
   },
   libraries: {
