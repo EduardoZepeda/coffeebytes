@@ -39,6 +39,9 @@ const SearchBarContainer = styled.div`
   align-self: end;
   z-index: 3;
   text-align: center;
+  @media (max-width: 560px) {
+    margin: 16px 16px;
+  }
 `;
 
 const SearchInput = styled.input`

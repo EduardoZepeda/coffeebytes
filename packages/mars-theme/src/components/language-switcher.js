@@ -22,4 +22,7 @@ const LanguageSwitchContainer = styled.div`
   font-size: 0.9em;
   box-sizing: border-box;
   flex-shrink: 0;
+  @media (max-width: 560px) {
+    margin: 16px 16px;
+  }
 `;
