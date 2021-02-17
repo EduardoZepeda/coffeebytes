@@ -92,12 +92,13 @@ const settings = [
           ],
           "featured": {
             "showOnList": true,
-            "showOnPost": false          }
-        },
+            "showOnPost": false          
+          },
           "mailChimp": {
             "modalCooldownInDays": 30,
             "formUrl": "https://dev.us17.list-manage.com/subscribe/post?u=5db658017fc3fb83c8ab5ff63&amp;id=c4ad1325c9",
             "formHiddenField": "b_5db658017fc3fb83c8ab5ff63_c4ad1325c9"
+          },
         },
         "socialMedia": {
           "twitter": "https://twitter.com/neon_affogato",
