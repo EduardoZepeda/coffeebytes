@@ -3,6 +3,7 @@ import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
 import prismProcessor from "./processors/prism";
+import exitIntentCookies from "./utils/cookie-handler";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -23,6 +24,7 @@ const marsTheme = {
       lang: "es",
       menu: [],
       searchQuery: "",
+      showMailChimpForm: false,
       isSearchBarOpen: false,
       isMobileMenuOpen: false,
       featured: {
@@ -52,6 +54,15 @@ const marsTheme = {
       },
       setSearchQuery: ({ state }) => event => {
         state.theme.searchQuery = event.target.value;
+      },
+      closeMailChimpForm: ({ state }) => event => {
+        state.theme.showMailChimpForm = false;
+      },
+      openMailChimpForm: ({ state }) => event => {
+        if(!exitIntentCookies.getCookie("mailChimpNewsletterShown")){
+          state.theme.showMailChimpForm = true;
+          exitIntentCookies.setCookie("mailChimpNewsletterShown", true, 30);
+        }
       },
       searchQuery: ({ state, actions }) => event => {
         event.preventDefault();
