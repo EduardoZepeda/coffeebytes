@@ -6,6 +6,7 @@ import FeaturedMedia from "./featured-media";
 import prismjs from "./styles/prism-styles";
 import SimilarPosts from "./similar-posts";
 import ReadingTime from "./reading-time";
+import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -32,6 +33,7 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container css={prismjs}>
+      <MailChimpSubscribeFormModal/>
       <div>
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
