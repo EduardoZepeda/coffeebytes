@@ -1,6 +1,7 @@
 import { styled, connect } from "frontity";
 import { useEffect } from "react";
 import MailChimpSubscribeForm from "./mail-chimp-form";
+import { AiOutlineClose } from "react-icons/ai";
 
 const MailChimpSubscribeFormModal = ({ state, actions }) => {
     const { showMailChimpForm } = state.theme;
@@ -10,7 +11,7 @@ const MailChimpSubscribeFormModal = ({ state, actions }) => {
     }, [])
     return (
         <ExitIntentPopup showMailChimpForm={showMailChimpForm}>
-            <Newsletter><Close onClick={actions.theme.closeMailChimpForm}>x</Close>
+            <Newsletter><Close onClick={actions.theme.closeMailChimpForm}><AiOutlineClose/></Close>
                 <MailChimpSubscribeForm/>
             </Newsletter>
         </ExitIntentPopup>
@@ -27,6 +28,9 @@ const Newsletter = styled.div`
     padding:50px;
     background-color: #181818;
     border-radius: 4px;
+    @media (max-width: 760px) {
+        width: 80%;
+      }
 `
 
 const ExitIntentPopup = styled.div(props=>({

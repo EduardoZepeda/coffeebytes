@@ -12,8 +12,8 @@ const MailChimpSubscribeForm = ({ state }) => {
         <div id="mc_embed_signup">
         <form action={state.theme.mailChimp.formUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate="">
             <MCEmbedSignupScroll>
-            <h2>Hey, espera, no te vayas</h2>
-            <p>¿Quieres recibir más contenido como este en tu correo electrónico? Suscríbete, te toma unos segundos, es gratis y puedes cancelar cuando quieras</p>
+            <h2>¿Te es útil el contenido que estas leyendo?</h2>
+            <p>Recibe más contenido como este en tu correo electrónico. Suscríbete, te toma unos segundos, es gratis y puedes cancelar cuando quieras</p>
             <IndicatedRequired><span className="asterisk">*</span> Campo obligatorio</IndicatedRequired>
             <MCFieldGroup>
                 <label htmlFor="mce-EMAIL">Email  <span className="asterisk">*</span>
