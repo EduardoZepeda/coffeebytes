@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import FeaturedMedia from "./featured-media";
+import shuffle from "../utils/array-shuffler";
 
 // In a React component that uses "connect":
 const SimilarPosts = ({ state, actions, post }) => {
@@ -25,14 +26,14 @@ const SimilarPosts = ({ state, actions, post }) => {
     // the category entity
     const category = state.source.category[data.id];
     // posts from that category
-    const posts = data.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id).sort(() => Math.random() - 0.5)
-.slice(0,4);
+    const posts = data.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id);
     // 4. render!
+    shuffle(posts);
     return (
       <>
         <h2>Publicaciones relacionadas</h2>
         <SimilarPostsContainer>
-        {posts.map((p) => (<SimilarPost key={p.id}><Link link={p.link}>
+        {posts.slice(0,4).map((p) => (<SimilarPost key={p.id}><Link link={p.link}>
           <FeaturedMedia id={p.featured_media} />
           <p>{p.title.rendered}</p></Link></SimilarPost>
         ))}
