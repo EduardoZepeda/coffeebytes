@@ -7,6 +7,11 @@ const settings = [
       "url": "https://coffeebytes.dev",
       "title": "Coffee bytes",
       "description": "Python, Javascript and GNU/Linux web development notes"
+    },
+    "analytics": {
+      "pageviews": {
+        "googleAnalytics": true,
+      },
     }
   },
   "packages": [
@@ -55,6 +60,14 @@ const settings = [
         }
       }
     },
+    {
+      name: "@frontity/google-analytics",
+      state: {
+        googleAnalytics: {
+          trackingId: "UA-112824408-2",
+        }
+      }
+    },
     "@frontity/tiny-router",
     "@frontity/html2react",
     "@frontity/head-tags"
@@ -68,6 +81,11 @@ const settings = [
       "url": "https://coffeebytes.dev",
       "title": "Coffee bytes",
       "description": "Apuntes de desarrollo web con GNU/Linux, Python y Javascript"
+    },
+    "analytics": {
+      "pageviews": {
+        "googleAnalytics": true,
+      },
     }
   },
   "packages": [
@@ -113,6 +131,14 @@ const settings = [
       "state": {
         "source": {
           "url": "https://coffeebytes.dev"
+        }
+      }
+    },
+    {
+      name: "@frontity/google-analytics",
+      state: {
+        googleAnalytics: {
+          trackingId: "UA-112824408-2",
         }
       }
     },
