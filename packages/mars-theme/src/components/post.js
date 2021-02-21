@@ -7,6 +7,7 @@ import prismjs from "./styles/prism-styles";
 import SimilarPosts from "./similar-posts";
 import ReadingTime from "./reading-time";
 import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
+import AfterPost from "./after-post";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -66,6 +67,7 @@ const Post = ({ state, actions, libraries }) => {
       <Content>
         <Html2React html={post.content.rendered} />
       </Content>
+      {post.type==="post" && <AfterPost/>}
       {post.type==="post" && <SimilarPosts post={post}/>}
     </Container>
   ) : null;
@@ -152,7 +154,7 @@ const Content = styled.div`
   blockquote {
     margin: 16px 0;
     background-color: rgba(0, 0, 0, 0.1);
-    border-left: 4px solid rgba(12, 17, 43);
+    border-left: 4px solid #FFF;
     padding: 4px 16px;
   }
 

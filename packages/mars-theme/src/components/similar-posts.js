@@ -13,7 +13,7 @@ const SimilarPosts = ({ state, actions, post }) => {
   // so the component is re-rendered and "data" will get proper content
 
   const randomCategory = post.categories[Math.floor(Math.random() * post.categories.length)];
-  const randomCategoryLink = state.source.category[randomCategory]["link"]
+  const randomCategoryLink = state.source.category[randomCategory]["link"];
 
   useEffect(() => {
     actions.source.fetch(randomCategoryLink);
