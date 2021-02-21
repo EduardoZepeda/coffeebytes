@@ -74,6 +74,6 @@ const HeadContainer = styled.div`
 const Main = styled.div`
   margin: 28px;
   display: flex;
-  color: #F2EBD9;
+  color: #EBF6FF;
   justify-content: center;
 `;
