@@ -2,7 +2,7 @@ import { styled } from "frontity";
 
 const ReadingTime = ({ content }) => {
 
-    return (<ReadTime><b>Tiempo de lectura: {content ? Math.ceil(content.rendered.split(" ").length/160): null} minutos</b></ReadTime>)
+    return (<ReadTime><b>Tiempo de lectura: {content ? Math.ceil(content.rendered.split(" ").length/225): null} minutos</b></ReadTime>)
 
 };
 
