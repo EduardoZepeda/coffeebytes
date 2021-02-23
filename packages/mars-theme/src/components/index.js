@@ -71,7 +71,7 @@ const HeadContainer = styled.div`
   background-color: #181818;
 `;
 
-const Main = styled.div`
+const Main = styled.main`
   margin: 28px;
   display: flex;
   color: #EBF6FF;
