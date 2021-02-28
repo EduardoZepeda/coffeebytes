@@ -5,8 +5,8 @@ const AfterPost = ({ state }) => {
     return (
         <>
             <h2>¿Quieres aprender más?</h2>
-            <p>Sígueme en Twitter y te aviso cuando tenga más contenido disponible para ti. ¡Es gratis!</p>
-            <FollowButton><a href={state.socialMedia.twitter} className="twitter-follow-button" data-size="large" data-show-screen-name="false" data-lang="es" data-show-count="false">Sí, llévame a Twitter</a></FollowButton>
+            <p>Sígueme en Twitter y te aviso cuando tenga nuevo contenido disponible. ¡Es gratis!</p>
+            <FollowButton><a href={state.socialMedia.twitter} className="twitter-follow-button" data-size="large" data-show-screen-name="false" data-lang="es" data-show-count="false">Seguir a Eduardo Zepeda</a></FollowButton>
         </>
         )
 

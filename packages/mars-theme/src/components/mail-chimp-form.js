@@ -12,8 +12,8 @@ const MailChimpSubscribeForm = ({ state }) => {
         <div id="mc_embed_signup">
         <form action={state.theme.mailChimp.formUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate="">
             <MCEmbedSignupScroll>
-            <h2>¿Te es útil el contenido que estas leyendo?</h2>
-            <p>Recibe más contenido como este en tu correo electrónico. Suscríbete, te toma unos segundos, es gratis y puedes cancelar cuando quieras</p>
+            <h2>¿Te pareció útil esta información?</h2>
+            <p>Recibe más contenido como este en tu correo electrónico. Suscríbete, te toma unos segundos, es gratis,  y puedes cancelar cuando quieras</p>
             <IndicatedRequired><span className="asterisk">*</span> Campo obligatorio</IndicatedRequired>
             <MCFieldGroup>
                 <label htmlFor="mce-EMAIL">Email  <span className="asterisk">*</span>
@@ -32,7 +32,7 @@ const MailChimpSubscribeForm = ({ state }) => {
                 <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
                 <input type="text" onChange={handleInput} name={state.theme.mailChimp.formHiddenField} tabIndex="-1" value=""/>
                 </div>
-                <div className="clear"><SubscribeButton type="submit" value="Sí, quiero leer más" name="subscribe"/></div>
+                <div className="clear"><SubscribeButton type="submit" value="Sí, suscríbeme gratis" name="subscribe"/></div>
                 </MCEmbedSignupScroll>
         </form>
         </div>
@@ -46,7 +46,7 @@ const SubscribeButton = styled.input`
     padding: 1rem;
     background-color: #F3B433;
     border: 0px solid;
-    color: #FFF;
+    color: #181818;
     border-radius: 4px;
     margin: 10px 0;
     outline: none;
