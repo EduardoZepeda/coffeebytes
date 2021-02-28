@@ -32,6 +32,10 @@ const settings = [
             [
               "Books I've read and reviews",
               "/en/books-ive-read-and-reviews/"
+            ],
+            [
+              "Contact me",
+              "/contact-eduardo-zepeda/"
             ]
           ],
           "featured": {
@@ -106,6 +110,10 @@ const settings = [
             [
               "Libros que he leído y reseñas",
               "/libros-que-he-leido-y-resenas/"
+            ],
+            [
+              "Contáctame",
+              "/contacto-eduardo-zepeda/"
             ]
           ],
           "featured": {
