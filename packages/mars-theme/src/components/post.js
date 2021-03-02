@@ -136,7 +136,7 @@ const Content = styled.div`
   }
 
   img {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     position: relative !important; /* same as above */
     @media (max-width: 768px) {
