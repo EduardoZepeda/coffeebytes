@@ -35,7 +35,7 @@ const settings = [
             ],
             [
               "Contact me",
-              "/en/contact-eduardo-zepeda/"
+              "/contact-eduardo-zepeda/"
             ]
           ],
           "featured": {
