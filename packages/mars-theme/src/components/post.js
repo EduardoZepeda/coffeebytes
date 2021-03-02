@@ -139,6 +139,9 @@ const Content = styled.div`
     object-fit: cover;
     object-position: center;
     position: relative !important; /* same as above */
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   figure {
