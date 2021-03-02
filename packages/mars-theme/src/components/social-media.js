@@ -1,15 +1,15 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
-import { GrTwitter, GrLinkedin, GrGithub } from "react-icons/gr";
+import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
 
 const SocialMedia = ({ state }) => {
-    const iconSize = "1em"
+    const iconSize = "1.2em"
 
     return (
     <SocialMediaContainer>
-        <div><IconContainer aria-label="Enlace a Github" link={state.socialMedia.github}><GrGithub size={iconSize}/></IconContainer></div>
-        <div><IconContainer aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><GrTwitter size={iconSize}/></IconContainer></div>
-        <div><IconContainer aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><GrLinkedin size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Github" link={state.socialMedia.github}><IoLogoGithub size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><IoLogoTwitter size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><IoLogoLinkedin size={iconSize}/></IconContainer></div>
     </SocialMediaContainer>)
 
 };
