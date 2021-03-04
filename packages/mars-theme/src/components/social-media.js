@@ -1,15 +1,18 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
-import { IoLogoTwitter, IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
+import { Icon } from 'react-icons-kit'
+import { socialGithub } from 'react-icons-kit/ionicons/socialGithub'
+import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
+import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
 
 const SocialMedia = ({ state }) => {
-    const iconSize = "1.2em"
+    const iconSize = "1.4rem"
 
     return (
     <SocialMediaContainer>
-        <div><IconContainer aria-label="Enlace a Github" link={state.socialMedia.github}><IoLogoGithub size={iconSize}/></IconContainer></div>
-        <div><IconContainer aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><IoLogoTwitter size={iconSize}/></IconContainer></div>
-        <div><IconContainer aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><IoLogoLinkedin size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Github" link={state.socialMedia.github}><Icon icon={socialGithub} size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><Icon icon={socialTwitter} size={iconSize}/></IconContainer></div>
+        <div><IconContainer aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize}/></IconContainer></div>
     </SocialMediaContainer>)
 
 };

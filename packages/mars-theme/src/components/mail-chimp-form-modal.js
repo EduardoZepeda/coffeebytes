@@ -1,7 +1,8 @@
 import { styled, connect } from "frontity";
 import { useEffect } from "react";
 import MailChimpSubscribeForm from "./mail-chimp-form";
-import { AiOutlineClose } from "react-icons/ai";
+import { Icon } from 'react-icons-kit'
+import { androidSearch } from 'react-icons-kit/ionicons/androidSearch'
 
 const MailChimpSubscribeFormModal = ({ state, actions }) => {
     const { showMailChimpForm } = state.theme;
@@ -11,7 +12,7 @@ const MailChimpSubscribeFormModal = ({ state, actions }) => {
     }, [])
     return (
         <ExitIntentPopup showMailChimpForm={showMailChimpForm}>
-            <Newsletter><Close onClick={actions.theme.closeMailChimpForm}><AiOutlineClose/></Close>
+            <Newsletter><Close onClick={actions.theme.closeMailChimpForm}><Icon icon={androidSearch} size={"1.4rem"}/></Close>
                 <MailChimpSubscribeForm/>
             </Newsletter>
         </ExitIntentPopup>

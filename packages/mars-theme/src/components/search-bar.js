@@ -1,6 +1,7 @@
 import { connect, styled, Global } from "frontity";
 import Link from "./link";
-import { AiOutlineSearch } from "react-icons/ai";
+import { Icon } from 'react-icons-kit'
+import { androidSearch } from 'react-icons-kit/ionicons/androidSearch'
 
 const SearchBar = ({ state, actions }) => {
     const { isSearchBarOpen } = state.theme;
@@ -15,7 +16,7 @@ const SearchBar = ({ state, actions }) => {
             <Global styles={{ body: { overflowY: "hidden" } }} />
           </>
         ) : (
-          <AiOutlineSearch/>
+          <Icon icon={androidSearch} size={"1.4rem"}/>
         )}
         </SearchBarContainer>
         {isSearchBarOpen && <SearchBarOverlay onClick={actions.theme.toggleSearchBar}>
