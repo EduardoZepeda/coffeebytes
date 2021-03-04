@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { connect, styled } from "frontity";
+import { connect, styled, decode } from "frontity";
 import Link from "./link";
 import FeaturedMedia from "./featured-media";
 import shuffle from "../utils/array-shuffler";
@@ -24,14 +24,19 @@ const SimilarPosts = ({ state, actions, post }) => {
   // 3. get entities from frontity state
   if (data.isCategory) {
     // the category entity
+    const latestPostsData = state.source.data['/']
     const category = state.source.category[data.id];
     // posts from that category
     const posts = data.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id);
+    if(latestPostsData.items && posts.length<=1){
+      const latestPosts = latestPostsData.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id);
+      posts.push(...latestPosts)
+    }
     // 4. render!
     shuffle(posts);
     return (
       <>
-        <h2>Publicaciones relacionadas</h2>
+        <h2>Otras publicaciones que pueden interesarte</h2>
         <SimilarPostsContainer>
         {posts.slice(0,4).map((p) => (<SimilarPost key={p.id}><Link link={p.link}>
           <FeaturedMedia id={p.featured_media} />
