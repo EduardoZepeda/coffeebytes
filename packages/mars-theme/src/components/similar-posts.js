@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { connect, styled, decode } from "frontity";
+import { connect, styled } from "frontity";
 import Link from "./link";
 import FeaturedMedia from "./featured-media";
 import shuffle from "../utils/array-shuffler";
@@ -17,7 +17,7 @@ const SimilarPosts = ({ state, actions, post }) => {
 
   useEffect(() => {
     actions.source.fetch(randomCategoryLink);
-  }, []);
+  }, [randomCategoryLink]);
 
   // 2. get data from frontity state
   const data = state.source.get(randomCategoryLink);
