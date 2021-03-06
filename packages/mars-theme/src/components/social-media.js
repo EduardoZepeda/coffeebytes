@@ -10,9 +10,9 @@ const SocialMedia = ({ state }) => {
 
     return (
     <SocialMediaContainer>
-        <div><IconContainer aria-label="Enlace a Github" link={state.socialMedia.github}><Icon icon={socialGithub} size={iconSize}/></IconContainer></div>
-        <div><IconContainer aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><Icon icon={socialTwitter} size={iconSize}/></IconContainer></div>
-        <div><IconContainer aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize}/></IconContainer></div>
+        <IconContainer><IconLink aria-label="Enlace a Github" link={state.socialMedia.github}><Icon icon={socialGithub} size={iconSize}/></IconLink></IconContainer>
+        <IconContainer><IconLink aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><Icon icon={socialTwitter} size={iconSize}/></IconLink></IconContainer>
+        <IconContainer><IconLink aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize}/></IconLink></IconContainer>
     </SocialMediaContainer>)
 
 };
@@ -30,6 +30,15 @@ const SocialMediaContainer = styled.div`
   }
 `;
 
-const IconContainer = styled(Link)`
+const IconLink = styled(Link)`
     margin: 0 0.7em;
+`;
+
+
+const IconContainer = styled.div`
+   transition-duration: 0.3s;  
+   &:hover {
+    transform: translateY(-5px);
+    transition-duration: 0.3s; 
+  }
 `;
