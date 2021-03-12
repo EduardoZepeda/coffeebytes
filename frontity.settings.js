@@ -36,6 +36,10 @@ const settings = [
             [
               "Contact me",
               "/en/contact-eduardo-zepeda/"
+            ],
+            [
+              "Gifts for you",
+              "/en/gifts/"
             ]
           ],
           "featured": {
@@ -114,6 +118,10 @@ const settings = [
             [
               "Contáctame",
               "/contacto-eduardo-zepeda/"
+            ],
+            [
+              "Regalos",
+              "/regalos/"
             ]
           ],
           "featured": {
