@@ -21,7 +21,6 @@ export default connect(SocialMedia);
 
 const SocialMediaContainer = styled.div`
   color: white;
-  margin-top: 1em;
   overflow-x: auto;
   display: inline-flex;
   @media screen and (max-width: 560px) {
