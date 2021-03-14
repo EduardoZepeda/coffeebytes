@@ -25,7 +25,7 @@ const Pagination = ({ state, actions }) => {
           <PaginationLink>← Regresar </PaginationLink>
         </Link>
       )}
-      {totalPages && [...Array(totalPages).keys()].map(paginationPage=><Link id={paginationPage} link={`/page/${paginationPage+1}/`}><PaginationLink active={paginationPage+1===page}>{paginationPage+1}</PaginationLink></Link>)}
+      {totalPages>0 && [...Array(totalPages).keys()].map(paginationPage=><Link key={paginationPage} link={`/page/${paginationPage+1}/`}><PaginationLink active={paginationPage+1===page}>{paginationPage+1}</PaginationLink></Link>)}
 
       {/* If there's a previous page, render this link */}
       {next && (
