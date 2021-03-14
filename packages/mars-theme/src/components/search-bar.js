@@ -19,13 +19,11 @@ const SearchBar = ({ state, actions }) => {
           <Icon icon={androidSearch} size={24}/>
         )}
         </SearchBarContainer>
-        {isSearchBarOpen && <SearchBarOverlay onClick={actions.theme.toggleSearchBar}>
-            <div>
+        {isSearchBarOpen && <SearchBarOverlay id="search-bar-overlay" onClick={actions.theme.toggleSearchBar}>
+            <form onSubmit={actions.theme.searchQuery}>
                 <SearchInput onChange={actions.theme.setSearchQuery} placeholder={state.theme.lang==="en"? "I'm searching for...": "Quiero leer sobre..." } value={state.theme.searchQuery} id="search" type="text"/>
-                <SearchButton onClick={actions.theme.searchQuery}  type="submit">
-                    {state.theme.lang==="en"? "Search": "Buscar" }
-                </SearchButton>
-            </div>
+                <SearchButton value={state.theme.lang==="en"? "Search": "Buscar" } type="submit"/>
+            </form>
         </SearchBarOverlay>}
         </>
         )
@@ -57,7 +55,7 @@ const SearchInput = styled.input`
     font-size: 1rem;
 `;
 
-const SearchButton = styled.button`
+const SearchButton = styled.input`
     background-color: #F3B433;
     color: #181818;
     margin: 0;

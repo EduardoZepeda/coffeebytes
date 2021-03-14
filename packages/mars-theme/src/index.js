@@ -48,7 +48,8 @@ const marsTheme = {
         state.theme.isMobileMenuOpen = false;
       },
       toggleSearchBar: ({ state }) => event => {
-          if(event.target.id!=="search"){
+          event.persist();
+          if(event.target.type!=="submit" && event.target.id!=="search"){
             state.theme.isSearchBarOpen = !state.theme.isSearchBarOpen;
           }
       },
@@ -70,6 +71,7 @@ const marsTheme = {
           actions.router.set("?s=" + state.theme.searchQuery);
           state.theme.searchQuery = "";
           state.theme.isMobileMenuOpen = false;
+          state.theme.isSearchBarOpen = false;
         }
       }
     },
