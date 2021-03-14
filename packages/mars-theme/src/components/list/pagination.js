@@ -12,7 +12,7 @@ import Link from "../link";
  */
 const Pagination = ({ state, actions }) => {
   // Get the total posts to be displayed based for the current link
-  const { next, previous, totalPages, page } = state.source.get(state.router.link);
+  const { next, previous, totalPages, page, searchQuery } = state.source.get(state.router.link);
   // Pre-fetch the the next page if it hasn't been fetched yet.
   useEffect(() => {
     if (next) actions.source.fetch(next);
@@ -25,7 +25,7 @@ const Pagination = ({ state, actions }) => {
           <PaginationLink>← Regresar </PaginationLink>
         </Link>
       )}
-      {totalPages>0 && [...Array(totalPages).keys()].map(paginationPage=><Link key={paginationPage} link={`/page/${paginationPage+1}/`}><PaginationLink active={paginationPage+1===page}>{paginationPage+1}</PaginationLink></Link>)}
+      {totalPages>0 && [...Array(totalPages).keys()].map(paginationPage=><Link key={paginationPage} link={`/page/${paginationPage+1}/${searchQuery? "?s=" + searchQuery: ""}`}><PaginationLink active={paginationPage+1===page}>{paginationPage+1}</PaginationLink></Link>)}
 
       {/* If there's a previous page, render this link */}
       {next && (
