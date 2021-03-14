@@ -24,7 +24,6 @@ const SocialMediaContainer = styled.div`
   overflow-x: auto;
   display: inline-flex;
   @media screen and (max-width: 560px) {
-    width: 100%;
     margin-left: 24px;
   }
 `;
