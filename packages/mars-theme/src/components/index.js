@@ -28,21 +28,23 @@ const Theme = ({ state }) => {
       <Global styles={globalStyles} />
 
       {/* Add the header of the site. */}
-      <HeadContainer>
-        <Header />
-      </HeadContainer>
+      <HamburguerGrid>
+        <HeadContainer>
+          <Header />
+        </HeadContainer>
 
-      {/* Add the main section. It renders a different component depending
-      on the type of URL we are in. */}
-      <Main>
-        <Switch>
-          <Loading when={data.isFetching} />
-          <List when={data.isArchive} />
-          <Post when={data.isPostType} />
-          <PageError when={data.isError} />
-        </Switch>
-      </Main>
-      <Footer/>
+        {/* Add the main section. It renders a different component depending
+        on the type of URL we are in. */}
+        <Main>
+          <Switch>
+            <Loading when={data.isFetching} />
+            <List when={data.isArchive} />
+            <Post when={data.isPostType} />
+            <PageError when={data.isError} />
+          </Switch>
+        </Main>
+        <Footer/>
+      </HamburguerGrid>
     </>
   );
 };
@@ -64,6 +66,14 @@ const globalStyles = css`
     text-decoration: none;
   }
 `;
+
+const HamburguerGrid = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+`;
+
 
 const HeadContainer = styled.div`
   display: flex;
