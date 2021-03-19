@@ -72,7 +72,7 @@ const ReadMore = styled.div`
     margin-bottom: 28px;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-size: 2rem;
   color: #FFF;
   margin: 0;
