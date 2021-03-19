@@ -16,7 +16,7 @@ const Item = ({ state, item }) => {
 
   return (
     <article>
-      <Link link={item.link}>
+      <Link aria-label={item.title.rendered} link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
 
@@ -42,7 +42,7 @@ const Item = ({ state, item }) => {
        {}
       <ReadingTime content={item.content}/>
       {state.theme.featured.showOnList && (
-              <Link link={item.link}>
+              <Link aria-label={item.title.rendered} link={item.link}>
                 <FeaturedMedia id={item.featured_media}/>
               </Link>
       )}
