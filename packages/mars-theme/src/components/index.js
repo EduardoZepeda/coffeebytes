@@ -7,6 +7,7 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import Footer from "./footer";
+import ScrollUp from "./scroll-up"
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -44,6 +45,7 @@ const Theme = ({ state }) => {
           </Switch>
         </Main>
         <Footer/>
+        <ScrollUp/>
       </HamburguerGrid>
     </>
   );

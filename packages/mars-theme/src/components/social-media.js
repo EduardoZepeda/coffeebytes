@@ -6,7 +6,7 @@ import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
 
 const SocialMedia = ({ state }) => {
-    const iconSize = 24
+    const iconSize = 24;
 
     return (
     <SocialMediaContainer>
