@@ -33,11 +33,12 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   font-size: 3rem;
   @media (max-width: 768px) {
     margin-top: 4rem;
+    margin-left: 1.5rem;
   }
 `;
 
@@ -47,6 +48,9 @@ const Description = styled.h2`
   color: #F3B433;
   font-family: sans;
   font-weight: normal;
+  @media (max-width: 768px) {
+    margin-left: 1.5rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
