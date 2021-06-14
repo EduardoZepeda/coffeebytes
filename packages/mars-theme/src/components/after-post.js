@@ -1,23 +1,49 @@
 import { styled, connect } from "frontity";
+import Link from "./link";
 
 const AfterPost = ({ state }) => {
 
     return (
-        <>
-            <h2>¿Quieres aprender más?</h2>
-            <p>Sígueme en Twitter y te aviso cuando tenga nuevo contenido disponible. ¡Es gratis!</p>
-            <FollowButton><a href={state.socialMedia.twitter} className="twitter-follow-button" data-size="large" data-show-screen-name="false" data-lang="es" data-show-count="false">Seguir a Eduardo Zepeda</a></FollowButton>
-        </>
+        <FollowMeContainer>
+            <ProfilePicture></ProfilePicture>
+            <FollowMeText><Link link={state.socialMedia.twitter}>Que disfrutes el post. Sígueme en Twitter para más contenido gratuito</Link></FollowMeText>
+        </FollowMeContainer>
         )
 
 };
 
 export default connect(AfterPost);
 
+const FollowMeContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+`;
 
-const FollowButton = styled.button`
-    padding: 1rem 1.5rem;
-    background-color: #3370f3;
-    border: 0px solid;
-    border-radius: 4px;
+const ProfilePicture = styled.div`
+    border-radius: 50%;
+    padding: 2rem;
+    background-color: #FFF;
+    background-image: url(https://coffeebytes.dev/wp-content/uploads/2021/06/avatar_user_1_1623705294-250x250.jpg);
+    background-size: 64px 64px;
+    box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.75);
+`;
+
+const FollowMeText = styled.div`
+    color: #FFF;
+    background-color: #131313;
+    margin-left: 2rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.75);
+    &:before{
+        content:"";
+        position:absolute;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #131313;
+        border-top: 20px solid transparent;
+        height: 0px;
+        width: 0px;
+        margin-left:-2.5rem;
+    }
 `;

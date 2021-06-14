@@ -34,6 +34,7 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container css={prismjs}>
+      {post.type==="post" && <AfterPost/>}
       <Article>
         <div>
           <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
@@ -68,7 +69,6 @@ const Post = ({ state, actions, libraries }) => {
           <Html2React html={post.content.rendered} />
         </Content>
       </Article>
-      {post.type==="post" && <AfterPost/>}
       {post.type==="post" && <SimilarPosts post={post}/>}
       <MailChimpSubscribeFormModal/>
     </Container>
