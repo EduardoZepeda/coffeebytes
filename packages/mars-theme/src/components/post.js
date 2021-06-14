@@ -7,7 +7,7 @@ import prismjs from "./styles/prism-styles";
 import SimilarPosts from "./similar-posts";
 import ReadingTime from "./reading-time";
 import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
-import AfterPost from "./after-post";
+import SocialMediaFollow from "./social-media-follow";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -34,7 +34,7 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container css={prismjs}>
-      {post.type==="post" && <AfterPost/>}
+      {post.type==="post" && <SocialMediaFollow/>}
       <Article>
         <div>
           <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
