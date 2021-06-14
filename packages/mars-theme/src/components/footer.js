@@ -23,6 +23,7 @@ const FooterContainer = styled.footer`
   color: #FFF;
   background-color: #131313;
   justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 const PrivacyPolicy = styled.div`
