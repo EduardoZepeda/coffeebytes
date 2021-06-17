@@ -6,7 +6,7 @@ const AfterPost = ({ state }) => {
     return (
         <FollowMeContainer>
             <ProfilePicture></ProfilePicture>
-            <FollowMeText><Link link={state.socialMedia.twitter}>Que disfrutes el post. Sígueme en Twitter para más contenido gratuito</Link></FollowMeText>
+            <FollowMeText><Link link={state.socialMedia.twitter}>Que disfrutes el post. Sígueme en Twitter para más contenido gratuito :)</Link></FollowMeText>
         </FollowMeContainer>
         )
 
@@ -16,7 +16,7 @@ export default connect(AfterPost);
 
 const FollowMeContainer = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 2rem;
 `;
 
@@ -24,14 +24,14 @@ const ProfilePicture = styled.div`
     border-radius: 50%;
     padding: 2rem;
     background-color: #FFF;
-    background-image: url(https://coffeebytes.dev/wp-content/uploads/2021/06/avatar_user_1_1623705294-250x250.jpg);
+    background-image: url(https://coffeebytes.dev/wp-content/uploads/2021/06/keyo_cuadrado.jpg);
     background-size: 64px 64px;
     box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.75);
 `;
 
 const FollowMeText = styled.div`
     color: #FFF;
-    background-color: #131313;
+    background-color: #3370f3;
     margin-left: 2rem;
     padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 10px;
@@ -40,7 +40,7 @@ const FollowMeText = styled.div`
         content:"";
         position:absolute;
         border-bottom: 20px solid transparent;
-        border-right: 20px solid #131313;
+        border-right: 20px solid #3370f3;
         border-top: 20px solid transparent;
         height: 0px;
         width: 0px;
