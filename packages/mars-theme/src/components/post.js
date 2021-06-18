@@ -8,6 +8,7 @@ import SimilarPosts from "./similar-posts";
 import ReadingTime from "./reading-time";
 import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
 import SocialMediaFollow from "./social-media-follow";
+import SharerButtons from "./sharer-buttons";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -69,6 +70,7 @@ const Post = ({ state, actions, libraries }) => {
           <Html2React html={post.content.rendered} />
         </Content>
       </Article>
+      <SharerButtons url={post.link} title={post.title.rendered} />
       {post.type==="post" && <SimilarPosts post={post}/>}
       <MailChimpSubscribeFormModal/>
     </Container>
