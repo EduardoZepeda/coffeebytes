@@ -70,7 +70,7 @@ const Post = ({ state, actions, libraries }) => {
           <Html2React html={post.content.rendered} />
         </Content>
       </Article>
-      <SharerButtons url={post.link} title={post.title.rendered} />
+      {post.type==="post" && <SharerButtons url={post.link} title={post.title.rendered} />}
       {post.type==="post" && <SimilarPosts post={post}/>}
       <MailChimpSubscribeFormModal/>
     </Container>
