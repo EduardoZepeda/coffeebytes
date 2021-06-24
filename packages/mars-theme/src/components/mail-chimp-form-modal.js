@@ -12,7 +12,8 @@ const MailChimpSubscribeFormModal = ({ state, actions }) => {
     }, [])
     return (
         <ExitIntentPopup showMailChimpForm={showMailChimpForm}>
-            <Newsletter><Close onClick={actions.theme.closeMailChimpForm}><Icon icon={androidClose} size={24}/></Close>
+            <Newsletter>
+                <Close onClick={actions.theme.closeMailChimpForm}><Icon icon={androidClose} size={24}/></Close>
                 <MailChimpSubscribeForm/>
             </Newsletter>
         </ExitIntentPopup>
@@ -43,7 +44,8 @@ const ExitIntentPopup = styled.div(props=>({
      background: 'rgba(33, 33, 33, 0.8)',
      transform: props.showMailChimpForm? "translateY(0) scale(1)" : "translateY(60%) scale(0)",
      transition: 'transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
-     boxShadow: '4px 4px 13px 0px rgba(24,24,24,1)'
+     boxShadow: '4px 4px 13px 0px rgba(24,24,24,1)',
+     zIndex: '5'
 }))
 
 

@@ -57,6 +57,7 @@ const marsTheme = {
         state.theme.searchQuery = event.target.value;
       },
       closeMailChimpForm: ({ state }) => event => {
+        event.preventDefault();
         state.theme.showMailChimpForm = false;
       },
       openMailChimpForm: ({ state }) => event => {

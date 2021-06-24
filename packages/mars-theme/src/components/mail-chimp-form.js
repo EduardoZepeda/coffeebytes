@@ -1,7 +1,7 @@
 import { styled, connect } from "frontity";
 import { useState } from 'react';
 
-const MailChimpSubscribeForm = ({ state }) => {
+const MailChimpSubscribeForm = ({ state, actions }) => {
     const [signupFormData, setSignupFormData] = useState({FNAME: "", EMAIL: ""});
 
     const handleInput = (event) => {
@@ -32,7 +32,10 @@ const MailChimpSubscribeForm = ({ state }) => {
                 <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
                 <input type="text" onChange={handleInput} name={state.theme.mailChimp.formHiddenField} tabIndex="-1" value=""/>
                 </div>
-                <div className="clear"><SubscribeButton type="submit" value="Sí, suscríbeme gratis" name="subscribe"/></div>
+                <div className="clear">
+                    <SubscribeButton type="submit" value="Sí, suscríbeme gratis" name="subscribe"/>
+                    <CloseButton onClick={actions.theme.closeMailChimpForm}>Cerrar</CloseButton>
+                </div>
                 </MCEmbedSignupScroll>
         </form>
         </div>
@@ -68,6 +71,17 @@ const MCInput = styled.input`
     margin: 1rem 0;
     color: #181818;
     text-indent:1rem;
+`;
+
+const CloseButton = styled.button`
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #3370f3;
+    border: 0px solid;
+    border-radius: 4px;
+    margin: 10px 1rem;
+    outline: none;
+    color:white;
 `;
 
 const MCEmbedSignupScroll = styled.div`
