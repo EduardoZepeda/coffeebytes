@@ -54,7 +54,7 @@ const settings = [
           },
         },
         "socialMedia": {
-          "twitter": "https://twitter.com/neon_affogato",
+          "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/--eduardozepeda--",
           "codewars": "https://www.codewars.com/users/EduardoZepeda"
@@ -137,7 +137,7 @@ const settings = [
           },
         },
         "socialMedia": {
-          "twitter": "https://twitter.com/neon_affogato",
+          "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/--eduardozepeda--",
           "codewars": "https://www.codewars.com/users/EduardoZepeda"
