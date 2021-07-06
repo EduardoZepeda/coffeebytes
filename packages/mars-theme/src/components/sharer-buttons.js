@@ -10,7 +10,7 @@ const SharerButtons = ({title, url, state}) => {
 
     return (
         <>
-            <h2>Comparte este artículo</h2>
+            <h2>Presume lo que aprendiste en redes</h2>
             <SharersContainer>
                 <IconLink aria-label="Enlace a Facebook" link={`http://www.facebook.com/sharer.php?u=${encodeURIComponent(state.source.url + url)}&t=${encodeURIComponent(title)}`}>
                     <IconContainer style={{ backgroundColor: '#3B5998' }}><Icon icon={socialFacebook} size={iconSize}/>
