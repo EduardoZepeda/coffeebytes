@@ -16,7 +16,7 @@ const SharerButtons = ({title, url, state}) => {
                     <IconContainer style={{ backgroundColor: '#3B5998' }}><Icon icon={socialFacebook} size={iconSize}/>
                     </IconContainer>
                 </IconLink>
-                <IconLink aria-label="Enlace a Twitter" link={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(state.source.url + url)}`}>
+                <IconLink aria-label="Enlace a Twitter" link={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(state.source.url + url)}&via=${new URL(state.socialMedia.twitter).pathname.replace("/", "")}`}>
                     <IconContainer style={{ backgroundColor: '#00AECE' }}><Icon icon={socialTwitter} size={iconSize}/>
                     </IconContainer>
                 </IconLink>
