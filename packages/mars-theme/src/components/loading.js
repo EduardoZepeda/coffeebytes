@@ -21,7 +21,7 @@ const Loading = () => (
 export default Loading;
 
 const bar = (index) => css`
-  background-color: #FFF;
+  background-color: var(--white);
   width: 4px;
   height: 24px;
   margin: 3px;

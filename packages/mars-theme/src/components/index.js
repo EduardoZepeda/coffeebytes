@@ -54,9 +54,20 @@ const Theme = ({ state }) => {
 export default connect(Theme);
 
 const globalStyles = css`
+  :root {
+    --white: #FFF;
+    --dark-gray: #181818;
+    --clear-blue: #EBF6FF;
+    --mustard-yellow: #F3B433;
+    --default-black: #131313;
+    --blue: #3370f3;
+    --soft-gray: #A2A2A2;
+    --medium-gray: #495057;
+    --dark-gray-transparent: #181818BB;
+  }
   body {
     margin: 0;
-    background-color: #181818;
+    background-color: var(--dark-gray);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 20px;
@@ -64,7 +75,7 @@ const globalStyles = css`
   }
   a,
   a:visited {
-    color: #FFF;
+    color: var(--white);
     text-decoration: none;
   }
 `;
@@ -81,12 +92,12 @@ const HeadContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #181818;
+  background-color: var(--dark-gray);
 `;
 
 const Main = styled.main`
   margin: 28px;
   display: flex;
-  color: #EBF6FF;
+  color: var(--clear-blue);
   justify-content: center;
 `;

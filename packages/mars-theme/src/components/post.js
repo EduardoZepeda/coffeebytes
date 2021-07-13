@@ -96,7 +96,7 @@ const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: #F3B433;
+  color: var(--mustard-yellow);
   line-height: 1.5em;
   font-family: Roboto;
   font-variant: petite-caps;
@@ -107,13 +107,13 @@ const StyledLink = styled(Link)`
 `;
 
 const Author = styled.p`
-  color: #A2A2A2;
+  color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
 `;
 
 const DateWrapper = styled.p`
-  color: #A2A2A2;
+  color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
 `;
@@ -123,7 +123,7 @@ const DateWrapper = styled.p`
  * selectors to style that HTML.
  */
 const Content = styled.div`
-  color: #EBF6FF;
+  color: var(--clear-blue);
   word-break: break-word;
 
   * {
@@ -164,12 +164,12 @@ const Content = styled.div`
   blockquote {
     margin: 16px 0;
     background-color: rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #FFF;
+    border-left: 4px solid var(--white);
     padding: 4px 16px;
   }
 
   a {
-    color: #3370f3;
+    color: var(--blue);
     text-decoration: none;
   }
 
@@ -188,17 +188,17 @@ const Content = styled.div`
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
+    color: var(--medium-gray);
+    background-color: var(--white);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--soft-gray);
     border-radius: 4px;
     outline-color: transparent;
     transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     margin: 8px 0 4px 0;
 
     &:focus {
-      outline-color: #1f38c5;
+      outline-color: var(--blue);
     }
   }
 
@@ -213,13 +213,13 @@ const Content = styled.div`
     touch-action: manipulation;
     cursor: pointer;
     background-image: none;
-    border: 1px solid #1f38c5;
+    border: 1px solid var(--blue);
     padding: 12px 36px;
     font-size: 14px;
     line-height: 1.42857143;
     border-radius: 4px;
-    color: #fff;
-    background-color: #1f38c5;
+    color: var(--white);
+    background-color: var(--blue);
   }
 
   /* WordPress Core Align Classes */

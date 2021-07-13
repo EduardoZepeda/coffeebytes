@@ -51,9 +51,9 @@ const Text = styled.em`
 const PaginationLink = styled.div`
   display: inline-block;
   padding: 12px;
-  background-color: ${props => props.active? "#FFF": ""};
-  color: ${props => props.active? "#181818": "#FFF"};
-  border: 1px solid #FFF;
+  background-color: ${props => props.active? "var(--white)": ""};
+  color: ${props => props.active? "var(--dark-gray)": "var(--white)"};
+  border: 1px solid var(--white);
   margin: 8px;
   border-radius: 4px;
 `;

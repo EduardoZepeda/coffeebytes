@@ -26,7 +26,7 @@ const Container = styled.div`
   max-width: 100%;
   box-sizing: border-box;
   padding: 24px;
-  color: #fff;
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -45,7 +45,7 @@ const Title = styled.h2`
 const Description = styled.h2`
   margin: 0;
   font-size: 1.5rem;
-  color: #F3B433;
+  color: var(--mustard-yellow);
   font-family: sans;
   font-weight: normal;
   @media (max-width: 768px) {

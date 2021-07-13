@@ -23,15 +23,15 @@ const FollowMeContainer = styled.div`
 const ProfilePicture = styled.div`
     border-radius: 50%;
     padding: 2rem;
-    background-color: #FFF;
+    background-color: var(--white);
     background-image: url(https://coffeebytes.dev/wp-content/uploads/2021/06/keyo_cuadrado.jpg);
     background-size: 64px 64px;
     box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.75);
 `;
 
 const FollowMeText = styled.div`
-    color: #FFF;
-    background-color: #3370f3;
+    color: var(--white);
+    background-color: var(--blue);
     margin-left: 2rem;
     padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 10px;
@@ -40,7 +40,7 @@ const FollowMeText = styled.div`
         content:"";
         position:absolute;
         border-bottom: 20px solid transparent;
-        border-right: 20px solid #3370f3;
+        border-right: 20px solid var(--blue);
         border-top: 20px solid transparent;
         height: 0px;
         width: 0px;

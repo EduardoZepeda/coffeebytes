@@ -51,5 +51,5 @@ const Container = styled.section`
 const Header = styled.h3`
   font-weight: 300;
   text-transform: capitalize;
-  color: #F3B433;
+  color: var(--mustard-yellow);
 `;

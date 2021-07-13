@@ -66,7 +66,7 @@ export default connect(Item);
 
 const ReadMore = styled.div`
     display: inline-block;
-    border: 1px solid #FFF;
+    border: 1px solid var(--white);
     border-radius: 2px;
     padding: 14px;
     margin-bottom: 28px;
@@ -74,7 +74,7 @@ const ReadMore = styled.div`
 
 const Title = styled.h2`
   font-size: 2rem;
-  color: #FFF;
+  color: var(--white);
   margin: 0;
   padding-top: 24px;
   padding-bottom: 8px;
@@ -82,7 +82,7 @@ const Title = styled.h2`
 `;
 
 const AuthorName = styled.span`
-  color: #A2A2A2;
+  color: var(--soft-gray);
   font-size: 0.9em;
 `;
 
@@ -91,11 +91,11 @@ const StyledLink = styled(Link)`
 `;
 
 const PublishDate = styled.span`
-  color: #A2A2A2;
+  color: var(--soft-gray);
   font-size: 0.9em;
 `;
 
 const Excerpt = styled.div`
   line-height: 1.6em;
-  color: #EBF6FF;
+  color: var(--clear-blue);
 `;

@@ -47,9 +47,9 @@ export default connect(MailChimpSubscribeForm);
 const SubscribeButton = styled.input`
     font-size: 1rem;
     padding: 1rem;
-    background-color: #F3B433;
+    background-color: var(--mustard-yellow);
     border: 0px solid;
-    color: #181818;
+    color: var(--dark-gray);
     border-radius: 4px;
     margin: 10px 0;
     outline: none;
@@ -69,19 +69,19 @@ const MCInput = styled.input`
     padding: 1rem 0;
     width: 100%;
     margin: 1rem 0;
-    color: #181818;
+    color: var(--dark-gray);
     text-indent:1rem;
 `;
 
 const CloseButton = styled.button`
     font-size: 1rem;
     padding: 1rem;
-    background-color: #3370f3;
+    background-color: var(--blue);
     border: 0px solid;
     border-radius: 4px;
     margin: 10px 1rem;
     outline: none;
-    color:white;
+    color: var(--white);
 `;
 
 const MCEmbedSignupScroll = styled.div`

@@ -36,7 +36,7 @@ export default connect(SharerButtons);
 const SharersContainer = styled.div`
   display: flex;
   align-items: center;
-  color: #FFF;
+  color: var(--white);
   flex-wrap: wrap;
   margin: 3rem 0;
 `;

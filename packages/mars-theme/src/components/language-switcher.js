@@ -18,7 +18,7 @@ const LanguageSwitchContainer = styled.div`
   text-align: center;
   padding: 0;
   margin: 0 16px;
-  color: #fff;
+  color: var(--white);
   font-size: 0.9em;
   box-sizing: border-box;
   flex-shrink: 0;

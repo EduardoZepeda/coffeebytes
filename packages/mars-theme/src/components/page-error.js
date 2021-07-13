@@ -47,21 +47,21 @@ const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: #FFF;
+  color: var(--white);
   font-size: 3em;
   line-height: 5rem;
 `;
 
 const Description = styled.div`
   line-height: 1.6em;
-  color: #FFF;
+  color: var(--white);
   margin: 48px 0;
 `;
 
 const RecentPostsButton = styled.button`
-  color: #FFF;
+  color: var(--white);
   margin: 24px 0;
-  background-color: #F3B433;
+  background-color: var(--mustard-yellow);
   border: 0px;
   padding: 1.5rem;
   border-radius: 2px;

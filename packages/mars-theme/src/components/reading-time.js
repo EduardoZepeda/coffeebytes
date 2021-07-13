@@ -9,9 +9,9 @@ const ReadingTime = ({ content }) => {
 export default ReadingTime
 
 const ReadTime = styled.div`
-  color: #A2A2A2;
+  color: var(--soft-gray);
   font-size: 0.9em;
-  border: 1px solid #A2A2A2;
+  border: 1px solid var(--soft-gray);
   border-radius: 4px;
   padding: 0 10px;
   display: flex;
