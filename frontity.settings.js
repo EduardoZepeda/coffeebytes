@@ -10,7 +10,7 @@ const settings = [
     },
     "analytics": {
       "pageviews": {
-        "googleAnalytics": true,
+        "googleAnalytics": false,
       },
     }
   },
@@ -20,6 +20,7 @@ const settings = [
       "state": {
         "theme": {
           "lang": "en",
+          "askCookieConsent": true,
           "menu": [
             [
               "Home",
@@ -56,7 +57,7 @@ const settings = [
         "socialMedia": {
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
-          "linkedin": "https://linkedin.com/--eduardozepeda--",
+          "linkedin": "https://linkedin.com/in/eduardomzepeda",
           "codewars": "https://www.codewars.com/users/EduardoZepeda"
         }
       }
@@ -73,7 +74,8 @@ const settings = [
       name: "@frontity/google-analytics",
       state: {
         googleAnalytics: {
-          trackingId: "UA-112824408-2",
+          trackingId: null,
+          id: "UA-112824408-2",
         }
       }
     },
@@ -93,7 +95,7 @@ const settings = [
     },
     "analytics": {
       "pageviews": {
-        "googleAnalytics": true,
+        "googleAnalytics": false,
       },
     }
   },
@@ -103,6 +105,7 @@ const settings = [
       "state": {
         "theme": {
           "lang": "es",
+          "askCookieConsent": true,
           "menu": [
             [
               "Home",
@@ -139,7 +142,7 @@ const settings = [
         "socialMedia": {
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
-          "linkedin": "https://linkedin.com/--eduardozepeda--",
+          "linkedin": "https://linkedin.com/in/eduardomzepeda",
           "codewars": "https://www.codewars.com/users/EduardoZepeda"
         }
       }
@@ -156,7 +159,8 @@ const settings = [
       name: "@frontity/google-analytics",
       state: {
         googleAnalytics: {
-          trackingId: "UA-112824408-2",
+          trackingId: null,
+          id: "UA-112824408-2",
         }
       }
     },

@@ -66,6 +66,10 @@ const marsTheme = {
           exitIntentCookies.setCookie("mailChimpNewsletterShown", true, 30);
         }
       },
+      enableAnalytics: ({ state }) => {
+              state.analytics.pageviews.googleAnalytics = true
+              state.googleAnalytics.trackingId = state.googleAnalytics.id
+            },
       searchQuery: ({ state, actions }) => event => {
         event.preventDefault();
         if(state.theme.searchQuery){

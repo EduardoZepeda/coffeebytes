@@ -7,7 +7,7 @@ import { androidClose } from 'react-icons-kit/ionicons/androidClose'
 const MailChimpSubscribeFormModal = ({ state, actions }) => {
     const { showMailChimpForm } = state.theme;
     useEffect(() => {
-        const mailChimpTimeout = setTimeout(()=>actions.theme.openMailChimpForm(), state.theme.mailChimp.delayModalShowUpInSeconds*1000);
+        const mailChimpTimeout = setTimeout(() => actions.theme.openMailChimpForm(), state.theme.mailChimp.delayModalShowUpInSeconds*1000);
         return () => clearTimeout(mailChimpTimeout);
     }, [])
     return (
@@ -28,7 +28,7 @@ const Newsletter = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     padding:50px;
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray-transparent);
     border-radius: 4px;
     @media (max-width: 760px) {
         width: 80%;
@@ -41,7 +41,7 @@ const ExitIntentPopup = styled.div(props=>({
      left: 0,
      bottom: 0,
      right: 0,
-     background: 'rgba(33, 33, 33, 0.8)',
+     background: 'var(--dark-gray-transparent)',
      transform: props.showMailChimpForm? "translateY(0) scale(1)" : "translateY(60%) scale(0)",
      transition: 'transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)',
      boxShadow: '4px 4px 13px 0px rgba(24,24,24,1)',

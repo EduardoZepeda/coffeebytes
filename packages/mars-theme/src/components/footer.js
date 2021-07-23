@@ -6,7 +6,10 @@ const Footer = ({state}) => {
 
     return (
         <FooterContainer>
-            <PrivacyPolicy><Link link={"/politica-de-privacidad/"}>{state.theme.lang==="en"? "Privacy Policy": "Política de privacidad"}</Link></PrivacyPolicy>
+            <LegalContainer>
+                <Link link={"/politica-de-privacidad/"}>{state.theme.lang==="en"? "Privacy Policy": "Política de privacidad"}</Link>
+                <Link link={"/politica-de-cookies/"}>{state.theme.lang==="en"? "Cookies": "Política de cookies"}</Link>
+            </LegalContainer>
             <SocialMedia/>
         </FooterContainer>
         )
@@ -26,7 +29,9 @@ const FooterContainer = styled.footer`
   flex-wrap: wrap;
 `;
 
-const PrivacyPolicy = styled.div`
+const LegalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 1rem;
   font-size: 1rem;
 `;

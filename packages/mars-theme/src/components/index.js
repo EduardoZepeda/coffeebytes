@@ -7,7 +7,8 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import Footer from "./footer";
-import ScrollUp from "./scroll-up"
+import ScrollUp from "./scroll-up";
+import CookieConsentManager from "./cookie-consent-manager";
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -46,6 +47,7 @@ const Theme = ({ state }) => {
         </Main>
         <Footer/>
         <ScrollUp/>
+        {state.theme.askCookieConsent && <CookieConsentManager/>}
       </HamburguerGrid>
     </>
   );
@@ -63,7 +65,8 @@ const globalStyles = css`
     --blue: #3370f3;
     --soft-gray: #A2A2A2;
     --medium-gray: #495057;
-    --dark-gray-transparent: #181818BB;
+    --dark-gray-transparent: #181818DD;
+    --red: #B82019;
   }
   body {
     margin: 0;
