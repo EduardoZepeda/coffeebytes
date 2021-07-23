@@ -6,7 +6,7 @@ const AfterPost = ({ state }) => {
     return (
         <FollowMeContainer>
             <ProfilePicture></ProfilePicture>
-            <FollowMeText><Link link={state.socialMedia.twitter}>¿Me sigues en Twitter? Me ayudas a seguir creando contenido gratuito</Link></FollowMeText>
+            <FollowMeText><Link link={state.socialMedia.twitter}>Ayúdame a seguir generando contenido gratuito para ti siguiéndome en redes sociales</Link></FollowMeText>
         </FollowMeContainer>
         )
 
