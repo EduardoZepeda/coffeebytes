@@ -49,7 +49,7 @@ const settings = [
           },
           "mailChimp": {
             "modalCooldownInDays": 30,
-            "delayModalShowUpInSeconds": 30, 
+            "delayModalShowUpInSeconds": 90, 
             "formUrl": "https://dev.us17.list-manage.com/subscribe/post?u=5db658017fc3fb83c8ab5ff63&amp;id=c4ad1325c9",
             "formHiddenField": "b_5db658017fc3fb83c8ab5ff63_c4ad1325c9"
           },
@@ -134,7 +134,7 @@ const settings = [
           },
           "mailChimp": {
             "modalCooldownInDays": 30,
-            "delayModalShowUpInSeconds": 60, 
+            "delayModalShowUpInSeconds": 90, 
             "formUrl": "https://dev.us17.list-manage.com/subscribe/post?u=5db658017fc3fb83c8ab5ff63&amp;id=c4ad1325c9",
             "formHiddenField": "b_5db658017fc3fb83c8ab5ff63_c4ad1325c9"
           },

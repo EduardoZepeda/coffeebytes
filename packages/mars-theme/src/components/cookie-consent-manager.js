@@ -25,7 +25,7 @@ const CookieConsentManager = ({state, actions}) => {
             buttonText='Aceptar cookies' 
             onAccept={() => { actions.theme.enableAnalytics() }}
             enableDeclineButton
-            declineButtonText='Denegar'
+            declineButtonText='Declinar'
             declineButtonStyle={{ 
                 fontSize: '1rem',
                 borderRadius: '4px',
