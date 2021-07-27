@@ -4,6 +4,7 @@ import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
 import prismProcessor from "./processors/prism";
 import exitIntentCookies from "./utils/cookie-handler";
+import searchByRelevanceHandler from "./handlers/searchByRelevanceHandler";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -40,6 +41,17 @@ const marsTheme = {
    */
   actions: {
     theme: {
+      init: ({state, libraries}) => {
+        libraries.source.handlers.push({
+          name: "search by relevance",
+          priority: 10,
+          pattern: "RegExp:(\\?|&)s=\\w+",
+          func: searchByRelevanceHandler({
+            type: "post",
+            endpoint: "posts",
+          }),
+      })
+      },
       toggleMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen;
         state.theme.isSearchBarOpen = false;
