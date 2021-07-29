@@ -10,7 +10,7 @@ const settings = [
     },
     "analytics": {
       "pageviews": {
-        "googleAnalytics": false,
+        "googleAnalytics": true,
       },
     }
   },
@@ -20,7 +20,7 @@ const settings = [
       "state": {
         "theme": {
           "lang": "es",
-          "askCookieConsent": true,
+          "askCookieConsent": false,
           "menu": [
             [
               "Home",
@@ -74,7 +74,7 @@ const settings = [
       name: "@frontity/google-analytics",
       state: {
         googleAnalytics: {
-          trackingId: null,
+          trackingId: "UA-112824408-2",
           id: "UA-112824408-2",
         }
       }
@@ -95,7 +95,7 @@ const settings = [
     },
     "analytics": {
       "pageviews": {
-        "googleAnalytics": false,
+        "googleAnalytics": true,
       },
     }
   },
@@ -105,7 +105,7 @@ const settings = [
       "state": {
         "theme": {
           "lang": "en",
-          "askCookieConsent": true,
+          "askCookieConsent": false,
           "menu": [
             [
               "Home",
@@ -159,7 +159,7 @@ const settings = [
       name: "@frontity/google-analytics",
       state: {
         googleAnalytics: {
-          trackingId: null,
+          trackingId: "UA-112824408-2",
           id: "UA-112824408-2",
         }
       }

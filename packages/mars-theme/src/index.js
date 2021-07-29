@@ -86,7 +86,6 @@ const marsTheme = {
         state.analytics.pageviews.googleAnalytics = !state.analytics.pageviews.googleAnalytics
       },
       processCookieConsent: ({state, actions}) => {
-       console.log("ejecuted")
        if(state.analytics.pageviews.googleAnalytics){
          actions.theme.enableAnalytics()
        }else{

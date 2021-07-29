@@ -46,6 +46,5 @@ const CookieConsentManager = ({state, actions}) => {
 }
 export default connect(CookieConsentManager);
 
-
 const CookieOptions = styled.input`
 `;
