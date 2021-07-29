@@ -82,6 +82,17 @@ const marsTheme = {
               state.analytics.pageviews.googleAnalytics = true
               state.googleAnalytics.trackingId = state.googleAnalytics.id
             },
+      toggleAnalytics: ({state}) => {
+        state.analytics.pageviews.googleAnalytics = !state.analytics.pageviews.googleAnalytics
+      },
+      processCookieConsent: ({state, actions}) => {
+       console.log("ejecuted")
+       if(state.analytics.pageviews.googleAnalytics){
+         actions.theme.enableAnalytics()
+       }else{
+         exitIntentCookies.setCookie("CookieConsent", false, 30)
+       }
+      },
       searchQuery: ({ state, actions }) => event => {
         event.preventDefault();
         if(state.theme.searchQuery){
