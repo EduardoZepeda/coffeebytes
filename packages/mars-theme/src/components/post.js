@@ -9,6 +9,7 @@ import ReadingTime from "./reading-time";
 import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
 import SocialMediaFollow from "./social-media-follow";
 import SharerButtons from "./sharer-buttons";
+import MailChimpSubscribeForm from "./mail-chimp-form";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -70,8 +71,12 @@ const Post = ({ state, actions, libraries }) => {
           <Html2React html={post.content.rendered} />
         </Content>
       </Article>
-      {post.type==="post" && <SharerButtons url={post.link} title={post.title.rendered} />}
-      {post.type==="post" && <SimilarPosts post={post}/>}
+      {post.type==="post" && <SharerButtons/>}
+      {post.type==="post" && <MailChimpSubscribeForm 
+        formTitle="Posts de calidad en tu inbox"
+        formDescription="Regularmente publico posts relacionados con desarrollo web, principalmente con Python y Javascript. Suscríbete para recibirlos directamente en tu inbox."
+        />}
+      {post.type==="post" && <SimilarPosts/>}
       <MailChimpSubscribeFormModal/>
     </Container>
   ) : null;

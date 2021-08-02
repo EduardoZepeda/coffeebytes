@@ -1,19 +1,20 @@
-import { styled, connect } from "frontity";
+import { styled, connect, css } from "frontity";
 import { useState } from 'react';
 
-const MailChimpSubscribeForm = ({ state, actions }) => {
+const MailChimpSubscribeForm = ({ state, actions, formTitle=null, formDescription=null }) => {
     const [signupFormData, setSignupFormData] = useState({FNAME: "", EMAIL: ""});
-
+    const title = formTitle || "Hola, ¿te está sirviendo el post?"
+    const description = formDescription || "Recibe mis posts por correo electrónico totalmente gratis. O por lo menos sígueme en Twitter. Me motivas a seguir creando contenido gratuito"
     const handleInput = (event) => {
         setSignupFormData({...signupFormData, [event.target.name]: event.target.value})
     }
 
     return (
-        <div id="mc_embed_signup">
+        <FormContainer formTitle={formTitle} id="mc_embed_signup">
         <form action={state.theme.mailChimp.formUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate="">
             <MCEmbedSignupScroll>
-            <h2>Hola, ¿te está sirviendo el post?</h2>
-            <p>Recibe mis posts por correo electrónico totalmente gratis. O por lo menos sígueme en Twitter. Me motivas a seguir creando contenido gratuito</p>
+            <h2>{title}</h2>
+            <p>{description}</p>
             <IndicatedRequired><span className="asterisk">*</span> Campo obligatorio</IndicatedRequired>
             <MCFieldGroup>
                 <label htmlFor="mce-EMAIL">Email  <span className="asterisk">*</span>
@@ -34,15 +35,23 @@ const MailChimpSubscribeForm = ({ state, actions }) => {
                 </div>
                 <div className="clear">
                     <SubscribeButton type="submit" value="Sí, suscríbeme gratis" name="subscribe"/>
-                    <CloseButton onClick={actions.theme.closeMailChimpForm}>Cerrar</CloseButton>
+                    {formTitle? null: <CloseButton onClick={actions.theme.closeMailChimpForm}>Cerrar</CloseButton>}
                 </div>
                 </MCEmbedSignupScroll>
         </form>
-        </div>
+        </FormContainer>
         )
 };
 
 export default connect(MailChimpSubscribeForm);
+
+const FormContainer = styled.div`
+    ${props => props.formTitle ? css`
+        padding: 2rem;
+        background-color: var(--medium-gray);
+        border-radius: 4px;
+    `:null};
+`
 
 const SubscribeButton = styled.input`
     font-size: 1rem;

@@ -5,9 +5,12 @@ import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
 import { socialFacebook } from 'react-icons-kit/ionicons/socialFacebook'
 
-const SharerButtons = ({title, url, state}) => {
+const SharerButtons = ({ state }) => {
     const iconSize = 24;
-
+    const data = state.source.get(state.router.link);
+    const post = state.source[data.type][data.id];
+    const url = post.link
+    const title = post.title.rendered
     return (
         <>
             <h2>Presume lo que aprendiste en redes</h2>
