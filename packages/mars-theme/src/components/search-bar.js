@@ -16,7 +16,7 @@ const SearchBar = ({ state, actions }) => {
             <Global styles={{ body: { overflowY: "hidden" } }} />
           </>
         ) : (
-          <Icon icon={androidSearch} size={24}/>
+          <Icon title={state.theme.lang==="en"? "Search": "Buscar" } icon={androidSearch} size={24}/>
         )}
         </SearchBarContainer>
         {isSearchBarOpen && <SearchBarOverlay id="search-bar-overlay" onClick={actions.theme.toggleSearchBar}>

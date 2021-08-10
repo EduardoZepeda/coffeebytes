@@ -11,10 +11,10 @@ const SocialMedia = ({ state }) => {
 
     return (
     <SocialMediaContainer>
-        <IconContainer><IconLink aria-label="Enlace a Github" link={state.socialMedia.github}><Icon icon={github} size={iconSize}/></IconLink></IconContainer>
-        <IconContainer><IconLink aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><Icon icon={socialTwitter} size={iconSize}/></IconLink></IconContainer>
-        <IconContainer><IconLink aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize}/></IconLink></IconContainer>
-        <IconContainer><IconLink aria-label="Enlace a Codewars" link={state.socialMedia.codewars}><Icon icon={Codewars} size={iconSize}/></IconLink></IconContainer>
+        <IconContainer><IconLink title="Github" aria-label="Enlace a Github" link={state.socialMedia.github}><Icon icon={github} size={iconSize}/></IconLink></IconContainer>
+        <IconContainer><IconLink title="Twitter" aria-label="Enlace a Twitter" link={state.socialMedia.twitter}><Icon icon={socialTwitter} size={iconSize}/></IconLink></IconContainer>
+        <IconContainer><IconLink title="Linkedin" aria-label="Enlace a Linkedin" link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize}/></IconLink></IconContainer>
+        <IconContainer><IconLink title="Codewars" aria-label="Enlace a Codewars" link={state.socialMedia.codewars}><Icon icon={Codewars} size={iconSize}/></IconLink></IconContainer>
     </SocialMediaContainer>)
 
 };
