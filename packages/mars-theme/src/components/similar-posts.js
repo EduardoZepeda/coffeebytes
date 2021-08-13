@@ -32,9 +32,9 @@ const SimilarPosts = ({ state, actions }) => {
     const latestPostsData = state.source.data['/']
     const category = state.source.category[data.id];
     // posts from that category
-    const posts = data.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id);
+    const posts = data.items.filter(({id}) => id!==post.id).map(({ type, id }) => state.source[type][id])
     if(latestPostsData.items && posts.length<=2){
-      const latestPosts = latestPostsData.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id);
+      const latestPosts = latestPostsData.items.map(({ type, id }) => state.source[type][id])
       posts.push(...latestPosts)
     }
     // 4. render!

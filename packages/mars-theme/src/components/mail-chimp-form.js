@@ -47,7 +47,7 @@ export default connect(MailChimpSubscribeForm);
 
 const FormContainer = styled.div`
     ${props => props.formTitle ? css`
-        padding: 2rem;
+        padding: 2rem 4rem;
         background-color: var(--medium-gray);
         border-radius: 4px;
     `:null};
