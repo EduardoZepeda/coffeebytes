@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 const MailChimpSubscribeForm = ({ state, actions, formTitle=null, formDescription=null }) => {
     const [signupFormData, setSignupFormData] = useState({FNAME: "", EMAIL: ""});
-    const title = formTitle || "Hola, ¿te está sirviendo el post?"
-    const description = formDescription || "Recibe mis posts por correo electrónico totalmente gratis. O por lo menos sígueme en Twitter. Me motivas a seguir creando contenido gratuito"
+    const title = formTitle || "Hola, veo que te apasiona el desarrollo web"
+    const description = formDescription || "Únete a mi comunidad de lectores, recibe contenido como este una vez por semana directo en tu correo electrónico"
     const handleInput = (event) => {
         setSignupFormData({...signupFormData, [event.target.name]: event.target.value})
     }
@@ -34,7 +34,7 @@ const MailChimpSubscribeForm = ({ state, actions, formTitle=null, formDescriptio
                 <input type="text" onChange={handleInput} name={state.theme.mailChimp.formHiddenField} tabIndex="-1" value=""/>
                 </div>
                 <div className="clear">
-                    <SubscribeButton type="submit" value="Sí, suscríbeme gratis" name="subscribe"/>
+                    <SubscribeButton type="submit" value="Quiero suscribirme" name="subscribe"/>
                     {formTitle? null: <CloseButton onClick={actions.theme.closeMailChimpForm}>Cerrar</CloseButton>}
                 </div>
                 </MCEmbedSignupScroll>
@@ -56,9 +56,9 @@ const FormContainer = styled.div`
 const SubscribeButton = styled.input`
     font-size: 1rem;
     padding: 1rem;
-    background-color: var(--mustard-yellow);
+    background-color: var(--blue);
     border: 0px solid;
-    color: var(--dark-gray);
+    color: var(--white);
     border-radius: 4px;
     margin: 10px 0;
     outline: none;
@@ -85,7 +85,7 @@ const MCInput = styled.input`
 const CloseButton = styled.button`
     font-size: 1rem;
     padding: 1rem;
-    background-color: var(--blue);
+    background-color: var(--red);
     border: 0px solid;
     border-radius: 4px;
     margin: 10px 1rem;

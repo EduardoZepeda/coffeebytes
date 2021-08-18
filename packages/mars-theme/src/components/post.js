@@ -75,8 +75,8 @@ const Post = ({ state, actions, libraries }) => {
       {post.type==="post" && <NextPost id={data.id}/>}
       {post.type==="post" && <SharerButtons/>}
       {post.type==="post" && <MailChimpSubscribeForm 
-        formTitle="Posts de calidad en tu inbox"
-        formDescription="Regularmente publico posts relacionados con desarrollo web, principalmente con Python y Javascript. Suscríbete para recibirlos directamente en tu inbox."
+        formTitle="Únete a mi comunidad de lectores"
+        formDescription="Recibe contenido como este por correo electrónico, una vez por semana, de manera totalmente gratuita."
         />}
       {post.type==="post" && <SimilarPosts/>}
       <MailChimpSubscribeFormModal/>
