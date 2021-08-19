@@ -58,7 +58,8 @@ const settings = [
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/in/eduardomzepeda",
-          "codewars": "https://www.codewars.com/users/EduardoZepeda"
+          "codewars": "https://www.codewars.com/users/EduardoZepeda",
+          "email": "/contacto-eduardo-zepeda/"
         }
       }
     },
@@ -143,7 +144,8 @@ const settings = [
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/in/eduardomzepeda",
-          "codewars": "https://www.codewars.com/users/EduardoZepeda"
+          "codewars": "https://www.codewars.com/users/EduardoZepeda",
+          "email": "/en/contact-eduardo-zepeda/"
         }
       }
     },

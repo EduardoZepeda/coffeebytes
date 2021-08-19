@@ -1,7 +1,10 @@
 import { styled, connect, css } from "frontity";
 import { useState } from 'react';
+import { mail } from 'react-icons-kit/oct/mail'
+import { Icon } from 'react-icons-kit'
 
 const MailChimpSubscribeForm = ({ state, actions, formTitle=null, formDescription=null }) => {
+    const iconSize = 36;
     const [signupFormData, setSignupFormData] = useState({FNAME: "", EMAIL: ""});
     const title = formTitle || "Hola, veo que te apasiona el desarrollo web"
     const description = formDescription || "Únete a mi comunidad de lectores, recibe contenido como este una vez por semana directo en tu correo electrónico"

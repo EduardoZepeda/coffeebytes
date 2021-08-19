@@ -11,6 +11,8 @@ import SocialMediaFollow from "./social-media-follow";
 import SharerButtons from "./sharer-buttons";
 import MailChimpSubscribeForm from "./mail-chimp-form";
 import NextPost from "./next-post";
+import SideProfile from "./side-profile";
+
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -37,7 +39,7 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container css={prismjs}>
-      {post.type==="post" && <SocialMediaFollow/>}
+      {post.type==="post" && <SideProfile/>}
       <Article>
         <div>
           <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
@@ -105,7 +107,6 @@ const Title = styled.h1`
   margin-bottom: 8px;
   color: var(--mustard-yellow);
   line-height: 1.5em;
-  font-family: Roboto;
   font-variant: petite-caps;
 `;
 
