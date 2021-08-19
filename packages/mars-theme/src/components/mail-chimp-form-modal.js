@@ -11,12 +11,13 @@ const MailChimpSubscribeFormModal = ({ state, actions }) => {
         return () => clearTimeout(mailChimpTimeout);
     }, [])
     return (
-        <ExitIntentPopup showMailChimpForm={showMailChimpForm}>
+        // This ternary prevents the form to be rendered twice at start which prevents a double aria-label
+        showMailChimpForm?<ExitIntentPopup showMailChimpForm={showMailChimpForm}>
             <Newsletter>
                 <Close onClick={actions.theme.closeMailChimpForm}><Icon icon={androidClose} size={24}/></Close>
                 <MailChimpSubscribeForm/>
             </Newsletter>
-        </ExitIntentPopup>
+        </ExitIntentPopup>:null
         )
 };
 

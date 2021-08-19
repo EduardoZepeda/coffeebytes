@@ -62,7 +62,7 @@ const globalStyles = css`
     --clear-blue: #EBF6FF;
     --mustard-yellow: #F3B433;
     --default-black: #131313;
-    --blue: #3370f3;
+    --blue: #467BF6;
     --soft-gray: #A2A2A2;
     --medium-gray: #495057;
     --dark-gray-transparent: #181818DD;

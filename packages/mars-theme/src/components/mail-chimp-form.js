@@ -22,12 +22,12 @@ const MailChimpSubscribeForm = ({ state, actions, formTitle=null, formDescriptio
             <MCFieldGroup>
                 <label htmlFor="mce-EMAIL">Email  <span className="asterisk">*</span>
             </label>
-                <MCInput type="email" placeholder="Tu email" value={signupFormData.EMAIL} onChange={handleInput} name="EMAIL" className="required email" id="mce-EMAIL"/>
+                <MCInput type="email" placeholder="Tu email" aria-label="Campo de email" value={signupFormData.EMAIL} onChange={handleInput} name="EMAIL" className="required email" id="mce-EMAIL"/>
             </MCFieldGroup>
             <MCFieldGroup>
                 <label htmlFor="mce-FNAME">Tu nombre  <span className="asterisk">*</span>
             </label>
-                <MCInput type="text" placeholder="Tu nombre" value={signupFormData.FNAME} onChange={handleInput} name="FNAME" className="required" id="mce-FNAME"/>
+                <MCInput type="text" placeholder="Tu nombre" aria-label="Campo de nombre" value={signupFormData.FNAME} onChange={handleInput} name="FNAME" className="required" id="mce-FNAME"/>
             </MCFieldGroup>
                 <div id="mce-responses" className="clear">
                     <div className="response" id="mce-error-response" style={{display:"none"}}></div>
