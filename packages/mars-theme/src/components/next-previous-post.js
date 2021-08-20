@@ -3,7 +3,9 @@ import { connect, styled } from "frontity"
 import Link from "./link";
 
 const NextPreviousPost = ({ state, actions }) => {
-
+    // this component requires a modification to the REST API wordpress response
+    // Please consider using the following snippet in functions.php or create a wp plugin
+    // https://community.frontity.org/t/next-and-previous-post/1836/17
     const data = state.source.get(state.router.link)
     const { next, previous } = state.source[data.type][data.id]
 
