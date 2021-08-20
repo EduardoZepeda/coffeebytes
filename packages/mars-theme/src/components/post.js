@@ -10,7 +10,7 @@ import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
 import SocialMediaFollow from "./social-media-follow";
 import SharerButtons from "./sharer-buttons";
 import MailChimpSubscribeForm from "./mail-chimp-form";
-import NextPost from "./next-post";
+import NextPreviousPost from "./next-previous-post";
 import SideProfile from "./side-profile";
 
 
@@ -74,7 +74,7 @@ const Post = ({ state, actions, libraries }) => {
           <Html2React html={post.content.rendered} />
         </Content>
       </Article>
-      {post.type==="post" && <NextPost id={data.id}/>}
+      {post.type==="post" && <NextPreviousPost id={data.id}/>}
       {post.type==="post" && <SharerButtons/>}
       {post.type==="post" && <MailChimpSubscribeForm 
         formTitle="Únete a mi comunidad de lectores"

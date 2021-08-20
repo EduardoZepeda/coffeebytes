@@ -39,7 +39,6 @@ const ProfileContainer = styled.div`
 `;
 
 const Profile = styled.div`
-	width: 400px;
 	color: var(--soft-gray);
     @media (max-width: 1024px) {
 		display: flex;
