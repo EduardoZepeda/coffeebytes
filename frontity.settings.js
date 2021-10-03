@@ -55,6 +55,7 @@ const settings = [
           },
         },
         "socialMedia": {
+          "instagram": "https://instagram.com/coffeebytes.dev",
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/in/eduardomzepeda",
@@ -141,6 +142,7 @@ const settings = [
           },
         },
         "socialMedia": {
+          "instagram": "https://instagram.com/coffeebytes.dev",
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/in/eduardomzepeda",

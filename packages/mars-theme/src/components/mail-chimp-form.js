@@ -6,8 +6,8 @@ import { Icon } from 'react-icons-kit'
 const MailChimpSubscribeForm = ({ state, actions, formTitle=null, formDescription=null }) => {
     const iconSize = 36;
     const [signupFormData, setSignupFormData] = useState({FNAME: "", EMAIL: ""});
-    const title = formTitle || "Hola, veo que te apasiona el desarrollo web"
-    const description = formDescription || "Únete a mi comunidad de lectores, recibe contenido como este una vez por semana directo en tu correo electrónico"
+    const title = formTitle || "¿Ya formas parte de mi comunidad de lectores?"
+    const description = formDescription || "Únete y recibe contenido como este una vez por semana directo en tu correo electrónico. ¿No? Que tal si me sigues en Instagram"
     const handleInput = (event) => {
         setSignupFormData({...signupFormData, [event.target.name]: event.target.value})
     }
