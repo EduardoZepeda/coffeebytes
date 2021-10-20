@@ -49,13 +49,13 @@ const settings = [
           },
           "mailChimp": {
             "modalCooldownInDays": 30,
-            "delayModalShowUpInSeconds": 150, 
+            "delayModalShowUpInSeconds": 45, 
             "formUrl": "https://dev.us17.list-manage.com/subscribe/post?u=5db658017fc3fb83c8ab5ff63&amp;id=c4ad1325c9",
             "formHiddenField": "b_5db658017fc3fb83c8ab5ff63_c4ad1325c9"
           },
         },
         "socialMedia": {
-          "instagram": "https://instagram.com/coffeebytes.dev",
+          "instagram": "https://bit.ly/3jnxnMF",
           "twitter": "https://twitter.com/hello_wired",
           "github": "https://github.com/eduardoZepeda",
           "linkedin": "https://linkedin.com/in/eduardomzepeda",
@@ -136,7 +136,7 @@ const settings = [
           },
           "mailChimp": {
             "modalCooldownInDays": 30,
-            "delayModalShowUpInSeconds": 150, 
+            "delayModalShowUpInSeconds": 45, 
             "formUrl": "https://dev.us17.list-manage.com/subscribe/post?u=5db658017fc3fb83c8ab5ff63&amp;id=c4ad1325c9",
             "formHiddenField": "b_5db658017fc3fb83c8ab5ff63_c4ad1325c9"
           },

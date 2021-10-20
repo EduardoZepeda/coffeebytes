@@ -2,7 +2,6 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import { Icon } from 'react-icons-kit'
 import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
-import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
 import { socialInstagram } from 'react-icons-kit/ionicons/socialInstagram'
 import { github } from 'react-icons-kit/entypo/github'
 import { Codewars } from './logos/codewars'

@@ -3,19 +3,22 @@ import { useEffect } from "react";
 import MailChimpSubscribeForm from "./mail-chimp-form";
 import { Icon } from 'react-icons-kit'
 import { androidClose } from 'react-icons-kit/ionicons/androidClose'
+import InstagramFollowModal from './instagram-follow-modal'
 
 const MailChimpSubscribeFormModal = ({ state, actions }) => {
     const { showMailChimpForm } = state.theme;
+    // Decide which modal will show, instagram or mailchimp, 50% chance
+    const InstagramModalInsteadOfMailchimp = Math.random() * 10 > 5;
     useEffect(() => {
         const mailChimpTimeout = setTimeout(() => actions.theme.openMailChimpForm(), state.theme.mailChimp.delayModalShowUpInSeconds*1000);
         return () => clearTimeout(mailChimpTimeout);
     }, [])
     return (
-        // This ternary prevents the form to be rendered twice at start which prevents a double aria-label
         showMailChimpForm?<ExitIntentPopup showMailChimpForm={showMailChimpForm}>
             <Newsletter>
                 <Close onClick={actions.theme.closeMailChimpForm}><Icon icon={androidClose} size={24}/></Close>
-                <MailChimpSubscribeForm/>
+                {/* Coin flip to show one of these modals */}
+                {InstagramModalInsteadOfMailchimp ? <InstagramFollowModal/>:<MailChimpSubscribeForm/>}
             </Newsletter>
         </ExitIntentPopup>:null
         )

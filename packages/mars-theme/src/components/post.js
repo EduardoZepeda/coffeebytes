@@ -7,7 +7,6 @@ import prismjs from "./styles/prism-styles";
 import SimilarPosts from "./similar-posts";
 import ReadingTime from "./reading-time";
 import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
-import SocialMediaFollow from "./social-media-follow";
 import SharerButtons from "./sharer-buttons";
 import MailChimpSubscribeForm from "./mail-chimp-form";
 import NextPreviousPost from "./next-previous-post";

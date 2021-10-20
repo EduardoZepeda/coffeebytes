@@ -67,6 +67,7 @@ const globalStyles = css`
     --medium-gray: #495057;
     --dark-gray-transparent: #181818DD;
     --red: #B82019;
+    --ig-blue: #3b91e1;
   }
   body {
     margin: 0;
