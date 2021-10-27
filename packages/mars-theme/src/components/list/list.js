@@ -8,7 +8,7 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link);
   return (
     <Container>
-      {state.router.link.startsWith("/?s=") && <h2>Resultados para: {state.router.link.split("=")[1]}</h2>}
+      {state.router.link.includes("?s=") && <h2>Resultados para: {state.router.link.split("=")[1]}</h2>}
       {data.items.length===0?<EmptySearch/>:null}
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
-
+import diggStylePagination from "../../utils/digg-style-pagination";
 /**
  * Pagination Component
  *
@@ -10,24 +10,25 @@ import Link from "../link";
  * The `state`, `actions`, `libraries` props are provided by the global context,
  * when we wrap this component in `connect(...)`
  */
+
 const Pagination = ({ state, actions }) => {
   // Get the total posts to be displayed based for the current link
   const { next, previous, totalPages, page, searchQuery } = state.source.get(state.router.link);
+  const pages = diggStylePagination(page, totalPages);
   // Pre-fetch the the next page if it hasn't been fetched yet.
   useEffect(() => {
     if (next) actions.source.fetch(next);
   }, []);
   return (
     <div>
-      {/* If there's a next page, render this link */}
+      {/* If there's a previous page, render this link */}
       {previous && (
         <Link link={previous}>
           <PaginationLink>← Regresar </PaginationLink>
         </Link>
-      )}
-      {totalPages>0 && [...Array(totalPages).keys()].map(paginationPage=><Link key={paginationPage} link={`/page/${paginationPage+1}/${searchQuery? "?s=" + searchQuery: ""}`}><PaginationLink active={paginationPage+1===page}>{paginationPage+1}</PaginationLink></Link>)}
-
-      {/* If there's a previous page, render this link */}
+      )}      
+      {totalPages>0 && pages.map(paginationPage=><Link key={paginationPage} link={typeof paginationPage==="number" ? `/page/${paginationPage}/${searchQuery? "?s=" + searchQuery: ""}`:""}><PaginationLink active={paginationPage===page}>{paginationPage}</PaginationLink></Link>)}
+      {/* If there's a next page, render this link */}
       {next && (
         <Link link={next}>
           <PaginationLink> Avanzar →</PaginationLink>
