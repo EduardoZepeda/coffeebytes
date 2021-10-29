@@ -4,53 +4,42 @@ import Link from "./link";
 import FeaturedMedia from "./featured-media";
 import shuffle from "../utils/array-shuffler";
 
-// In a React component that uses "connect":
 const SimilarPosts = ({ state, actions }) => {
-  const [url, setUrl] = useState("")
-  const currentUrl = state.source.get(state.router.link);
-  const post = state.source[currentUrl.type][currentUrl.id];
-  // 1. fetch data related to a path
-  // With this useEffect we make the call to fetch
-  // only the first time the component is rendered.
-  // When the data is fetched, the state is updated with the new data
-  // so the component is re-rendered and "data" will get proper content
-  const randomCategory = post.categories[Math.floor(Math.random() * post.categories.length)];
-  const randomCategoryLink = state.source.category[randomCategory]["link"];
+    const currentUrl = state.source.get(state.router.link);
+    const { categories, id } = state.source[currentUrl.type][currentUrl.id];
+    // Get a random category
+    const randomCategory = categories[Math.floor(Math.random() * categories.length)]
+    const category = state.source.category[randomCategory]
 
-  useEffect(async () => {
-    await actions.source.fetch(randomCategoryLink);
-    const randomPage = Math.floor(Math.random() * state.source.data[randomCategoryLink]["totalPages"]) + 1
-    setUrl(`${randomCategoryLink}page/${randomPage}/`)
-    await actions.source.fetch(`${randomCategoryLink}page/${randomPage}/`)
-  }, [randomCategoryLink]);
+    useEffect(() => {
+      actions.source.fetch(category.link);
+    }, [category]);
 
-  // 2. get data from frontity state
-  const data = state.source.get(url);
-  // 3. get entities from frontity state
-  if (data.isCategory) {
-    // the category entity
-    const latestPostsData = state.source.data['/']
-    const category = state.source.category[data.id];
-    // posts from that category
-    const posts = data.items.filter(({id}) => id!==post.id).map(({ type, id }) => state.source[type][id])
-    if(latestPostsData.items && posts.length<=2){
-      const latestPosts = latestPostsData.items.map(({ type, id }) => state.source[type][id]).filter(({id}) => id!==post.id)
-      posts.push(...latestPosts)
+    const data = state.source.get(category.link);
+    const items = data.items?.filter(post => post.id !== id);
+    var posts = items?.map(({ type, id }) => state.source[type][id])
+    if(posts){
+      // If the number of related posts is less than 4, fill the empty spaces with recent posts
+      if(posts.length<=3){
+        // root refers to recent posts
+        const newPosts = state.source.data["/"].items
+        const recentPosts = newPosts?.map(({ type, id }) => state.source[type][id]) || []
+        posts = [...posts, ...recentPosts]
+      }
+      // There could be more than 6 posts, shuffle them
+      shuffle(posts);
+      return (
+        <>
+          <h2>Otras publicaciones que pueden interesarte</h2>
+          <SimilarPostsContainer>
+          {posts?.slice(0,6).map((p) => (<SimilarPost key={p.id}><Link link={p.link}>
+            <FeaturedMedia id={p.featured_media} />
+            <p>{p.title.rendered}</p></Link></SimilarPost>
+          ))}
+          </SimilarPostsContainer>
+        </>
+      );
     }
-    // 4. render!
-    shuffle(posts);
-    return (
-      <>
-        <h2>Otras publicaciones que pueden interesarte</h2>
-        <SimilarPostsContainer>
-        {posts.slice(0,6).map((p) => (<SimilarPost key={p.id}><Link link={p.link}>
-          <FeaturedMedia id={p.featured_media} />
-          <p>{p.title.rendered}</p></Link></SimilarPost>
-        ))}
-        </SimilarPostsContainer>
-      </>
-    );
-  }
   return null;
 };
 
