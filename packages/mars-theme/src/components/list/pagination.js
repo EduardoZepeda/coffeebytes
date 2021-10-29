@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { connect, styled } from "frontity";
-import Link from "../link";
-import diggStylePagination from "../../utils/digg-style-pagination";
+import { useEffect } from 'react'
+import { connect, styled } from 'frontity'
+import Link from '../link'
+import diggStylePagination from '../../utils/digg-style-pagination'
 /**
  * Pagination Component
  *
@@ -13,12 +13,12 @@ import diggStylePagination from "../../utils/digg-style-pagination";
 
 const Pagination = ({ state, actions }) => {
   // Get the total posts to be displayed based for the current link
-  const { next, previous, totalPages, page, searchQuery } = state.source.get(state.router.link);
-  const activePages = diggStylePagination(page, totalPages);
+  const { next, previous, totalPages, page, handleSearchQuery } = state.source.get(state.router.link)
+  const activePages = diggStylePagination(page, totalPages)
   // Pre-fetch the the next page if it hasn't been fetched yet.
   useEffect(() => {
-    if (next) actions.source.fetch(next);
-  }, []);
+    if (next) actions.source.fetch(next)
+  }, [])
   return (
     <div>
       {/* If there's a previous page, render this link */}
@@ -26,8 +26,8 @@ const Pagination = ({ state, actions }) => {
         <Link link={previous}>
           <PaginationLink>← Regresar </PaginationLink>
         </Link>
-      )}      
-      {totalPages>0 && activePages.map(paginationPage=>typeof paginationPage==="number" ? <Link key={paginationPage} link={`/page/${paginationPage}/${searchQuery? "?s=" + searchQuery: ""}`}><PaginationLink active={paginationPage===page}>{paginationPage}</PaginationLink></Link>:<PaginationLink key={paginationPage}>...</PaginationLink>)}
+      )}
+      {totalPages > 0 && activePages.map(paginationPage => typeof paginationPage === 'number' ? <Link key={paginationPage} link={`/page/${paginationPage}/${handleSearchQuery ? '?s=' + handleSearchQuery : ''}`}><PaginationLink active={paginationPage === page}>{paginationPage}</PaginationLink></Link> : <PaginationLink key={paginationPage}>...</PaginationLink>)}
       {/* If there's a next page, render this link */}
       {next && (
         <Link link={next}>
@@ -35,26 +35,21 @@ const Pagination = ({ state, actions }) => {
         </Link>
       )}
     </div>
-  );
-};
+  )
+}
 
 /**
  * Connect Pagination to global context to give it access to
  * `state`, `actions`, `libraries` via props
  */
-export default connect(Pagination);
-
-const Text = styled.em`
-  display: inline-block;
-  margin-top: 16px;
-`;
+export default connect(Pagination)
 
 const PaginationLink = styled.div`
   display: inline-block;
   padding: 12px;
-  background-color: ${props => props.active? "var(--white)": ""};
-  color: ${props => props.active? "var(--dark-gray)": "var(--white)"};
+  background-color: ${props => props.active ? 'var(--white)' : ''};
+  color: ${props => props.active ? 'var(--dark-gray)' : 'var(--white)'};
   border: 1px solid var(--white);
   margin: 8px;
   border-radius: 4px;
-`;
+`

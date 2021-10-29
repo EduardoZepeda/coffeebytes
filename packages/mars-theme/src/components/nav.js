@@ -1,8 +1,8 @@
-import { connect, styled } from "frontity";
-import Link from "./link";
-import SocialMedia from "./social-media";
-import SearchBar from "./search-bar";
-import LanguageSwitcher from "./language-switcher";
+import { connect, styled } from 'frontity'
+import Link from './link'
+import SocialMedia from './social-media'
+import SearchBar from './search-bar'
+import LanguageSwitcher from './language-switcher'
 /**
  * Navigation Component
  *
@@ -10,27 +10,27 @@ import LanguageSwitcher from "./language-switcher";
  */
 const Nav = ({ state }) => (
   <>
-  <NavContainer>
-    {state.theme.menu.map(([name, link]) => {
+    <NavContainer>
+      {state.theme.menu.map(([name, link]) => {
       // Check if the link matched the current page url
-      const isCurrentPage = state.router.link === link;
-      return (
-        <NavItem key={name}>
-          {/* If link url is the current page, add `aria-current` for a11y */}
-          <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
-            {name}
-          </Link>
-        </NavItem>
-      );
-    })}
-  <LanguageSwitcher/>
-  <SearchBar/>
-  </NavContainer>
-  <SocialMedia/>
+        const isCurrentPage = state.router.link === link
+        return (
+          <NavItem key={name}>
+            {/* If link url is the current page, add `aria-current` for a11y */}
+            <Link link={link} aria-current={isCurrentPage ? 'page' : undefined}>
+              {name}
+            </Link>
+          </NavItem>
+        )
+      })}
+      <LanguageSwitcher />
+      <SearchBar />
+    </NavContainer>
+    <SocialMedia />
   </>
-);
+)
 
-export default connect(Nav);
+export default connect(Nav)
 
 const NavContainer = styled.nav`
   list-style: none;
@@ -45,7 +45,7 @@ const NavContainer = styled.nav`
   @media screen and (max-width: 560px) {
     display: none;
   }
-`;
+`
 
 const NavItem = styled.div`
   padding: 0;
@@ -79,4 +79,4 @@ const NavItem = styled.div`
       width: 24px;
     }
   }
-`;
+`

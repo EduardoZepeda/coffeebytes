@@ -1,91 +1,92 @@
-import { useEffect } from "react";
-import { connect, styled, styles, css } from "frontity";
-import Link from "./link";
-import List from "./list";
-import FeaturedMedia from "./featured-media";
-import prismjs from "./styles/prism-styles";
-import SimilarPosts from "./similar-posts";
-import ReadingTime from "./reading-time";
-import MailChimpSubscribeFormModal from "./mail-chimp-form-modal";
-import SharerButtons from "./sharer-buttons";
-import MailChimpSubscribeForm from "./mail-chimp-form";
-import NextPreviousPost from "./next-previous-post";
-import SideProfile from "./side-profile";
-
+import { useEffect } from 'react'
+import { connect, styled } from 'frontity'
+import Link from './link'
+import List from './list'
+import FeaturedMedia from './featured-media'
+import prismjs from './styles/prism-styles'
+import SimilarPosts from './similar-posts'
+import ReadingTime from './reading-time'
+import MailChimpSubscribeFormModal from './mail-chimp-form-modal'
+import SharerButtons from './sharer-buttons'
+import MailChimpSubscribeForm from './mail-chimp-form'
+import NextPreviousPost from './next-previous-post'
+import SideProfile from './side-profile'
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
-  const data = state.source.get(state.router.link);
-  //source.category.id.link
+  const data = state.source.get(state.router.link)
+  // source.category.id.link
   // Get the data of the post.
-  const post = state.source[data.type][data.id];
+  const post = state.source[data.type][data.id]
   // Get the data of the author.
-  const author = state.source.author[post.author];
+  const author = state.source.author[post.author]
   // Get a human readable date.
-  const date = new Date(post.date);
+  const date = new Date(post.date)
   // Get the html2react component.
-  const Html2React = libraries.html2react.Component;
+  const Html2React = libraries.html2react.Component
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
    * the home page, everything is ready and it loads instantly.
    */
   useEffect(() => {
-    actions.source.fetch("/");
-    List.preload();
-  }, []);
+    actions.source.fetch('/')
+    List.preload()
+  }, [])
 
   // Load the post, but only if the data is ready.
-  return data.isReady ? (
-    <Container css={prismjs}>
-      {post.type==="post" && <SideProfile/>}
-      <Article>
-        <div>
-          <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+  return data.isReady
+    ? (
+      <Container css={prismjs}>
+        {post.type === 'post' && <SideProfile />}
+        <Article>
+          <div>
+            <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
-          {/* Only display author and date on posts */}
-          {data.isPost && (
-            <div>
-              <DateWrapper>
-                {" "}
-                <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
-              </DateWrapper>
-              {author && (
-                <StyledLink link={author.link}>
-                  <Author>
-                    {" "} por <b>{author.name}</b>
-                  </Author>
-                </StyledLink>
-              )}
-              <ReadingTime content={post.content}/>
-            </div>
+            {/* Only display author and date on posts */}
+            {data.isPost && (
+              <div>
+                <DateWrapper>
+                  {' '}
+                  <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</b>
+                </DateWrapper>
+                {author && (
+                  <StyledLink link={author.link}>
+                    <Author>
+                      {' '} por <b>{author.name}</b>
+                    </Author>
+                  </StyledLink>
+                )}
+                <ReadingTime content={post.content} />
+              </div>
+            )}
+          </div>
+
+          {/* Look at the settings to see if we should include the featured image */}
+          {state.theme.featured.showOnPost && (
+            <FeaturedMedia id={post.featured_media} />
           )}
-        </div>
 
-        {/* Look at the settings to see if we should include the featured image */}
-        {state.theme.featured.showOnPost && (
-          <FeaturedMedia id={post.featured_media} />
-        )}
+          {/* Render the content using the Html2React component so the HTML is processed
+          by the processors we included in the libraries.html2react.processors array. */}
+          <Content>
+            <Html2React html={post.content.rendered} />
+          </Content>
+        </Article>
+        {post.type === 'post' && <NextPreviousPost id={data.id} />}
+        {post.type === 'post' && <SharerButtons />}
+        {post.type === 'post' && <MailChimpSubscribeForm
+          formTitle='Únete a mi comunidad de lectores'
+          formDescription='Recibe contenido como este por correo electrónico, una vez por semana, de manera totalmente gratuita.'
+                                 />}
+        {post.type === 'post' && <SimilarPosts />}
+        <MailChimpSubscribeFormModal />
+      </Container>
+      )
+    : null
+}
 
-        {/* Render the content using the Html2React component so the HTML is processed
-         by the processors we included in the libraries.html2react.processors array. */}
-        <Content>
-          <Html2React html={post.content.rendered} />
-        </Content>
-      </Article>
-      {post.type==="post" && <NextPreviousPost id={data.id}/>}
-      {post.type==="post" && <SharerButtons/>}
-      {post.type==="post" && <MailChimpSubscribeForm 
-        formTitle="Únete a mi comunidad de lectores"
-        formDescription="Recibe contenido como este por correo electrónico, una vez por semana, de manera totalmente gratuita."
-        />}
-      {post.type==="post" && <SimilarPosts/>}
-      <MailChimpSubscribeFormModal/>
-    </Container>
-  ) : null;
-};
-
-export default connect(Post);
+export default connect(Post)
 
 const Container = styled.div`
   width: 768px;
@@ -95,10 +96,10 @@ const Container = styled.div`
     width: 100%;
     padding:12px;
   }
-`;
+`
 
 const Article = styled.article`
-`;
+`
 
 const Title = styled.h1`
   margin: 0;
@@ -107,23 +108,23 @@ const Title = styled.h1`
   color: var(--mustard-yellow);
   line-height: 1.5em;
   font-variant: petite-caps;
-`;
+`
 
 const StyledLink = styled(Link)`
   padding: 15px 0;
-`;
+`
 
 const Author = styled.p`
   color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
-`;
+`
 
 const DateWrapper = styled.p`
   color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
-`;
+`
 
 /**
  * This component is the parent of the `content.rendered` HTML. We can use nested
@@ -254,4 +255,4 @@ const Content = styled.div`
       margin-right: 24px;
     }
   }
-`;
+`

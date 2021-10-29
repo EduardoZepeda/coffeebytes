@@ -1,36 +1,37 @@
-import { connect, styled, Global } from "frontity";
-import Link from "./link";
+import { connect, styled, Global } from 'frontity'
 import { Icon } from 'react-icons-kit'
 import { androidSearch } from 'react-icons-kit/ionicons/androidSearch'
 
 const SearchBar = ({ state, actions }) => {
-    const { isSearchBarOpen } = state.theme;
+  const { isSearchBarOpen } = state.theme
 
-    return (
-        <>
-        <SearchBarContainer onClick={actions.theme.toggleSearchBar}>
-          {isSearchBarOpen ? (
-          <>
-            {/* Add some style to the body when menu is open,
-            to prevent body scroll */}
-            <Global styles={{ body: { overflowY: "hidden" } }} />
-          </>
-        ) : (
-          <Icon title={state.theme.lang==="en"? "Search": "Buscar" } icon={androidSearch} size={24}/>
-        )}
-        </SearchBarContainer>
-        {isSearchBarOpen && <SearchBarOverlay id="search-bar-overlay" onClick={actions.theme.toggleSearchBar}>
-            <form onSubmit={actions.theme.searchQuery}>
-                <SearchInput autoFocus onChange={actions.theme.setSearchQuery} placeholder={state.theme.lang==="en"? "I'm searching for...": "Quiero leer sobre..." } value={state.theme.searchQuery} id="search" type="search"/>
-                <SearchButton value={state.theme.lang==="en"? "Search": "Buscar" } type="submit"/>
-            </form>
-        </SearchBarOverlay>}
-        </>
-        )
+  return (
+    <>
+      <SearchBarContainer onClick={actions.theme.handleToggleSearchBar}>
+        {isSearchBarOpen
+          ? (
+            <>
+              {/* Add some style to the body when menu is open,
+              to prevent body scroll */}
+              <Global styles={{ body: { overflowY: 'hidden' } }} />
+            </>
+            )
+          : (
+            <Icon title={state.theme.lang === 'en' ? 'Search' : 'Buscar'} icon={androidSearch} size={24} />
+            )}
+      </SearchBarContainer>
+      {isSearchBarOpen && (
+        <SearchBarOverlay id='search-bar-overlay' onClick={actions.theme.handleToggleSearchBar}>
+          <form onSubmit={actions.theme.handleSearchQuery}>
+            <SearchInput autoFocus onChange={actions.theme.handleSetSearchQuery} placeholder={state.theme.lang === 'en' ? "I'm searching for..." : 'Quiero leer sobre...'} value={state.theme.searchQuery} id='search' type='search' />
+            <SearchButton value={state.theme.lang === 'en' ? 'Search' : 'Buscar'} type='submit' />
+          </form>
+        </SearchBarOverlay>)}
+    </>
+  )
+}
 
-};
-
-export default connect(SearchBar);
+export default connect(SearchBar)
 
 const SearchBarContainer = styled.div`
   color: var(--white);
@@ -40,7 +41,7 @@ const SearchBarContainer = styled.div`
   @media (max-width: 560px) {
     margin: 16px 16px;
   }
-`;
+`
 
 const SearchInput = styled.input`
     background-color: 0;
@@ -53,7 +54,7 @@ const SearchInput = styled.input`
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     font-size: 1rem;
-`;
+`
 
 const SearchButton = styled.input`
     background-color: var(--mustard-yellow);
@@ -65,8 +66,7 @@ const SearchButton = styled.input`
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     font-size: 1rem;
-`;
-
+`
 
 const SearchBarOverlay = styled.div`
   display: flex;
@@ -80,5 +80,4 @@ const SearchBarOverlay = styled.div`
   z-index: 2;
   top: 0;
   left: 0;
-`;
-
+`

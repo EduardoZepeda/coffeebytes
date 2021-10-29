@@ -1,18 +1,16 @@
-import { styled } from "frontity";
-import Link from "./link";
+import { styled } from 'frontity'
+import Link from './link'
 
 const EmptySearch = () => {
+  return (
+    <>
+      <h3>No encontramos nada, ¿por qué no visitas nuestras publicaciones recientes?</h3>
+      <Link link='/'><EmptySearchButton>Ver publicaciones recientes</EmptySearchButton></Link>
+    </>
+  )
+}
 
-    return (
-        <>
-           <h3>No encontramos nada, ¿por qué no visitas nuestras publicaciones recientes?</h3> 
-           <Link link={"/"}><EmptySearchButton>Ver publicaciones recientes</EmptySearchButton></Link>
-        </>
-        )
-
-};
-
-export default EmptySearch;
+export default EmptySearch
 
 const EmptySearchButton = styled.button`
     background-color: var(--mustard-yellow);
@@ -23,4 +21,4 @@ const EmptySearchButton = styled.button`
     padding: 1rem;
     font-size: 1rem;
     border-radius: 2px;
-`;
+`

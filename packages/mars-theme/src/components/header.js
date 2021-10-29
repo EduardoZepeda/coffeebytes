@@ -1,13 +1,13 @@
-import { connect, styled } from "frontity";
-import Link from "./link";
-import Nav from "./nav";
-import MobileMenu from "./menu";
+import { connect, styled } from 'frontity'
+import Link from './link'
+import Nav from './nav'
+import MobileMenu from './menu'
 
 const Header = ({ state }) => {
   return (
     <>
       <Container>
-        <StyledLink link="/">
+        <StyledLink link='/'>
           <Title>{state.frontity.title}</Title>
         </StyledLink>
         <Description>{state.frontity.description}</Description>
@@ -15,11 +15,11 @@ const Header = ({ state }) => {
       </Container>
       <Nav />
     </>
-  );
-};
+  )
+}
 
 // Connect the Header component to get access to the `state` in it's `props`
-export default connect(Header);
+export default connect(Header)
 
 const Container = styled.div`
   width: 848px;
@@ -30,7 +30,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`;
+`
 
 const Title = styled.h2`
   margin-top: 4rem;
@@ -40,7 +40,7 @@ const Title = styled.h2`
     margin-top: 4rem;
     margin-left: 1.5rem;
   }
-`;
+`
 
 const Description = styled.h2`
   margin: 0;
@@ -51,8 +51,8 @@ const Description = styled.h2`
   @media (max-width: 768px) {
     margin-left: 1.5rem;
   }
-`;
+`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-`;
+`

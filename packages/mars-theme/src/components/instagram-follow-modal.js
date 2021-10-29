@@ -1,23 +1,23 @@
-import { styled, connect } from "frontity";
+import { styled, connect } from 'frontity'
 import { socialInstagram } from 'react-icons-kit/ionicons/socialInstagram'
 import { Icon } from 'react-icons-kit'
-import Link from "./link";
+import Link from './link'
 
 const InstagramFollowModal = ({ state, actions }) => {
-    const iconSize = 36;
+  const iconSize = 36
 
-    return (
-        <InstagramContainer>
-            <h2>¡Sígueme en Instagram!</h2>
-            <p>Allí también publico contenido gratuito que puede servirte muchísimo. ¡Dale click al botón de seguir!</p>
-            <IconLink title="Instagram" aria-label="Enlace a Instagram" link={state.socialMedia.instagram}>
-                <FollowButton><Icon style={{ marginRight: 8 }} icon={socialInstagram} size={iconSize}/>Seguir</FollowButton>
-            </IconLink>
-        </InstagramContainer>
-        )
-};
+  return (
+    <InstagramContainer>
+      <h2>¡Sígueme en Instagram!</h2>
+      <p>Allí también publico contenido gratuito que puede servirte muchísimo. ¡Dale click al botón de seguir!</p>
+      <IconLink title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}>
+        <FollowButton><Icon style={{ marginRight: 8 }} icon={socialInstagram} size={iconSize} />Seguir</FollowButton>
+      </IconLink>
+    </InstagramContainer>
+  )
+}
 
-export default connect(InstagramFollowModal);
+export default connect(InstagramFollowModal)
 
 const InstagramContainer = styled.div`
     padding: 1rem;
@@ -26,7 +26,7 @@ const InstagramContainer = styled.div`
 
 const IconLink = styled(Link)`
     margin: 0 0;
-`;
+`
 
 const FollowButton = styled.button`
     background-color: var(--ig-blue);

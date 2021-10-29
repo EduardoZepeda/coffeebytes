@@ -75,12 +75,12 @@ interface MarsTheme extends Package {
       /**
        * Toggles the mobile menu between opened and closed states.
        */
-      toggleMobileMenu: Action<MarsTheme>;
+      handleToggleMobileMenu: Action<MarsTheme>;
 
       /**
        * Closes the mobile menu, not matter the previous state.
        */
-      closeMobileMenu: Action<MarsTheme>;
+      handleCloseMobileMenu: Action<MarsTheme>;
     };
   };
 

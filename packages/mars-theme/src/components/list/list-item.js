@@ -1,7 +1,7 @@
-import { connect, styled } from "frontity";
-import Link from "../link";
-import FeaturedMedia from "../featured-media";
-import ReadingTime from "../reading-time";
+import { connect, styled } from 'frontity'
+import Link from '../link'
+import FeaturedMedia from '../featured-media'
+import ReadingTime from '../reading-time'
 /**
  * Item Component
  *
@@ -11,8 +11,8 @@ import ReadingTime from "../reading-time";
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
-  const author = state.source.author[item.author];
-  const date = new Date(item.date);
+  const author = state.source.author[item.author]
+  const date = new Date(item.date)
 
   return (
     <article>
@@ -23,13 +23,13 @@ const Item = ({ state, item }) => {
       <div>
         {/* If the post has an author, we render a clickable author text. */}
         <PublishDate>
-          {" "}
-          <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}</b>
+          {' '}
+          <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</b>
         </PublishDate>
         {author && (
           <StyledLink link={author.link}>
             <AuthorName>
-              {" "} por <b>{author.name}</b>
+              {' '} por <b>{author.name}</b>
             </AuthorName>
           </StyledLink>
         )}
@@ -39,12 +39,12 @@ const Item = ({ state, item }) => {
        * If the want to show featured media in the
        * list of featured posts, we render the media.
        */}
-       {}
-      <ReadingTime content={item.content}/>
+      {}
+      <ReadingTime content={item.content} />
       {state.theme.featured.showOnList && (
-              <Link aria-label={item.title.rendered} link={item.link}>
-                <FeaturedMedia id={item.featured_media}/>
-              </Link>
+        <Link aria-label={item.title.rendered} link={item.link}>
+          <FeaturedMedia id={item.featured_media} />
+        </Link>
       )}
 
       {/* If the post has an excerpt (short summary text), we render it */}
@@ -58,11 +58,11 @@ const Item = ({ state, item }) => {
 
       )}
     </article>
-  );
-};
+  )
+}
 
 // Connect the Item to gain access to `state` as a prop
-export default connect(Item);
+export default connect(Item)
 
 const ReadMore = styled.div`
     display: inline-block;
@@ -79,23 +79,23 @@ const Title = styled.h2`
   padding-top: 24px;
   padding-bottom: 8px;
   box-sizing: border-box;
-`;
+`
 
 const AuthorName = styled.span`
   color: var(--soft-gray);
   font-size: 0.9em;
-`;
+`
 
 const StyledLink = styled(Link)`
   padding: 15px 0;
-`;
+`
 
 const PublishDate = styled.span`
   color: var(--soft-gray);
   font-size: 0.9em;
-`;
+`
 
 const Excerpt = styled.div`
   line-height: 1.6em;
   color: var(--clear-blue);
-`;
+`
