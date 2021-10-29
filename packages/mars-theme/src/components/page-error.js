@@ -20,7 +20,7 @@ const description = (
 const Page404 = ({ state }) => {
   const data = state.source.get(state.router.link)
 
-  const title = 'Ops! Un error feo por aquí'
+  const title = 'Oops! Un error feo por aquí'
   const title404 = state.theme.lang === 'en' ? '404, there are no post in english... yet ☕' : '404, no hay nada... ☕'
 
   return (

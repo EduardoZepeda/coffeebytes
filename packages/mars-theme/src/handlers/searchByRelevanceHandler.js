@@ -76,7 +76,7 @@ const searchByRelevanceHandler = ({
     ...(hasNewerPosts && { next: getPageLink(page + 1) }),
 
     // Add search data if this is a search.
-    ...(query.s && { isSearch: true, handleSearchQuery: query.s })
+    ...(query.s && { isSearch: true, searchQuery: query.s })
   }
 
   // This ensures the resulting type is correct.
