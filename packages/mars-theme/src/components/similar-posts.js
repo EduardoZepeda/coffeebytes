@@ -3,6 +3,7 @@ import { connect, styled } from 'frontity'
 import Link from './link'
 import FeaturedMedia from './featured-media'
 import shuffle from '../utils/array-shuffler'
+import Loading from './loading'
 
 const SimilarPosts = ({ state, actions }) => {
   const currentUrl = state.source.get(state.router.link)
@@ -16,6 +17,9 @@ const SimilarPosts = ({ state, actions }) => {
   }, [category])
 
   const data = state.source.get(category.link)
+  if (data.isFetching) {
+    return <Loading />
+  }
   const items = data.items?.filter(post => post.id !== id)
   let posts = items?.map(({ type, id }) => state.source[type][id])
   if (posts) {
