@@ -11,6 +11,7 @@ import SharerButtons from './sharer-buttons'
 import MailChimpSubscribeForm from './mail-chimp-form'
 import NextPreviousPost from './next-previous-post'
 import SideProfile from './side-profile'
+import Categories from './categories'
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -58,6 +59,7 @@ const Post = ({ state, actions, libraries }) => {
                   </StyledLink>
                 )}
                 <ReadingTime content={post.content} />
+                <Categories categories={state.source.post[post.id].categories} />
               </div>
             )}
           </div>

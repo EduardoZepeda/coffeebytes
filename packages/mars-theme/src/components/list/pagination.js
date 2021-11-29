@@ -13,7 +13,7 @@ import diggStylePagination from '../../utils/digg-style-pagination'
 
 const Pagination = ({ state, actions }) => {
   // Get the total posts to be displayed based for the current link
-  const { next, previous, totalPages, page, searchQuery } = state.source.get(state.router.link)
+  const { next, previous, route, totalPages, page, searchQuery } = state.source.get(state.router.link)
   const activePages = diggStylePagination(page, totalPages)
   // Pre-fetch the the next page if it hasn't been fetched yet.
   useEffect(() => {
@@ -27,7 +27,7 @@ const Pagination = ({ state, actions }) => {
           <PaginationLink>← Regresar </PaginationLink>
         </Link>
       )}
-      {totalPages > 0 && activePages.map(paginationPage => typeof paginationPage === 'number' ? <Link key={paginationPage} link={`/page/${paginationPage}/${searchQuery ? '?s=' + searchQuery : ''}`}><PaginationLink active={paginationPage === page}>{paginationPage}</PaginationLink></Link> : <PaginationLink key={paginationPage}>...</PaginationLink>)}
+      {totalPages > 0 && activePages.map(paginationPage => typeof paginationPage === 'number' ? <Link key={paginationPage} link={`${route}page/${paginationPage}/${searchQuery ? '?s=' + searchQuery : ''}`}><PaginationLink active={paginationPage === page}>{paginationPage}</PaginationLink></Link> : <PaginationLink key={paginationPage}>...</PaginationLink>)}
       {/* If there's a next page, render this link */}
       {next && (
         <Link link={next}>

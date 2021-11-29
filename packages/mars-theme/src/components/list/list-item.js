@@ -2,6 +2,7 @@ import { connect, styled } from 'frontity'
 import Link from '../link'
 import FeaturedMedia from '../featured-media'
 import ReadingTime from '../reading-time'
+import Categories from '../categories'
 /**
  * Item Component
  *
@@ -41,6 +42,7 @@ const Item = ({ state, item }) => {
        */}
       {}
       <ReadingTime content={item.content} />
+      <Categories categories={item.categories} />
       {state.theme.featured.showOnList && (
         <Link aria-label={item.title.rendered} link={item.link}>
           <FeaturedMedia id={item.featured_media} />
