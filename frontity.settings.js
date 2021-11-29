@@ -6,7 +6,7 @@ const settings = [
       frontity: {
         url: 'https://coffeebytes.dev',
         title: 'Coffee bytes',
-        description: 'Blog de desarrollo web con Python y Javascript'
+        description: 'Blog de desarrollo web full stack'
       },
       analytics: {
         pageviews: {
@@ -93,7 +93,7 @@ const settings = [
       frontity: {
         url: 'https://coffeebytes.dev',
         title: 'Coffee bytes',
-        description: 'Python and Javascript web development blog'
+        description: 'Full stack web development blog'
       },
       analytics: {
         pageviews: {
