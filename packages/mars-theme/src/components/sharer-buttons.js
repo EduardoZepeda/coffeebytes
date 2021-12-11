@@ -13,7 +13,7 @@ const SharerButtons = ({ state }) => {
   const title = post.title.rendered
   return (
     <ShareContent>
-      <h2>Presume lo que aprendiste en redes</h2>
+      <TypographyH2>Presume lo que aprendiste en redes</TypographyH2>
       <SharersContainer>
         <IconLink aria-label='Enlace a Facebook' link={`http://www.facebook.com/sharer.php?u=${encodeURIComponent(state.source.url + url)}&t=${encodeURIComponent(title)}`}>
           <IconContainer style={{ backgroundColor: '#3B5998' }}><Icon icon={socialFacebook} size={iconSize} />
@@ -33,6 +33,11 @@ const SharerButtons = ({ state }) => {
 }
 
 export default connect(SharerButtons)
+
+const TypographyH2 = styled.p`
+  font-size: 30px;
+  line-height: 32px
+`
 
 const ShareContent = styled.section`
 `

@@ -35,7 +35,7 @@ const SimilarPosts = ({ state, actions }) => {
     return (
       <>
         <SimilarPostsContainer>
-          <h2>Otras publicaciones que pueden interesarte</h2>
+          <TypographyH2 as='p'>Otras publicaciones que pueden interesarte</TypographyH2>
           {posts?.slice(0, 6).map((p) => (
             <SimilarPost key={p.id}>
               <Link link={p.link}>
@@ -52,6 +52,11 @@ const SimilarPosts = ({ state, actions }) => {
 }
 
 export default connect(SimilarPosts)
+
+const TypographyH2 = styled.p`
+  font-size: 30px;
+  line-height: 32px
+`
 
 const SimilarPost = styled.div`
   width: 300px;

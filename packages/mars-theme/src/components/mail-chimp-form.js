@@ -13,7 +13,7 @@ const MailChimpSubscribeForm = ({ state, actions, formTitle = null, formDescript
     <FormContainer formTitle={formTitle} id='mc_embed_signup'>
       <form action={state.theme.mailChimp.formUrl} method='post' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' className='validate' target='_blank' noValidate=''>
         <MCEmbedSignupScroll>
-          <h2>{title}</h2>
+          <TypographyH2>{title}</TypographyH2>
           <p>{description}</p>
           <IndicatedRequired><span className='asterisk'>*</span> Campo obligatorio</IndicatedRequired>
           <MCFieldGroup>
@@ -57,6 +57,10 @@ const FormContainer = styled.aside`
         border-radius: 4px;
     `
 : null};
+`
+const TypographyH2 = styled.p`
+  font-size: 30px;
+  line-height: 32px
 `
 
 const SubscribeButton = styled.input`
