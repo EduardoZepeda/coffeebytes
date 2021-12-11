@@ -34,8 +34,8 @@ const SimilarPosts = ({ state, actions }) => {
     shuffle(posts)
     return (
       <>
-        <h2>Otras publicaciones que pueden interesarte</h2>
         <SimilarPostsContainer>
+          <h2>Otras publicaciones que pueden interesarte</h2>
           {posts?.slice(0, 6).map((p) => (
             <SimilarPost key={p.id}>
               <Link link={p.link}>
@@ -60,7 +60,7 @@ const SimilarPost = styled.div`
   list-style: none;
 `
 
-const SimilarPostsContainer = styled.div`
+const SimilarPostsContainer = styled.aside`
   display:flex;
   flex-wrap: wrap;
 `

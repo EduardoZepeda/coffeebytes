@@ -45,7 +45,7 @@ const MailChimpSubscribeForm = ({ state, actions, formTitle = null, formDescript
 
 export default connect(MailChimpSubscribeForm)
 
-const FormContainer = styled.div`
+const FormContainer = styled.aside`
     ${props => props.formTitle
 ? css`
         padding: 2rem 4rem;

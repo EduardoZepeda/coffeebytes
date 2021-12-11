@@ -91,7 +91,7 @@ const HamburguerGrid = styled.div`
   height: 100vh;
 `
 
-const HeadContainer = styled.div`
+const HeadContainer = styled.header`
   display: flex;
   align-items: center;
   flex-direction: column;

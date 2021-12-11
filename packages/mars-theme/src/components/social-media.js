@@ -21,7 +21,7 @@ const SocialMedia = ({ state }) => {
 
 export default connect(SocialMedia)
 
-const SocialMediaContainer = styled.div`
+const SocialMediaContainer = styled.section`
   color: var(--white);
   overflow-x: auto;
   display: inline-flex;

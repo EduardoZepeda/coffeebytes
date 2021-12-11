@@ -5,17 +5,19 @@ import React from 'react'
 
 const Categories = ({ categories, state }) => {
   return (
-    <div>
+    <PostCategories>
       {categories.map(singleCategory => (
         <Link key={`category${singleCategory}`} aria-label={state.source.category[singleCategory].name} link={state.source.category[singleCategory].link}>
           <Category>{state.source.category[singleCategory].name}</Category>
         </Link>
       ))}
-    </div>
+    </PostCategories>
   )
 }
 
 export default connect(Categories)
+
+const PostCategories = styled.section``
 
 const Category = styled.div`
     font-size: 0.75rem;

@@ -26,7 +26,7 @@ const FooterContainer = styled.footer`
   flex-wrap: wrap;
 `
 
-const LegalContainer = styled.div`
+const LegalContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin: 1rem;

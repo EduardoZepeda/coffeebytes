@@ -41,15 +41,15 @@ const Post = ({ state, actions, libraries }) => {
       <Container css={prismjs}>
         {post.type === 'post' && <SideProfile />}
         <Article>
-          <div>
+          <PostInfo>
             <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
             {/* Only display author and date on posts */}
             {data.isPost && (
-              <div>
-                <DateWrapper>
+              <section>
+                <DateWrapper time='abc'>
                   {' '}
-                  <b>El {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</b>
+                  {date.toLocaleString('es-ES', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                 </DateWrapper>
                 {author && (
                   <StyledLink link={author.link}>
@@ -60,9 +60,9 @@ const Post = ({ state, actions, libraries }) => {
                 )}
                 <ReadingTime content={post.content} />
                 <Categories categories={state.source.post[post.id].categories} />
-              </div>
+              </section>
             )}
-          </div>
+          </PostInfo>
 
           {/* Look at the settings to see if we should include the featured image */}
           {state.theme.featured.showOnPost && (
@@ -71,9 +71,9 @@ const Post = ({ state, actions, libraries }) => {
 
           {/* Render the content using the Html2React component so the HTML is processed
           by the processors we included in the libraries.html2react.processors array. */}
-          <Content>
+          <PostContent>
             <Html2React html={post.content.rendered} />
-          </Content>
+          </PostContent>
         </Article>
         {post.type === 'post' && <NextPreviousPost id={data.id} />}
         {post.type === 'post' && <SharerButtons />}
@@ -89,6 +89,9 @@ const Post = ({ state, actions, libraries }) => {
 }
 
 export default connect(Post)
+
+const PostInfo = styled.section`
+`
 
 const Container = styled.div`
   width: 768px;
@@ -122,17 +125,18 @@ const Author = styled.p`
   display: inline;
 `
 
-const DateWrapper = styled.p`
+const DateWrapper = styled.time`
   color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
+  font-weight: bold;
 `
 
 /**
  * This component is the parent of the `content.rendered` HTML. We can use nested
  * selectors to style that HTML.
  */
-const Content = styled.div`
+const PostContent = styled.section`
   color: var(--clear-blue);
   word-break: break-word;
 

@@ -24,7 +24,7 @@ const NextPreviousPost = ({ state, actions }) => {
 
 export default connect(NextPreviousPost)
 
-const NextPostContainer = styled.div`
+const NextPostContainer = styled.section`
     display: flex;
     justify-content: space-between;
     margin: 4rem 0;

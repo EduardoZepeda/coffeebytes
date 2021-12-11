@@ -28,7 +28,7 @@ const SideProfile = ({ state }) => {
 
 export default connect(SideProfile)
 
-const ProfileContainer = styled.div`
+const ProfileContainer = styled.aside`
   position: sticky;
   top: 4rem;
   @media (max-width: 1024px) {
@@ -36,7 +36,7 @@ const ProfileContainer = styled.div`
   }
 `
 
-const Profile = styled.div`
+const Profile = styled.section`
   color: var(--soft-gray);
   @media (max-width: 1024px) {
     display: flex;
