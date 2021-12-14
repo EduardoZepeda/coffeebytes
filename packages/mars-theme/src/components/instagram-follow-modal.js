@@ -8,8 +8,8 @@ const InstagramFollowModal = ({ state, actions }) => {
 
   return (
     <InstagramContainer>
-      <h2>¡Sígueme en Instagram!</h2>
-      <p>Allí también publico contenido gratuito que puede servirte muchísimo. ¡Dale click al botón de seguir!</p>
+      <h2>¡Contenido gratis en Instagram!</h2>
+      <p>Allí también publico contenido que puede servirte muchísimo. ¡Dale click al botón de seguir!</p>
       <IconLink title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}>
         <FollowButton><Icon style={{ marginRight: 8 }} icon={socialInstagram} size={iconSize} />Seguir</FollowButton>
       </IconLink>
