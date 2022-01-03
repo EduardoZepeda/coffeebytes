@@ -66,6 +66,7 @@ const globalStyles = css`
     --soft-gray: #A2A2A2;
     --medium-gray: #495057;
     --dark-gray-transparent: #181818DD;
+    --blue-transparent: #071f37dd;
     --red: #B82019;
     --ig-blue: #3b91e1;
   }

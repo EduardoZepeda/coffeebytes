@@ -1,5 +1,5 @@
 import { styled, connect } from 'frontity'
-import { socialInstagram } from 'react-icons-kit/ionicons/socialInstagram'
+import { instagram } from 'react-icons-kit/fa/instagram'
 import { Icon } from 'react-icons-kit'
 import Link from './link'
 
@@ -8,10 +8,10 @@ const InstagramFollowModal = ({ state, actions }) => {
 
   return (
     <InstagramContainer>
-      <h2>¡Contenido gratis en Instagram!</h2>
-      <p>Allí también publico contenido que puede servirte muchísimo. ¡Dale click al botón de seguir!</p>
+      <h2>¡Estoy en Instagram!</h2>
+      <p>¡No te pierdas mis posts! Publico info sobre desarrollo web cada semana. </p>
       <IconLink title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}>
-        <FollowButton><Icon style={{ marginRight: 8 }} icon={socialInstagram} size={iconSize} />Seguir</FollowButton>
+        <FollowButton><Icon style={{ marginRight: 8 }} icon={instagram} size={iconSize} />Seguir</FollowButton>
       </IconLink>
     </InstagramContainer>
   )

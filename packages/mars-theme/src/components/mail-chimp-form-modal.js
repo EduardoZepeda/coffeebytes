@@ -35,7 +35,7 @@ const Newsletter = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     padding:50px;
-    background-color: var(--dark-gray-transparent);
+    background-color: var(--blue-transparent);
     border-radius: 4px;
     @media (max-width: 760px) {
         width: 80%;

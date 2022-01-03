@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 const MailChimpSubscribeForm = ({ state, actions, formTitle = null, formDescription = null }) => {
   const [signupFormData, setSignupFormData] = useState({ FNAME: '', EMAIL: '' })
-  const title = formTitle || '¿Ya formas parte de mi comunidad de lectores?'
-  const description = formDescription || 'Únete y recibe contenido como este una vez por semana directo en tu correo electrónico. ¿No? Que tal si me sigues en Instagram'
+  const title = formTitle || 'Únete a mis lectores'
+  const description = formDescription || 'Recibe contenido como este una vez por semana directo en tu correo electrónico y mi promesa de no spammearte, nunca.'
   const handleInput = (event) => {
     setSignupFormData({ ...signupFormData, [event.target.name]: event.target.value })
   }
