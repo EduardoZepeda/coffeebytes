@@ -8,8 +8,8 @@ const InstagramFollowModal = ({ state, actions }) => {
 
   return (
     <InstagramContainer>
-      <h2>¡Estoy en Instagram!</h2>
-      <p>¡No te pierdas mis posts! Publico info sobre desarrollo web cada semana. </p>
+      <h2>¡No te pierdas las nuevas entradas!</h2>
+      <p>Aquí publico más información sobre desarrollo web cada semana y te aviso cuando publique.</p>
       <IconLink title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}>
         <FollowButton><Icon style={{ marginRight: 8 }} icon={instagram} size={iconSize} />Seguir</FollowButton>
       </IconLink>
@@ -29,7 +29,8 @@ const IconLink = styled(Link)`
 `
 
 const FollowButton = styled.button`
-    background-color: var(--ig-blue);
+    background: rgb(254,218,117);
+    background: linear-gradient(27deg, rgb(254, 218, 117) 0%, rgb(245, 133, 41) 30%, rgb(214, 41, 118) 67%);
     color: var(--white);
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
