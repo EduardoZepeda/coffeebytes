@@ -21,13 +21,13 @@ const Page404 = ({ state }) => {
   const data = state.source.get(state.router.link)
 
   const title = 'Oops! Un error feo por aquí'
-  const title404 = state.theme.lang === 'en' ? '404, there are no post in english... yet ☕' : '404, no hay nada... ☕'
+  const title404 = state.theme.lang === 'en' ? '404, there are no post in english... yet ☕' : '404, no hay nada escrito aún... ☕'
 
   return (
     <Container>
       <Title>{data.is404 ? title404 : title}</Title>
       <Description>{data.is404 ? description404(state.theme.lang) : description}</Description>
-      {state.theme.lang === 'en' ? null : <Link link=''><RecentPostsButton>Quiero leerlos</RecentPostsButton></Link>}
+      {state.theme.lang === 'en' ? null : <Link link=''><RecentPostsButton>Leer entradas recientes</RecentPostsButton></Link>}
     </Container>
   )
 }

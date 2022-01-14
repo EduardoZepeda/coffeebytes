@@ -4,7 +4,7 @@ const LanguageSwitcher = ({ state }) => {
   return (
     <LanguageSwitchContainer>
       <a href={state.theme.lang === 'es' ? '/en/' : '/'} aria-current={state.theme.lang === 'es' ? 'Cambia el lenguaje a inglés' : 'Change language to spanish'}>
-        {state.theme.lang === 'es' ? 'English' : 'Español'}
+        {state.theme.lang === 'es' ? '🇺🇸 🇬🇧' : '🇲🇽 🇪🇸'}
       </a>
     </LanguageSwitchContainer>
   )
