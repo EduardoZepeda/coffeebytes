@@ -8,6 +8,8 @@ import 'prismjs/components/prism-docker'
 import 'prismjs/components/prism-nginx'
 import 'prismjs/components/prism-sql'
 import 'prismjs/components/prism-go'
+import 'prismjs/components/prism-jsx'
+
 
 // Disable the automatic code highlighting of all `<code>` elements on the
 // client because we are doing it ourselves with a processors.
