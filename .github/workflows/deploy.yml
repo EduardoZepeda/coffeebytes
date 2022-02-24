@@ -29,8 +29,6 @@ jobs:
 
     name: Deploy
     runs-on: ubuntu-latest
-    env:
-      ROUTE_TO_PROJECT: ${{secrets.ROUTE_TO_PROJECT}}
     steps:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
@@ -40,7 +38,7 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          cd $ROUTE_TO_PROJECT
+          cd /var/www/coffeebytes/
           git pull
           pm2 stop all
           npm run build
