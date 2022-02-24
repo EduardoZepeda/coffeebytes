@@ -29,12 +29,11 @@ jobs:
 
     name: Deploy
     runs-on: ubuntu-latest
-
+    env:
+      ROUTE_TO_PROJECT: ${{secrets.ROUTE_TO_PROJECT}}
     steps:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
-    env:
-      ROUTE_TO_PROJECT: ${{secrets.ROUTE_TO_PROJECT}}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
