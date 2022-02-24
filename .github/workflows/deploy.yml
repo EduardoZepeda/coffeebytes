@@ -38,8 +38,8 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-        cd $ROUTE_TO_PROJECT
-        git pull
-        pm2 stop all
-        npm run build
-        pm2 start all
+          cd $ROUTE_TO_PROJECT
+          git pull
+          pm2 stop all
+          npm run build
+          pm2 start all
