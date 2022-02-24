@@ -30,13 +30,15 @@ jobs:
     steps:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
+    env:
+      ROUTE_TO_PROJECT: ${{secrets.ROUTE_TO_PROJECT}}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-        cd ${{secrets.ROUTE_TO_PROJECT}}
+        cd $ROUTE_TO_PROJECT
         git pull
         pm2 stop all
         npm run build
