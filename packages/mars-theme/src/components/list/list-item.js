@@ -3,6 +3,7 @@ import Link from '../link'
 import FeaturedMedia from '../featured-media'
 import ReadingTime from '../reading-time'
 import Categories from '../categories'
+import encloseUrlInAnchorNoFollow from '../../utils/enclose-url-inside-anchor'
 /**
  * Item Component
  *
@@ -14,6 +15,7 @@ import Categories from '../categories'
 const Item = ({ state, item }) => {
   const author = state.source.author[item.author]
   const date = new Date(item.date)
+  const media = state.source.attachment[item.featured_media]
 
   return (
     <article>
@@ -44,9 +46,12 @@ const Item = ({ state, item }) => {
       <ReadingTime content={item.content} />
       <Categories categories={item.categories} />
       {state.theme.featured.showOnList && (
-        <Link aria-label={item.title.rendered} link={item.link}>
-          <FeaturedMedia id={item.featured_media} />
-        </Link>
+        <>
+          <Link aria-label={item.title.rendered} link={item.link}>
+            <FeaturedMedia id={item.featured_media} />
+          </Link>
+          {media.caption && <Credits dangerouslySetInnerHTML={{ __html: encloseUrlInAnchorNoFollow(media.caption.rendered) }} />}
+        </>
       )}
 
       {/* If the post has an excerpt (short summary text), we render it */}
@@ -100,4 +105,8 @@ const PublishDate = styled.span`
 const Excerpt = styled.div`
   line-height: 1.6em;
   color: var(--clear-blue);
+`
+const Credits = styled.div`
+  font-size: 0.85em;
+  color: var(--soft-gray);
 `

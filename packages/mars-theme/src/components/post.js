@@ -6,9 +6,9 @@ import FeaturedMedia from './featured-media'
 import prismjs from './styles/prism-styles'
 import SimilarPosts from './similar-posts'
 import ReadingTime from './reading-time'
-import MailChimpSubscribeFormModal from './mail-chimp-form-modal'
 import SharerButtons from './sharer-buttons'
 import MailChimpSubscribeForm from './mail-chimp-form'
+import MailChimpSubscribeFormModal from './mail-chimp-form-modal'
 import NextPreviousPost from './next-previous-post'
 import SideProfile from './side-profile'
 import Categories from './categories'
@@ -39,11 +39,11 @@ const Post = ({ state, actions, libraries }) => {
   return data.isReady
     ? (
       <Container css={prismjs}>
+        {post.type === 'post' && <MailChimpSubscribeFormModal />}
         {post.type === 'post' && <SideProfile />}
         <Article>
           <PostInfo>
             <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-
             {/* Only display author and date on posts */}
             {data.isPost && (
               <section>
@@ -82,9 +82,7 @@ const Post = ({ state, actions, libraries }) => {
           formDescription='Recibe contenido como este por correo electrónico, una vez por semana, de manera totalmente gratuita.'
                                  />}
         {post.type === 'post' && <SimilarPosts />}
-        <MailChimpSubscribeFormModal />
-      </Container>
-      )
+      </Container>)
     : null
 }
 

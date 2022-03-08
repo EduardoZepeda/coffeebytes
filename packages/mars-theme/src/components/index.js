@@ -9,6 +9,7 @@ import PageError from './page-error'
 import Footer from './footer'
 import ScrollUp from './scroll-up'
 import CookieConsentManager from './cookie-consent-manager'
+
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
@@ -46,9 +47,9 @@ const Theme = ({ state }) => {
           </Switch>
         </Main>
         <Footer />
-        <ScrollUp />
         {state.theme.askCookieConsent && <CookieConsentManager />}
       </HamburguerGrid>
+      <ScrollUp />
     </>
   )
 }
@@ -66,7 +67,7 @@ const globalStyles = css`
     --soft-gray: #A2A2A2;
     --medium-gray: #495057;
     --dark-gray-transparent: #181818DD;
-    --blue-transparent: #071f37dd;
+    --blue-transparent: #071f37ee;
     --red: #B82019;
     --ig-blue: #3b91e1;
   }
