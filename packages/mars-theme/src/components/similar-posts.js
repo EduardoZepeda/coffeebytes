@@ -2,70 +2,56 @@ import React, { useEffect } from 'react'
 import { connect, styled } from 'frontity'
 import Link from './link'
 import FeaturedMedia from './featured-media'
-import shuffle from '../utils/array-shuffler'
 import Loading from './loading'
 
-const SimilarPosts = ({ state, actions }) => {
-  const currentUrl = state.source.get(state.router.link)
-  const { categories, id } = state.source[currentUrl.type][currentUrl.id]
-  // Get a random category
-  const randomCategory = categories[Math.floor(Math.random() * categories.length)]
-  const category = state.source.category[randomCategory]
-
+const SimilarPosts = ({ state, actions, postId }) => {
   useEffect(() => {
-    actions.source.fetch(category.link)
-  }, [category])
+    actions.source.fetch(`post/${postId}/related`)
+  }, [postId])
 
-  const data = state.source.get(category.link)
+  const data = state.source.get(`post/${postId}/related`)
+
+  if (data.items === undefined) {
+    return null
+  }
   if (data.isFetching) {
     return <Loading />
   }
-  const items = data.items?.filter(post => post.id !== id)
-  let posts = items?.map(({ type, id }) => state.source[type][id])
-  if (posts) {
-    // If the number of related posts is less than 4, fill the empty spaces with recent posts
-    if (posts.length <= 3) {
-      // root refers to recent posts
-      const newPosts = state.source.data['/'].items
-      const recentPosts = newPosts?.map(({ type, id }) => state.source[type][id]) || []
-      posts = [...posts, ...recentPosts]
-    }
-    // There could be more than 6 posts, shuffle them
-    shuffle(posts)
+  const relatedPosts = data.items.map(({ type, id }) => {
+    const p = state.source[type][id]
     return (
-      <>
-        <SimilarPostsContainer>
-          <TypographyH2 as='p'>Otras publicaciones que pueden interesarte</TypographyH2>
-          {posts?.slice(0, 6).map((p) => (
-            <SimilarPost key={p.id}>
-              <Link link={p.link}>
-                <FeaturedMedia id={p.featured_media} />
-                <p>{p.title.rendered}</p>
-              </Link>
-            </SimilarPost>
-          ))}
-        </SimilarPostsContainer>
-      </>
+      <SimilarPost key={p.id}>
+        <Link link={p.link}>
+          <FeaturedMedia id={p.featured_media} />
+          <p>{p.title.rendered}</p>
+        </Link>
+      </SimilarPost>
     )
-  }
-  return null
+  })
+
+  return (
+    <SimilarPostsContainer>
+      <TypographyH2 as='p'>Otras publicaciones que pueden interesarte</TypographyH2>
+      {relatedPosts}
+    </SimilarPostsContainer>
+  )
 }
 
 export default connect(SimilarPosts)
 
 const TypographyH2 = styled.p`
-  font-size: 30px;
-  line-height: 32px
-`
+      font-size: 30px;
+      line-height: 32px
+      `
 
 const SimilarPost = styled.div`
-  width: 300px;
-  margin: 0;
-  padding: 24px;
-  list-style: none;
-`
+      width: 300px;
+      margin: 0;
+      padding: 24px;
+      list-style: none;
+      `
 
 const SimilarPostsContainer = styled.aside`
-  display:flex;
-  flex-wrap: wrap;
-`
+      display:flex;
+      flex-wrap: wrap;
+      `

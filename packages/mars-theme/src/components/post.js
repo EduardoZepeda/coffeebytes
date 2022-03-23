@@ -81,7 +81,7 @@ const Post = ({ state, actions, libraries }) => {
           formTitle='Únete a mi comunidad de lectores'
           formDescription='Recibe contenido como este por correo electrónico, una vez por semana, de manera totalmente gratuita.'
                                  />}
-        {post.type === 'post' && <SimilarPosts />}
+        {post.type === 'post' && <SimilarPosts postId={data.id} />}
       </Container>)
     : null
 }

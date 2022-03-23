@@ -56,12 +56,27 @@ const Theme = ({ state }) => {
 
 export default connect(Theme)
 
+// :root {
+//   --white: #FFF;
+//   --dark-gray: #181818;
+//   --clear-blue: #EBF6FF;
+//   --mustard-yellow: #F3B433;
+//   --default-black: #131313;
+//   --blue: #467BF6;
+//   --soft-gray: #A2A2A2;
+//   --medium-gray: #495057;
+//   --dark-gray-transparent: #181818DD;
+//   --blue-transparent: #071f37ee;
+//   --red: #B82019;
+//   --ig-blue: #3b91e1;
+// }
+
 const globalStyles = css`
   :root {
-    --white: #FFF;
-    --dark-gray: #181818;
-    --clear-blue: #EBF6FF;
-    --mustard-yellow: #F3B433;
+    --white: #1c1c24;
+    --dark-gray: #FFF;
+    --clear-blue: #7a7b7f;
+    --mustard-yellow: #335ea3;
     --default-black: #131313;
     --blue: #467BF6;
     --soft-gray: #A2A2A2;

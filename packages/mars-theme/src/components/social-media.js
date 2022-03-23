@@ -3,7 +3,7 @@ import Link from './link'
 import { Icon } from 'react-icons-kit'
 import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
 import { instagram } from 'react-icons-kit/fa/instagram'
-import { github } from 'react-icons-kit/entypo/github'
+import { githubAlt } from 'react-icons-kit/fa/githubAlt'
 import { Codewars } from './logos/codewars'
 
 const SocialMedia = ({ state }) => {
@@ -11,7 +11,7 @@ const SocialMedia = ({ state }) => {
 
   return (
     <SocialMediaContainer>
-      <IconContainer><IconLink title='Github' aria-label='Enlace a Github' link={state.socialMedia.github}><Icon icon={github} size={iconSize} /></IconLink></IconContainer>
+      <IconContainer><IconLink title='Github' aria-label='Enlace a Github' link={state.socialMedia.github}><Icon icon={githubAlt} size={iconSize} /></IconLink></IconContainer>
       <IconContainer><IconLink title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}><Icon icon={instagram} size={iconSize} /></IconLink></IconContainer>
       <IconContainer><IconLink title='Linkedin' aria-label='Enlace a Linkedin' link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize} /></IconLink></IconContainer>
       <IconContainer><IconLink title='Codewars' aria-label='Enlace a Codewars' link={state.socialMedia.codewars}><Icon icon={Codewars} size={iconSize} /></IconLink></IconContainer>
