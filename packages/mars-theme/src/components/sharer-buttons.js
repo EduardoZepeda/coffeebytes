@@ -45,7 +45,7 @@ const ShareContent = styled.section`
 const SharersContainer = styled.div`
   display: flex;
   align-items: center;
-  color: var(--white);
+  color: var(--text-background);
   flex-wrap: wrap;
   margin: 3rem 0;
 `

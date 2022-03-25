@@ -1,20 +1,20 @@
 import { connect, styled } from 'frontity'
 import Link from './link'
 import { Icon } from 'react-icons-kit'
-import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
+import { linkedin } from 'react-icons-kit/fa/linkedin'
 import { instagram } from 'react-icons-kit/fa/instagram'
 import { githubAlt } from 'react-icons-kit/fa/githubAlt'
 import { Codewars } from './logos/codewars'
 
 const SocialMedia = ({ state }) => {
-  const iconSize = 24
+  const iconSize = 22
 
   return (
     <SocialMediaContainer>
-      <IconContainer><IconLink title='Github' aria-label='Enlace a Github' link={state.socialMedia.github}><Icon icon={githubAlt} size={iconSize} /></IconLink></IconContainer>
-      <IconContainer><IconLink title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}><Icon icon={instagram} size={iconSize} /></IconLink></IconContainer>
-      <IconContainer><IconLink title='Linkedin' aria-label='Enlace a Linkedin' link={state.socialMedia.linkedin}><Icon icon={socialLinkedin} size={iconSize} /></IconLink></IconContainer>
-      <IconContainer><IconLink title='Codewars' aria-label='Enlace a Codewars' link={state.socialMedia.codewars}><Icon icon={Codewars} size={iconSize} /></IconLink></IconContainer>
+      <IconContainer><IconLinkGh title='Github' aria-label='Enlace a Github' link={state.socialMedia.github}><Icon icon={githubAlt} size={iconSize} /></IconLinkGh></IconContainer>
+      <IconContainer><IconLinkIg title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}><Icon icon={instagram} size={iconSize} /></IconLinkIg></IconContainer>
+      <IconContainer><IconLinkLn title='Linkedin' aria-label='Enlace a Linkedin' link={state.socialMedia.linkedin}><Icon icon={linkedin} size={iconSize} /></IconLinkLn></IconContainer>
+      <IconContainer><IconLinkCw title='Codewars' aria-label='Enlace a Codewars' link={state.socialMedia.codewars}><Icon style={{ color: '#FFF' }} icon={Codewars} size={iconSize} /></IconLinkCw></IconContainer>
     </SocialMediaContainer>
   )
 }
@@ -22,22 +22,38 @@ const SocialMedia = ({ state }) => {
 export default connect(SocialMedia)
 
 const SocialMediaContainer = styled.section`
-  color: var(--white);
-  overflow-x: auto;
-  display: inline-flex;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   @media screen and (max-width: 560px) {
     margin-left: 24px;
   }
 `
 
 const IconLink = styled(Link)`
-    margin: 0 0.7em;
+  padding: 0.5rem 0.6rem;
+  border-radius: 100%;
+  color: white;
+  margin: 0.5rem;
+`
+
+const IconLinkLn = styled(IconLink)`
+  background-color: #0e76a8;
+`
+
+const IconLinkIg = styled(IconLink)`
+  background-color: #e1306c;
+`
+
+const IconLinkGh = styled(IconLink)`
+  background-color: #333;
+`
+
+const IconLinkCw = styled(IconLink)`
+  background-color: #b1361e;
 `
 
 const IconContainer = styled.div`
-   transition-duration: 0.3s;  
-   &:hover {
-    transform: translateY(-5px);
-    transition-duration: 0.3s; 
-  }
 `

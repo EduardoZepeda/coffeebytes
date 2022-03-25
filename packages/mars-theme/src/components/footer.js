@@ -20,8 +20,8 @@ const FooterContainer = styled.footer`
   display: flex;
   height: 200px;
   align-items: center;
-  color: var(--white);
-  background-color: var(--default-black);
+  color: var(--text-background);
+  background-color: var(--footer);
   justify-content: space-around;
   flex-wrap: wrap;
 `

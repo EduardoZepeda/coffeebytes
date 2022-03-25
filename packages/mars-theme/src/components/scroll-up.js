@@ -43,6 +43,6 @@ const ScrollUpContainer = styled.div`
     bottom: 20px;
     padding: 1rem;
     background-color: var(--blue);
-    color: var(--white);
+    color: var(--text-background);
     border-radius: 4px;
 `

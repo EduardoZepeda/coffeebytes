@@ -23,6 +23,7 @@ const marsTheme = {
      */
     theme: {
       autoPrefetch: 'in-view',
+      themeDark: true,
       lang: 'es',
       menu: [],
       searchQuery: '',
@@ -100,6 +101,9 @@ const marsTheme = {
         } else {
           exitIntentCookies.setCookie('CookieConsent', false, 30)
         }
+      },
+      handleToggleDarkTheme: ({ state }) => event => {
+        state.theme.themeDark = event.target.checked
       },
       handleSearchQuery: ({ state, actions }) => event => {
         event.preventDefault()

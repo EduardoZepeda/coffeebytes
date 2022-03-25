@@ -46,8 +46,9 @@ const MailChimpSubscribeForm = ({ state, actions, formTitle = null, formDescript
 export default connect(MailChimpSubscribeForm)
 
 const FormContainer = styled.aside`
+    color: var(--text-background);
     ${props => props.formTitle
-? css`
+    ? css`
         padding: 2rem 4rem;
         background: rgb(3,52,95);
         background: -moz-linear-gradient(90deg, rgba(3,52,95,1) 0%, rgba(0,66,117,1) 100%);
@@ -56,7 +57,7 @@ const FormContainer = styled.aside`
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#03345f",endColorstr="#004275",GradientType=1); 
         border-radius: 4px;
     `
-: null};
+    : null};
 `
 const TypographyH2 = styled.p`
   font-size: 30px;
@@ -67,8 +68,8 @@ const SubscribeButton = styled.input`
     font-size: 1rem;
     padding: 1rem;
     background-color: var(--blue);
+    color: inherit;
     border: 0px solid;
-    color: var(--white);
     border-radius: 4px;
     margin: 10px 0;
     outline: none;
@@ -88,7 +89,6 @@ const MCInput = styled.input`
     padding: 1rem 0;
     width: 100%;
     margin: 1rem 0;
-    color: var(--dark-gray);
     text-indent:1rem;
 `
 
@@ -100,7 +100,7 @@ const CloseButton = styled.button`
     border-radius: 4px;
     margin: 10px 1rem;
     outline: none;
-    color: var(--white);
+    color: var(--title);
 `
 
 const MCEmbedSignupScroll = styled.div`

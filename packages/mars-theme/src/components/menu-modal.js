@@ -29,7 +29,7 @@ const MenuModal = ({ state }) => {
 }
 
 const MenuOverlay = styled.div`
-  background-color: var(--dark-gray);
+  background-color: var(--background);
   width: 100vw;
   height: 100%;
   overflow: hidden auto;
@@ -60,9 +60,9 @@ const MenuLink = styled(Link)`
   }
   /* styles for active link */
   &[aria-current="page"] {
-    color: var(--mustard-yellow);
+    color: var(--blue);
     font-weight: bold;
-    /* border-bottom: 4px solid var(--mustard-yellow); */
+    /* border-bottom: 4px solid var(--blue); */
   }
 `
 

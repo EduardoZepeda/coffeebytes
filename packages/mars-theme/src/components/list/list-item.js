@@ -23,7 +23,7 @@ const Item = ({ state, item }) => {
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
 
-      <div>
+      <PostMetadata>
         {/* If the post has an author, we render a clickable author text. */}
         <PublishDate>
           {' '}
@@ -36,7 +36,7 @@ const Item = ({ state, item }) => {
             </AuthorName>
           </StyledLink>
         )}
-      </div>
+      </PostMetadata>
 
       {/*
        * If the want to show featured media in the
@@ -71,17 +71,24 @@ const Item = ({ state, item }) => {
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item)
 
+const PostMetadata = styled.div`
+  color: var(--secondary-text);
+`
+
 const ReadMore = styled.div`
     display: inline-block;
-    border: 1px solid var(--white);
     border-radius: 2px;
     padding: 14px;
     margin-bottom: 28px;
+    background-color: var(--background);
+    color: var(--main-text);
+    border: 1px solid var(--main-text);
+    font-size: 1rem;
 `
 
 const Title = styled.h2`
   font-size: 2rem;
-  color: var(--white);
+  color: var(--title);
   margin: 0;
   padding-top: 24px;
   padding-bottom: 8px;
@@ -89,7 +96,6 @@ const Title = styled.h2`
 `
 
 const AuthorName = styled.span`
-  color: var(--soft-gray);
   font-size: 0.9em;
 `
 
@@ -98,15 +104,13 @@ const StyledLink = styled(Link)`
 `
 
 const PublishDate = styled.span`
-  color: var(--soft-gray);
   font-size: 0.9em;
 `
 
 const Excerpt = styled.div`
   line-height: 1.6em;
-  color: var(--clear-blue);
 `
 const Credits = styled.div`
   font-size: 0.85em;
-  color: var(--soft-gray);
+  color: var(--secondary-text);
 `

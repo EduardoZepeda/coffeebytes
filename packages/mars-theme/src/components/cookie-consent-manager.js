@@ -18,11 +18,11 @@ const CookieConsentManager = ({ state, actions }) => {
     <>
       <CookieConsent
         style={{
-          background: 'var(--dark-gray-transparent)',
+          background: 'var(--overlay)',
           fontSize: '0.95rem'
         }}
         buttonStyle={{
-          background: 'var(--mustard-yellow)',
+          background: 'var(--blue)',
           fontSize: '1rem',
           borderRadius: '4px',
           padding: '1rem'

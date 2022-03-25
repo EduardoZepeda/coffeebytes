@@ -8,11 +8,11 @@ import LanguageSwitcher from './language-switcher'
  *
  * It renders the navigation links
  */
-const Nav = ({ state }) => (
+const Nav = ({ state, actions }) => (
   <>
     <NavContainer>
       {state.theme.menu.map(([name, link]) => {
-      // Check if the link matched the current page url
+        // Check if the link matched the current page url
         const isCurrentPage = state.router.link === link
         return (
           <NavItem key={name}>
@@ -50,7 +50,7 @@ const NavContainer = styled.nav`
 const NavItem = styled.div`
   padding: 0;
   margin: 0 16px;
-  color: var(--white);
+  color: var(--main-text);
   font-size: 0.9em;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -62,7 +62,7 @@ const NavItem = styled.div`
     border-bottom-color: transparent;
     /* Use for semantic approach to style the current link */
     &[aria-current="page"] {
-      border-bottom-color: var(--white);
+      border-bottom-color: var(--secondary-text);
     }
   }
 

@@ -89,6 +89,7 @@ const Post = ({ state, actions, libraries }) => {
 export default connect(Post)
 
 const PostInfo = styled.section`
+  color: var(--secondary-text);
 `
 
 const Container = styled.div`
@@ -108,7 +109,7 @@ const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: var(--mustard-yellow);
+  color: var(--title);
   line-height: 1.5em;
   font-variant: petite-caps;
 `
@@ -118,13 +119,11 @@ const StyledLink = styled(Link)`
 `
 
 const Author = styled.p`
-  color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
 `
 
 const DateWrapper = styled.time`
-  color: var(--soft-gray);
   font-size: 0.9em;
   display: inline;
   font-weight: bold;
@@ -135,7 +134,7 @@ const DateWrapper = styled.time`
  * selectors to style that HTML.
  */
 const PostContent = styled.section`
-  color: var(--clear-blue);
+  color: var(--main-text);
   word-break: break-word;
 
   * {
@@ -176,7 +175,7 @@ const PostContent = styled.section`
   blockquote {
     margin: 16px 0;
     background-color: rgba(0, 0, 0, 0.1);
-    border-left: 4px solid var(--white);
+    border-left: 4px solid var(--title);
     padding: 4px 16px;
   }
 
@@ -200,10 +199,10 @@ const PostContent = styled.section`
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--medium-gray);
-    background-color: var(--white);
+    color: var(--secondary-text);
+    background-color: var(--title);
     background-clip: padding-box;
-    border: 1px solid var(--soft-gray);
+    border: 1px solid var(--secondary-text);
     border-radius: 4px;
     outline-color: transparent;
     transition: outline-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -230,7 +229,7 @@ const PostContent = styled.section`
     font-size: 14px;
     line-height: 1.42857143;
     border-radius: 4px;
-    color: var(--white);
+    color: var(--title);
     background-color: var(--blue);
   }
 

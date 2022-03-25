@@ -34,7 +34,7 @@ const SearchBar = ({ state, actions }) => {
 export default connect(SearchBar)
 
 const SearchBarContainer = styled.div`
-  color: var(--white);
+  color: var(--title);
   padding: 4px;
   align-self: end;
   text-align: center;
@@ -46,7 +46,7 @@ const SearchBarContainer = styled.div`
 const SearchInput = styled.input`
     background-color: 0;
     border: 0px;
-    color: var(--dark-gray);
+    color: var(--secondary-text);
     padding: 1rem;
     border-radius: 2px;
     border-top-left-radius: 2px;
@@ -57,8 +57,8 @@ const SearchInput = styled.input`
 `
 
 const SearchButton = styled.input`
-    background-color: var(--mustard-yellow);
-    color: var(--dark-gray);
+    background-color: var(--blue);
+    color: var(--text-background);
     margin: 0;
     border: 0px;
     padding: 1rem;
@@ -72,7 +72,7 @@ const SearchBarOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark-gray-transparent);
+  background-color: var(--overlay);
   width: 100vw;
   height: 100vh;
   overflow: hidden auto;

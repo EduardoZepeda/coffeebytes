@@ -26,7 +26,7 @@ const Container = styled.div`
   max-width: 100%;
   box-sizing: border-box;
   padding: 24px;
-  color: var(--white);
+  color: var(--title);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -36,6 +36,7 @@ const Title = styled.h2`
   margin-top: 4rem;
   margin-bottom: 2rem;
   font-size: 3rem;
+  color: var(--title);
   @media (max-width: 768px) {
     margin-top: 4rem;
     margin-left: 1.5rem;
@@ -45,7 +46,7 @@ const Title = styled.h2`
 const Description = styled.h2`
   margin: 0;
   font-size: 1.5rem;
-  color: var(--mustard-yellow);
+  color: var(--secondary-text);
   font-family: sans;
   font-weight: normal;
   @media (max-width: 768px) {

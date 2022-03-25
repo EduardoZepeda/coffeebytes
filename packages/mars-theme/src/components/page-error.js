@@ -45,21 +45,21 @@ const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: var(--white);
+  color: var(--title);
   font-size: 3em;
   line-height: 5rem;
 `
 
 const Description = styled.div`
   line-height: 1.6em;
-  color: var(--white);
+  color: var(--title);
   margin: 48px 0;
 `
 
 const RecentPostsButton = styled.button`
-  color: var(--white);
+  color: var(--text-background);
   margin: 24px 0;
-  background-color: var(--mustard-yellow);
+  background-color: var(--blue);
   border: 0px;
   padding: 1.5rem;
   border-radius: 2px;

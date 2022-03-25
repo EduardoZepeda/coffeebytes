@@ -21,8 +21,8 @@ const PostCategories = styled.section``
 
 const Category = styled.div`
     font-size: 0.75rem;
-    color: var(--dark-gray);
-    background-color: var(--soft-gray);
+    color: var(--text-background);
+    background-color: var(--blue);
     display: inline-block;
     padding: 0rem 0.5rem;
     margin: 1rem 1rem 1rem 0rem;

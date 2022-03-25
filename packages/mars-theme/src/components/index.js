@@ -9,6 +9,7 @@ import PageError from './page-error'
 import Footer from './footer'
 import ScrollUp from './scroll-up'
 import CookieConsentManager from './cookie-consent-manager'
+import ThemeSwitch from './theme-switch'
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -28,9 +29,10 @@ const Theme = ({ state }) => {
 
       {/* Add some global styles for the whole site, like body or a's.
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
-      <Global styles={globalStyles} />
+      <Global styles={state.theme.themeDark ? globalStylesDark : globalStylesLight} />
 
       {/* Add the header of the site. */}
+      <ThemeSwitch />
       <HamburguerGrid>
         <HeadContainer>
           <Header />
@@ -56,68 +58,81 @@ const Theme = ({ state }) => {
 
 export default connect(Theme)
 
-// :root {
-//   --white: #FFF;
-//   --dark-gray: #181818;
-//   --clear-blue: #EBF6FF;
-//   --mustard-yellow: #F3B433;
-//   --default-black: #131313;
-//   --blue: #467BF6;
-//   --soft-gray: #A2A2A2;
-//   --medium-gray: #495057;
-//   --dark-gray-transparent: #181818DD;
-//   --blue-transparent: #071f37ee;
-//   --red: #B82019;
-//   --ig-blue: #3b91e1;
-// }
-
-const globalStyles = css`
-  :root {
-    --white: #1c1c24;
-    --dark-gray: #FFF;
-    --clear-blue: #7a7b7f;
-    --mustard-yellow: #335ea3;
-    --default-black: #131313;
-    --blue: #467BF6;
-    --soft-gray: #A2A2A2;
-    --medium-gray: #495057;
-    --dark-gray-transparent: #181818DD;
-    --blue-transparent: #071f37ee;
-    --red: #B82019;
-    --ig-blue: #3b91e1;
-  }
-  body {
-    margin: 0;
-    background-color: var(--dark-gray);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    line-height: 2rem;
-  }
-  a,
-  a:visited {
-    color: var(--white);
+const commonCss = `
+    @font-face {
+      font-family: 'Nunito';
+      src: url('/fonts/Nunito.woff2') format('woff2');
+      font-display: fallback;
+    }
+    body {
+      margin: 0;
+      background-color: var(--background);
+      font-family: 'Arimo', sans;
+      font-size: 20px;
+      line-height: 2rem;
+      @media (min-width: 768px) { 
+        font-family: 'Nunito', sans;
+      }
+    }
+    a,
+    a:visited {
+      color: inherit;
     text-decoration: none;
-  }
+    }
+    textarea:focus, input:focus{
+      outline: 1px solid var(--blue);
+    }
 `
+
+const globalStylesDark = css`
+  :root {
+    --title: #FFF;
+    --background: #1c1c1c;
+    --main-text: #FFF;
+    --secondary-text: #A2A2A2;
+    --text-background: #FFF;
+    --footer: #111;
+    --blue: #467BF6;
+    --red: #B82019;
+    --overlay: #181818DD;
+    --blue-transparent: #071f37fa;
+    }
+    ${commonCss}
+  `
+
+const globalStylesLight = css`
+  :root {
+    --title: #161620;
+    --background: #FFF;
+    --main-text: #292a2a;
+    --secondary-text: #696869;
+    --text-background: #FFF;
+    --footer: #111;
+    --blue: #467BF6;
+    --red: #B82019;
+    --overlay: #181818DD;
+    --blue-transparent: #071f37fa;
+  }
+  ${commonCss}
+  `
 
 const HamburguerGrid = styled.div`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
-`
+  `
 
 const HeadContainer = styled.header`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: var(--dark-gray);
-`
+  background-color: var(--background);
+  `
 
 const Main = styled.main`
   margin: 28px;
   display: flex;
-  color: var(--clear-blue);
+  color: var(--main-text);
   justify-content: center;
-`
+  `

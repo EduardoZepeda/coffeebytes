@@ -47,9 +47,9 @@ export default connect(Pagination)
 const PaginationLink = styled.div`
   display: inline-block;
   padding: 12px;
-  background-color: ${props => props.active ? 'var(--white)' : ''};
-  color: ${props => props.active ? 'var(--dark-gray)' : 'var(--white)'};
-  border: 1px solid var(--white);
+  background-color: ${props => props.active ? 'var(--blue)' : ''};
+  color: ${props => props.active ? 'var(--text-background)' : 'var(--blue)'};
+  border: 1px solid var(--blue);
   margin: 8px;
   border-radius: 4px;
 `

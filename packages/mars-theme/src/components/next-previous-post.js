@@ -32,6 +32,6 @@ const NextPostContainer = styled.section`
 
 const NextButton = styled.div`
     padding: 1rem 2rem;
-    border: 1px solid var(--white);
+    border: 1px solid var(--title);
     border-radius: 4px;
 `

@@ -13,8 +13,8 @@ const EmptySearch = () => {
 export default EmptySearch
 
 const EmptySearchButton = styled.button`
-    background-color: var(--mustard-yellow);
-    color: var(--dark-gray);
+    background-color: var(--blue);
+    color: var(--background);
     margin: 0;
     border: 0px;
     padding: 1rem;

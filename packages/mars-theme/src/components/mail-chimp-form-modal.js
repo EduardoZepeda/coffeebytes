@@ -62,8 +62,8 @@ const Newsletter = styled.aside`
   top: 0;
   left: 0;
   background-color: var(--blue-transparent);
+  color: var(--text-background);
   width: 100%;
-  color: var(--white);
   z-index:9;
 `
 
@@ -96,17 +96,15 @@ const MCInput = styled.input`
   vertical-align: middle;
   padding: 0.5rem 0;
   margin: 1rem 0;
-  color: var(--dark-gray);
+  color: var(--main-text);
   text-indent: 0.5rem;
 `
 
 const MCLabel = styled.label`
   font-size: 0.9rem;
-  color: var(--white);
 `
 
 const Close = styled.div`
-  color: var(--white);
   display: flex;
   justify-content: flex-end;
 `
@@ -116,7 +114,7 @@ const SubscribeButton = styled.input`
   padding: 1rem;
   background-color: var(--blue);
   border: 0px solid;
-  color: var(--white);
+  color: inherit;
   border-radius: 4px;
   margin: 1rem;
   outline: none;
