@@ -37,6 +37,9 @@ const IconLink = styled(Link)`
   border-radius: 100%;
   color: white;
   margin: 0.5rem;
+  &:visited {
+    color: var(--white);
+  }
 `
 
 const IconLinkLn = styled(IconLink)`

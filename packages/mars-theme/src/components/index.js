@@ -76,7 +76,7 @@ const commonCss = `
     }
     a,
     a:visited {
-      color: var(--main-text);
+      color: inherit;
     text-decoration: none;
     }
     textarea:focus, input:focus{
@@ -96,6 +96,7 @@ const globalStylesDark = css`
     --red: #B82019;
     --overlay: #181818DD;
     --blue-transparent: #071f37fa;
+    --white: #FFF;
     }
     ${commonCss}
   `
@@ -112,6 +113,7 @@ const globalStylesLight = css`
     --red: #B82019;
     --overlay: #181818DD;
     --blue-transparent: #071f37fa;
+    --white: #FFF;
   }
   ${commonCss}
   `

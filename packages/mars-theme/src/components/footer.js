@@ -5,11 +5,11 @@ import Link from './link'
 const Footer = ({ state }) => {
   return (
     <FooterContainer>
+      <SocialMedia />
       <LegalContainer>
         <Link link='/politica-de-privacidad/'>{state.theme.lang === 'en' ? 'Privacy Policy' : 'Política de privacidad'}</Link>
         <Link link='/politica-de-cookies/'>{state.theme.lang === 'en' ? 'Cookies' : 'Política de cookies'}</Link>
       </LegalContainer>
-      <SocialMedia />
     </FooterContainer>
   )
 }
@@ -24,6 +24,7 @@ const FooterContainer = styled.footer`
   background-color: var(--footer);
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-top: 2rem;
 `
 
 const LegalContainer = styled.section`
