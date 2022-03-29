@@ -76,7 +76,7 @@ const commonCss = `
     }
     a,
     a:visited {
-      color: inherit;
+      color: var(--main-text);
     text-decoration: none;
     }
     textarea:focus, input:focus{
