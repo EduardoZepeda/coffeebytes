@@ -15,10 +15,10 @@ const SearchBar = ({ state, actions }) => {
               to prevent body scroll */}
               <Global styles={{ body: { overflowY: 'hidden' } }} />
             </>
-            )
+          )
           : (
             <Icon title={state.theme.lang === 'en' ? 'Search' : 'Buscar'} icon={androidSearch} size={24} />
-            )}
+          )}
       </SearchBarContainer>
       {isSearchBarOpen && (
         <SearchBarOverlay id='search-bar-overlay' onClick={actions.theme.handleToggleSearchBar}>
@@ -46,7 +46,7 @@ const SearchBarContainer = styled.div`
 const SearchInput = styled.input`
     background-color: 0;
     border: 0px;
-    color: var(--secondary-text);
+    color: var(--dark);
     padding: 1rem;
     border-radius: 2px;
     border-top-left-radius: 2px;

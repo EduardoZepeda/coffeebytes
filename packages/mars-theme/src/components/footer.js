@@ -27,9 +27,10 @@ const FooterContainer = styled.footer`
   padding-top: 2rem;
 `
 
-const LegalContainer = styled.section`
+const LegalContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem;
   font-size: 1rem;
+  gap: 1rem;
 `

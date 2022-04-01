@@ -86,34 +86,36 @@ const commonCss = `
 
 const globalStylesDark = css`
   :root {
-    --title: #FFF;
-    --background: #1c1c1c;
-    --main-text: #FFF;
-    --secondary-text: #A2A2A2;
-    --text-background: #FFF;
-    --footer: #111;
+    --white: #FFF;
+    --dark: #111;
     --blue: #467BF6;
     --red: #B82019;
+    --title: var(--white);
+    --background: #1c1c1c;
+    --main-text: var(--white);
+    --secondary-text: #A2A2A2;
+    --text-background: var(--white);
+    --footer: var(--dark);
     --overlay: #181818DD;
     --blue-transparent: #071f37fa;
-    --white: #FFF;
     }
     ${commonCss}
   `
 
 const globalStylesLight = css`
   :root {
+    --white: #FFF;
     --title: #161620;
-    --background: #FFF;
-    --main-text: #292a2a;
-    --secondary-text: #696869;
-    --text-background: #FFF;
-    --footer: #111;
+    --dark: #111;
     --blue: #467BF6;
     --red: #B82019;
     --overlay: #181818DD;
+    --background: var(--white);
+    --main-text: #292a2a;
+    --secondary-text: #696869;
+    --text-background: var(--white);
+    --footer: var(--dark);
     --blue-transparent: #071f37fa;
-    --white: #FFF;
   }
   ${commonCss}
   `

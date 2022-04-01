@@ -25,7 +25,7 @@ color: #f8f8f2;
 background: none;
 text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-font-size: 1em;
+font-size: 0.85em;
 text-align: left;
 white-space: pre;
 word-spacing: normal;
