@@ -6,7 +6,7 @@ const settings = [
       frontity: {
         url: 'https://coffeebytes.dev',
         title: 'Coffee bytes',
-        description: 'Blog de desarrollo web full stack'
+        description: 'Blog de desarrollo web frontend y backend'
       },
       analytics: {
         pageviews: {
@@ -35,10 +35,6 @@ const settings = [
                 '/libros-que-he-leido-y-resenas/'
               ],
               [
-                'Contáctame',
-                '/contacto-eduardo-zepeda/'
-              ],
-              [
                 'Regalos',
                 '/regalos/'
               ]
@@ -60,7 +56,7 @@ const settings = [
             github: 'https://github.com/eduardoZepeda',
             linkedin: 'https://linkedin.com/in/eduardomzepeda',
             codewars: 'https://www.codewars.com/users/EduardoZepeda',
-            email: '/contacto-eduardo-zepeda/'
+            website: 'https://eduardozepeda.dev'
           }
         }
       },
@@ -93,7 +89,7 @@ const settings = [
       frontity: {
         url: 'https://coffeebytes.dev',
         title: 'Coffee bytes',
-        description: 'Full stack web development blog'
+        description: 'Backend and frontend web development blog'
       },
       analytics: {
         pageviews: {
@@ -122,10 +118,6 @@ const settings = [
                 '/en/books-ive-read-and-reviews/'
               ],
               [
-                'Contact me',
-                '/en/contact-eduardo-zepeda/'
-              ],
-              [
                 'Gifts for you',
                 '/en/gifts/'
               ]
@@ -147,7 +139,7 @@ const settings = [
             github: 'https://github.com/eduardoZepeda',
             linkedin: 'https://linkedin.com/in/eduardomzepeda',
             codewars: 'https://www.codewars.com/users/EduardoZepeda',
-            email: '/en/contact-eduardo-zepeda/'
+            website: 'https://eduardozepeda.dev'
           }
         }
       },

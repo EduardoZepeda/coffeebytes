@@ -51,9 +51,9 @@ const FormContainer = styled.aside`
     ? css`
         padding: 2rem 4rem;
         background: rgb(3,52,95);
-        background: -moz-linear-gradient(90deg, rgba(3,52,95,1) 0%, rgba(0,66,117,1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(3,52,95,1) 0%, rgba(0,66,117,1) 100%);
-        background: linear-gradient(90deg, rgba(3,52,95,1) 0%, rgba(0,66,117,1) 100%);
+        background: -moz-linear-gradient(90deg, rgba(3,52,95,1) 0%, rgb(44, 118, 176) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(3,52,95,1) 0%, rgb(44, 118, 176) 100%);
+        background: linear-gradient(90deg, rgba(3,52,95,1) 0%, rgb(44, 118, 176) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#03345f",endColorstr="#004275",GradientType=1); 
         border-radius: 4px;
     `

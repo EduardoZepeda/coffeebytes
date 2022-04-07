@@ -1,7 +1,7 @@
 import { styled, connect } from 'frontity'
 import { Icon } from 'react-icons-kit'
 import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
-import { iosEmail } from 'react-icons-kit/ionicons/iosEmail'
+import { ic_language } from 'react-icons-kit/md/ic_language'
 import Link from './link'
 
 const SideProfile = ({ state }) => {
@@ -16,7 +16,7 @@ const SideProfile = ({ state }) => {
         <ProfilePicture avatarUrl={author.avatar_urls['96']} />
         <DataContainer>
           <Author>{author.name}</Author>
-          <SocialMediaLink><Link link={state.socialMedia.email}><Icon icon={iosEmail} size={iconSize} /><small> Email</small></Link></SocialMediaLink>
+          <SocialMediaLink><Link link={state.socialMedia.website}><Icon icon={ic_language} size={iconSize} /><small> Sitio web</small></Link></SocialMediaLink>
           <SocialMediaLink><Link link={state.socialMedia.twitter}><Icon style={{ color: '#00acee ' }} icon={socialTwitter} size={iconSize} /><small> Twitter</small></Link></SocialMediaLink>
         </DataContainer>
       </Profile>

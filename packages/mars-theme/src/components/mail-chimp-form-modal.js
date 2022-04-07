@@ -22,7 +22,7 @@ const MailChimpSubscribeFormModal = ({ state, actions }) => {
           <MCContainer>
             <MCFormContainer action={state.theme.mailChimp.formUrl} method='post' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' className='validate' target='_blank' noValidate=''>
               <MCInputContainer>
-                <h2>Únete a mi newsletter</h2>
+                <h2>Únete</h2>
                 <p> ✅ Más de 100 desarrolladores registrados. Tutoriales gratuitos cada semana directo en tu correo y cero spam</p>
               </MCInputContainer>
               <MCFields>

@@ -78,9 +78,9 @@ const Post = ({ state, actions, libraries }) => {
         {post.type === 'post' && <NextPreviousPost id={data.id} />}
         {post.type === 'post' && <SharerButtons />}
         {post.type === 'post' && <MailChimpSubscribeForm
-          formTitle='Únete a mi comunidad de lectores'
-          formDescription='Recibe contenido como este por correo electrónico, una vez por semana, de manera totalmente gratuita.'
-        />}
+          formTitle='Únete'
+          formDescription='✅ Más de 100 desarrolladores registrados. Tutoriales gratuitos cada semana directo en tu correo y cero spam'
+                                 />}
         {post.type === 'post' && <SimilarPosts postId={data.id} />}
       </Container>)
     : null
