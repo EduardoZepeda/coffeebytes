@@ -53,7 +53,6 @@ const settings = [
           socialMedia: {
             instagram: 'https://bit.ly/3jnxnMF',
             twitter: 'https://twitter.com/hello_wired',
-            github: 'https://github.com/eduardoZepeda',
             linkedin: 'https://linkedin.com/in/eduardomzepeda',
             codewars: 'https://www.codewars.com/users/EduardoZepeda',
             website: 'https://eduardozepeda.dev'
@@ -136,7 +135,6 @@ const settings = [
           socialMedia: {
             instagram: 'https://instagram.com/coffeebytes.dev',
             twitter: 'https://twitter.com/hello_wired',
-            github: 'https://github.com/eduardoZepeda',
             linkedin: 'https://linkedin.com/in/eduardomzepeda',
             codewars: 'https://www.codewars.com/users/EduardoZepeda',
             website: 'https://eduardozepeda.dev'

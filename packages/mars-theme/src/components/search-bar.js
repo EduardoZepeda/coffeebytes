@@ -15,10 +15,10 @@ const SearchBar = ({ state, actions }) => {
               to prevent body scroll */}
               <Global styles={{ body: { overflowY: 'hidden' } }} />
             </>
-          )
+            )
           : (
             <Icon title={state.theme.lang === 'en' ? 'Search' : 'Buscar'} icon={androidSearch} size={24} />
-          )}
+            )}
       </SearchBarContainer>
       {isSearchBarOpen && (
         <SearchBarOverlay id='search-bar-overlay' onClick={actions.theme.handleToggleSearchBar}>

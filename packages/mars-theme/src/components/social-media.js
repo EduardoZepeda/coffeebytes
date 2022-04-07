@@ -3,7 +3,6 @@ import Link from './link'
 import { Icon } from 'react-icons-kit'
 import { linkedin } from 'react-icons-kit/fa/linkedin'
 import { instagram } from 'react-icons-kit/fa/instagram'
-import { githubAlt } from 'react-icons-kit/fa/githubAlt'
 import { Codewars } from './logos/codewars'
 
 const SocialMedia = ({ state }) => {
@@ -11,7 +10,6 @@ const SocialMedia = ({ state }) => {
 
   return (
     <SocialMediaContainer>
-      <IconContainer><IconLinkGh title='Github' aria-label='Enlace a Github' link={state.socialMedia.github}><Icon icon={githubAlt} size={iconSize} /></IconLinkGh></IconContainer>
       <IconContainer><IconLinkIg title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}><Icon icon={instagram} size={iconSize} /></IconLinkIg></IconContainer>
       <IconContainer><IconLinkLn title='Linkedin' aria-label='Enlace a Linkedin' link={state.socialMedia.linkedin}><Icon icon={linkedin} size={iconSize} /></IconLinkLn></IconContainer>
       <IconContainer><IconLinkCw title='Codewars' aria-label='Enlace a Codewars' link={state.socialMedia.codewars}><Icon style={{ color: '#FFF' }} icon={Codewars} size={iconSize} /></IconLinkCw></IconContainer>
@@ -48,10 +46,6 @@ const IconLinkLn = styled(IconLink)`
 
 const IconLinkIg = styled(IconLink)`
   background-color: #e1306c;
-`
-
-const IconLinkGh = styled(IconLink)`
-  background-color: #333;
 `
 
 const IconLinkCw = styled(IconLink)`
