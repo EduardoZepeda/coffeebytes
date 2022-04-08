@@ -17,7 +17,7 @@ const SearchBar = ({ state, actions }) => {
             </>
           )
           : (
-            <FontAwesomeIcon title={state.theme.lang === 'en' ? 'Search' : 'Buscar'} icon={faMagnifyingGlass} size={iconSize} />
+            <span title={state.theme.lang === 'en' ? 'Search' : 'Buscar'}><FontAwesomeIcon icon={faMagnifyingGlass} size={iconSize} /></span>
           )}
       </SearchBarContainer>
       {isSearchBarOpen && (

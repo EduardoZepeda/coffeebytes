@@ -63,4 +63,7 @@ const ToggleLabel = styled.label`
         top: 3px;
         left: 3px;
     }
+    &:hover {
+      cursor: pointer;
+    }
 `

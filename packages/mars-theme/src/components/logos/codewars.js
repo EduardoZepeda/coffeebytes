@@ -1,6 +1,6 @@
 'use strict'
 Object.defineProperty(exports, '__esModule', { value: true })
-const prefix = 'fab'
+const prefix = 'fa'
 const iconName = 'code-wars'
 const width = 663
 const height = 655

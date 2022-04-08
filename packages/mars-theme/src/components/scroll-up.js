@@ -45,4 +45,7 @@ const ScrollUpContainer = styled.div`
     background-color: var(--blue);
     color: var(--text-background);
     border-radius: 4px;
+    &:hover {
+      cursor: pointer;
+    }
 `

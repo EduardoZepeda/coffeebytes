@@ -10,17 +10,17 @@ const SocialMedia = ({ state }) => {
   return (
     <SocialMediaContainer>
       <IconContainer>
-        <IconLinkCw title='Codewars' aria-label='Enlace a Codewars' link={state.socialMedia.codewars}>
+        <IconLinkCw aria-label='Enlace a Codewars' link={state.socialMedia.codewars}>
           <FontAwesomeIcon icon={faCodeWars} size={iconSize} />
         </IconLinkCw>
       </IconContainer>
       <IconContainer>
-        <IconLinkIg title='Instagram' aria-label='Enlace a Instagram' link={state.socialMedia.instagram}>
+        <IconLinkIg aria-label='Enlace a Instagram' link={state.socialMedia.instagram}>
           <FontAwesomeIcon icon={faInstagram} size={iconSize} />
         </IconLinkIg>
       </IconContainer>
       <IconContainer>
-        <IconLinkLn title='Linkedin' aria-label='Enlace a Linkedin' link={state.socialMedia.linkedin}>
+        <IconLinkLn aria-label='Enlace a Linkedin' link={state.socialMedia.linkedin}>
           <FontAwesomeIcon icon={faLinkedinIn} size={iconSize} />
         </IconLinkLn>
       </IconContainer>
