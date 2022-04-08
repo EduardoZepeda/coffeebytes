@@ -1,11 +1,12 @@
 import { styled, connect } from 'frontity'
-import { Icon } from 'react-icons-kit'
-import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
-import { ic_language } from 'react-icons-kit/md/ic_language'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+
 import Link from './link'
 
 const SideProfile = ({ state }) => {
-  const iconSize = 18
+  const iconSize = 'sm'
   const data = state.source.get(state.router.link)
   const post = state.source[data.type][data.id]
   const author = state.source.author[post.author]
@@ -16,8 +17,8 @@ const SideProfile = ({ state }) => {
         <ProfilePicture avatarUrl={author.avatar_urls['96']} />
         <DataContainer>
           <Author>{author.name}</Author>
-          <SocialMediaLink><Link link={state.socialMedia.website}><Icon icon={ic_language} size={iconSize} /><small> Sitio web</small></Link></SocialMediaLink>
-          <SocialMediaLink><Link link={state.socialMedia.twitter}><Icon style={{ color: '#00acee ' }} icon={socialTwitter} size={iconSize} /><small> Twitter</small></Link></SocialMediaLink>
+          <SocialMediaLink><Link link={state.socialMedia.website}><FontAwesomeIcon icon={faGlobe} size={iconSize} /><small> Sitio web</small></Link></SocialMediaLink>
+          <SocialMediaLink><Link link={state.socialMedia.twitter}><FontAwesomeIcon style={{ color: '#00acee ' }} icon={faTwitter} size={iconSize} /><small> Twitter</small></Link></SocialMediaLink>
         </DataContainer>
       </Profile>
     </ProfileContainer>

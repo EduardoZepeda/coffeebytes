@@ -1,10 +1,9 @@
 import { connect, styled } from 'frontity'
-import { Icon } from 'react-icons-kit'
-import { sunO } from 'react-icons-kit/fa/sunO'
-import { moonO } from 'react-icons-kit/fa/moonO'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 const ThemeSwitch = ({ state, actions }) => {
-  const iconSize = 18
+  const iconSize = 'sm'
   return (
     <>
       <ToggleContainer>
@@ -15,8 +14,8 @@ const ThemeSwitch = ({ state, actions }) => {
           checked={state.theme.themeDark}
         />
         <ToggleLabel htmlFor='toggle'>
-          <IconContainer><Icon style={{ color: state.theme.themeDark ? '#161620' : 'transparent' }} icon={sunO} size={iconSize} /></IconContainer>
-          <IconContainer><Icon style={{ color: state.theme.themeDark ? 'transparent' : '#161620' }} icon={moonO} size={iconSize} /></IconContainer>
+          <FontAwesomeIcon style={{ color: state.theme.themeDark ? '#161620' : 'transparent' }} icon={faSun} size={iconSize} />
+          <FontAwesomeIcon style={{ color: state.theme.themeDark ? 'transparent' : '#161620' }} icon={faMoon} size={iconSize} />
         </ToggleLabel>
       </ToggleContainer>
     </>
@@ -27,10 +26,6 @@ export default connect(ThemeSwitch)
 
 const ToggleContainer = styled.div`
     margin-left: 24px;
-`
-
-const IconContainer = styled.div`
-    margin-bottom: 3px;
 `
 
 const ToggleSwitch = styled.input`

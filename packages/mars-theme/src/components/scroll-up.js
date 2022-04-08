@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { styled } from 'frontity'
-import { Icon } from 'react-icons-kit'
-import { thickTop } from 'react-icons-kit/iconic/thickTop'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 const ScrollUp = () => {
   const [screenPosition, setScreenPosition] = useState(0)
-  const iconSize = 24
+  const iconSize = 'sm'
   let eventTimeout
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const ScrollUp = () => {
   }
 
   return (
-    screenPosition > 1080 && <ScrollUpContainer onClick={scrollToTop}><Icon icon={thickTop} size={iconSize} /></ScrollUpContainer>
+    screenPosition > 1080 && <ScrollUpContainer onClick={scrollToTop}><FontAwesomeIcon icon={faArrowUp} size={iconSize} /></ScrollUpContainer>
   )
 }
 

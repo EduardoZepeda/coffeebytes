@@ -1,10 +1,10 @@
 import { connect, styled, Global } from 'frontity'
-import { Icon } from 'react-icons-kit'
-import { androidSearch } from 'react-icons-kit/ionicons/androidSearch'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const SearchBar = ({ state, actions }) => {
   const { isSearchBarOpen } = state.theme
-
+  const iconSize = 'sm'
   return (
     <>
       <SearchBarContainer onClick={actions.theme.handleToggleSearchBar}>
@@ -15,10 +15,10 @@ const SearchBar = ({ state, actions }) => {
               to prevent body scroll */}
               <Global styles={{ body: { overflowY: 'hidden' } }} />
             </>
-            )
+          )
           : (
-            <Icon title={state.theme.lang === 'en' ? 'Search' : 'Buscar'} icon={androidSearch} size={24} />
-            )}
+            <FontAwesomeIcon title={state.theme.lang === 'en' ? 'Search' : 'Buscar'} icon={faMagnifyingGlass} size={iconSize} />
+          )}
       </SearchBarContainer>
       {isSearchBarOpen && (
         <SearchBarOverlay id='search-bar-overlay' onClick={actions.theme.handleToggleSearchBar}>

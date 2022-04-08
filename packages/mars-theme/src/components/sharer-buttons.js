@@ -1,12 +1,10 @@
 import { connect, styled } from 'frontity'
 import Link from './link'
-import { Icon } from 'react-icons-kit'
-import { socialLinkedin } from 'react-icons-kit/ionicons/socialLinkedin'
-import { socialTwitter } from 'react-icons-kit/ionicons/socialTwitter'
-import { socialFacebook } from 'react-icons-kit/ionicons/socialFacebook'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const SharerButtons = ({ state }) => {
-  const iconSize = 24
+  const iconSize = '1x'
   const data = state.source.get(state.router.link)
   const post = state.source[data.type][data.id]
   const url = post.link
@@ -16,15 +14,18 @@ const SharerButtons = ({ state }) => {
       <TypographyH2>Comparte este contenido</TypographyH2>
       <SharersContainer>
         <IconLink aria-label='Enlace a Facebook' link={`http://www.facebook.com/sharer.php?u=${encodeURIComponent(state.source.url + url)}&t=${encodeURIComponent(title)}`}>
-          <IconContainer style={{ backgroundColor: '#3B5998' }}><Icon icon={socialFacebook} size={iconSize} />
+          <IconContainer style={{ backgroundColor: '#3B5998' }}>
+            <FontAwesomeIcon icon={faFacebookF} size={iconSize} />
           </IconContainer>
         </IconLink>
         <IconLink aria-label='Enlace a Twitter' link={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(state.source.url + url)}&via=${new URL(state.socialMedia.twitter).pathname.replace('/', '')}`}>
-          <IconContainer style={{ backgroundColor: '#00AECE' }}><Icon icon={socialTwitter} size={iconSize} />
+          <IconContainer style={{ backgroundColor: '#00AECE' }}>
+            <FontAwesomeIcon icon={faTwitter} size={iconSize} />
           </IconContainer>
         </IconLink>
         <IconLink aria-label='Enlace a Linkedin' link={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(state.source.url + url)}`}>
-          <IconContainer style={{ backgroundColor: '#0E76A8' }}><Icon icon={socialLinkedin} size={iconSize} />
+          <IconContainer style={{ backgroundColor: '#0E76A8' }}>
+            <FontAwesomeIcon icon={faLinkedinIn} size={iconSize} />
           </IconContainer>
         </IconLink>
       </SharersContainer>
@@ -51,10 +52,16 @@ const SharersContainer = styled.div`
 `
 
 const IconLink = styled(Link)`
-    margin: 0 0.7em;
+    margin-right: 2em;
+
 `
 
 const IconContainer = styled.div`
-    border-radius: 5px;
-    padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 5px;
+  width: 4rem;
+  height: 5rem;
 `

@@ -27,7 +27,7 @@ const Page404 = ({ state }) => {
     <Container>
       <Title>{data.is404 ? title404 : title}</Title>
       <Description>{data.is404 ? description404(state.theme.lang) : description}</Description>
-      {state.theme.lang === 'en' ? null : <Link link=''><RecentPostsButton>Leer entradas recientes</RecentPostsButton></Link>}
+      {state.theme.lang === 'en' ? null : <Link link='#'><RecentPostsButton>Leer entradas recientes</RecentPostsButton></Link>}
     </Container>
   )
 }

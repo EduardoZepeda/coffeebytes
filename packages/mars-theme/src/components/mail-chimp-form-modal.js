@@ -1,7 +1,7 @@
 import { styled, connect } from 'frontity'
 import { useEffect, useState } from 'react'
-import { Icon } from 'react-icons-kit'
-import { androidClose } from 'react-icons-kit/ionicons/androidClose'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const MailChimpSubscribeFormModal = ({ state, actions }) => {
   const { showMailChimpForm } = state.theme
@@ -48,7 +48,7 @@ const MailChimpSubscribeFormModal = ({ state, actions }) => {
                 <SubscribeButton type='submit' value='Quiero suscribirme' name='subscribe' />
               </div>
             </MCFormContainer>
-            <Close onClick={actions.theme.handleCloseMailChimpForm}><Icon icon={androidClose} size={24} /></Close>
+            <Close onClick={actions.theme.handleCloseMailChimpForm}><FontAwesomeIcon icon={faXmark} size='lg' /></Close>
           </MCContainer>
         </Newsletter>)
       : null
@@ -106,6 +106,7 @@ const MCLabel = styled.label`
 
 const Close = styled.div`
   display: flex;
+  padding: 1rem;
   justify-content: flex-end;
 `
 
