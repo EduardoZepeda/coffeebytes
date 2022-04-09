@@ -10,6 +10,10 @@ import Footer from './footer'
 import ScrollUp from './scroll-up'
 import CookieConsentManager from './cookie-consent-manager'
 import ThemeSwitch from './theme-switch'
+// Prevent giant icons to show on loading
+// Preventing the auto CSS and adding it manually solves the problem
+import { config, dom } from '@fortawesome/fontawesome-svg-core'
+config.autoAddCss = false
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -82,6 +86,7 @@ const commonCss = `
     textarea:focus, input:focus{
       outline: 1px solid var(--blue);
     }
+    ${dom.css()}
 `
 
 const globalStylesDark = css`
